@@ -1,0 +1,15 @@
+\changetocdepth {4}
+\select@language {brazil}
+\contentsline {chapter}{\chapternumberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Otimiza\IeC {\c c}\IeC {\~a}o de Desempenho de Websites}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Espa\IeC {\c c}o para Novas T\IeC {\'e}cnicas}{3}{section.1.2}
+\contentsline {chapter}{\chapternumberline {2}Descri\IeC {\c c}\IeC {\~a}o do problema}{4}{chapter.2}
+\contentsline {chapter}{\chapternumberline {3}Objetivos}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Objetivo Geral}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Objetivos Espec\IeC {\'\i }ficos}{5}{section.3.2}
+\contentsline {chapter}{\chapternumberline {4}Resultados Esperados}{6}{chapter.4}
+\contentsline {chapter}{\chapternumberline {5}Metodologia}{7}{chapter.5}
+\contentsline {chapter}{\chapternumberline {6}Infraestrutura necess\IeC {\'a}ria}{8}{chapter.6}
+\contentsline {chapter}{\chapternumberline {7}Cronograma}{9}{chapter.7}
+\contentsline {chapter}{Refer\^encias}{10}{section*.6}
+\vspace {\cftbeforepartskip }

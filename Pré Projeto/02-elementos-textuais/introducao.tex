@@ -1,0 +1,34 @@
+%
+% Documento: Introdução
+%
+
+\chapter{Introdução}\label{chap:introducao}
+
+A Internet como é conhecida nos dias de hoje foi proposta em 1989 pelo cientista britânico Tim Berners-Lee pesquisador da Organização Europeia de Pesquisas Nucleares, CERN. De acordo com a CERN a ideia de Lee era ajudar seus colegas a compartilharem informações científicas de maneira mais rápida \cite{Cern}, possibilitando o maior avanço das pesquisas realizadas na Europa e ao redor de todo o mundo. Para isso Lee queria inventar um modelo simples para o compartilhamento de dados via rede de computadores e então criou o projeto da \textit{World Wide Web} (W3). Como descrito por Lee em seu primeiro \textit{website} o W3 era “uma iniciativa de recuperação de informação em hipermídia em grande área, com o objetivo de dar acesso universal para um grande universo de documentos” \cite{WorldWideWeb}. No final de 1990, Lee já tinha terminado de desenvolver todas as ferramentas necessárias para o funcionamento de seu modelo: uma linguagem de marcação de hipertextos (HTML), um navegador \textit{web} (o WorldWideWeb) e um protocolo para a transferência de hipertextos (HTTP). O primeiro \textit{site} que Lee colocou no ar ainda pode ser acessado pelo seu endereço original, \href{http://info.cern.ch/}{http://info.cern.ch/}, e contém informações sobre o próprio W3.
+
+Em 1993, vendo as vantagens que poderiam trazer para todos, a CERN decidiu colocar a World Wide Web em domínio público. Então, em 1994, Tim Berners-Lee fundou o \textit{World Wide Web Consortium} (W3C), com o objetivo de formalizar especificações e regras para o uso do seu modelo. O W3C se tornou o responsável por garantir que a Web funcionasse para todos e que evoluísse de uma maneira consciente.
+
+Muita coisa mudou desde que Tim propôs e desenvolveu a primeira versão da World Wide Web. O modelo de Tim se tornou o mais utilizado pela rede mundial de computadores, a Internet, e hoje em dia, de acordo com o \textit{site} Internet World Status mais de 3 bilhões de pessoas utilizam das ferramentas desenvolvidas por ele para acessar informações pessoais, fazer pesquisas, se comunicar com amigos, compartilhar trabalhos, fazer compras, etc.  \cite{InternetWorldStatus}
+
+
+\section{Otimização de Desempenho de Websites}
+Atualmente, \textit{websites} são compostos por páginas interativas, com vídeos, fotos, animações, cores, links e outros elementos dinâmicos que tiram toda a monotonia de uma folha de papel apenas com textos. Mas o primeiro \textit{website} desenvolvido por Lee em 1990 era bem mais simples do que isso e continha apenas textos estáticos e links internos.
+ 
+Com o avanço da Web surgiram novas maneiras de interagir com ela. A humanidade está na era das imagens e dos vídeos, páginas não podem ser estáticas se não os usuários não ficam o tempo necessário nela, é preciso criar \textit{layouts} agradáveis e interessantes além de interatividade entre \textit{websites} e usuários. Esses fatores fizeram com que os sites que antigamente possuíam alguns poucos \textit{bytes} de informação passassem a ter muitos \textit{megabytes}. Além disso o número de acessos simultâneos aumentou e os usuários ficaram mais impacientes, exigindo que as páginas da Web respondessem cada vez mais rápido. Então criou-se um paradoxo: os sites ficaram mais pesados e difíceis de serem carregados, os acessos ficaram mais frequentes sobrecarregando mais os servidores, mas os usuários passarão a querer respostas mais rápidas e eficientes. Sozinhas, nem mesmo as melhorias na velocidade de conexão com a Internet seriam o suficiente para solucionar esse problema. Algo a mais precisava ser feito.
+
+Por muitos anos acreditou-se que para melhorar o desempenho de um \textit{website} era suficiente melhorar o desempenho do que está por trás dele, o \textit{back-end}. O \textit{back-end} é a parte responsável por gerenciar as operações de um \textit{website} e controlar tudo o que acontece na parte vista pelo usuário, o \textit{front-end}.
+
+No início dos anos 2000, começaram a ser realizados novos estudos a procura de técnicas para a entrega mais rápida de conteúdo pela Web. A otimização da performance de \textit{websites} se tornou um fator crítico para o sucesso de algumas empresas que dependiam da Web para sobreviver. Os pesquisadores então perceberam que otimizar  \textit{back-end} não era o suficiente, pois apesar de ser nele onde ocorrem que as operações mais pesadas computacionalmente as melhorias de desempenho eram limitadas. Mesmo assim muito tempo e dinheiro foi gasto procurando maneiras de otimizar servidores e sistemas de gestão de conteúdo, e pouca atenção foi dada ao \textit{front-end}. Mas de acordo com Steve Souders \cite{HighPerformanceWebSites} esse foi o erro dos desenvolvedores por anos. Apenas 10-20\% do tempo de carregamento de uma página é gasto com operações de \textit{back-end}, os outros 80-90\% são de responsabilidade do \textit{front-end}.
+
+Até o ano de 2007, pouco conteúdo sobre otimização de \textit{front-end} era disponibilizado para o grande público, até que o engenheiro de software do Yahoo!, Steve Souders, publicou o livro “High Performance Web Sites” explicando 14 técnicas utilizadas pela equipe da gigante da Internet para tornar seus sites mais rápidos \cite{HighPerformanceWebSites}. Essas técnicas eram específicas para otimização no \textit{front-end} dos sites. A evolução da Web fez com que esse tipo de otimização se tornasse fundamentalmente importante para a velocidade da entrega do conteúdo, e Souders fez com que esse segredo deixasse de pertencer apenas às grandes empresas e passasse a ser do conhecimento de todos.
+
+
+\section{Espaço para Novas Técnicas}
+Para desenvolver seus métodos de otimização, Souders se baseou no protocolo de troca de conteúdo criado por Tim Berners-Lee em 1990, o HTTP. Esse protocolo tinha algumas características e limitações que faziam necessárias as técnicas propostas por ele.
+
+Ao longo dos anos, o HTTP mudou muito pouco. Após a sua primeira versão oficial, que teve sua descrição aprovada em 1996, o HTTP/1.0, foi lançado apenas uma atualização do protocolo, que foi aprovado em 1999, o HTTP/1.1 \cite{W3Http}. O protocolo era tão robusto que de sua ideia inicial pouca coisa precisou ser mudada para o HTTP ser usado em todo o mundo.
+
+Às vésperas do lançamento do HTTP2, desenvolvido com o intuito de melhorar o desempenho e a segurança da Internet, estima-se que muitas das técnicas propostas por Souders se tornem obsoletas. As mudanças geradas pela implantação do HTTP2 farão necessárias novas técnicas de otimização e o desenvolvimento dessas técnicas dependerá da compreensão do novo protocolo. Por isso é necessário já começar a estudar e analisar o comportamento do HTTP2 na Web.
+
+
+

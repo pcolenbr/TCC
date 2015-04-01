@@ -1,0 +1,33 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.3 }
+
+\bibitem[Berners-Lee 1990]{WorldWideWeb}
+\abntrefinfo{Berners-Lee}{BERNERS-LEE}{1990}
+{BERNERS-LEE, T. \textbf{World Wide Web}. 1990.
+Dispon{\'\i}vel em: \url{http://info.cern.ch/hypertext/WWW/TheProject.html}.}
+
+\bibitem[CERN 2015]{Cern}
+\abntrefinfo{CERN}{CERN}{2015}
+{CERN. \textbf{The birth of the web}. 2015.
+Dispon{\'\i}vel em: \url{http://home.web.cern.ch/topics/birth-web}.}
+
+\bibitem[Group 2014]{InternetWorldStatus}
+\abntrefinfo{Group}{GROUP}{2014}
+{GROUP, M.~M. \textbf{INTERNET USAGE STATISTICS The Internet Big Picture}.
+  2014.
+Dispon{\'\i}vel em: \url{http://www.internetworldstats.com/stats.htm}.}
+
+\bibitem[Nielsen 2004]{W3Http}
+\abntrefinfo{Nielsen}{NIELSEN}{2004}
+{NIELSEN, J.~G. H.~F. \textbf{Change History for HTTP}. 2004.
+Dispon{\'\i}vel em: \url{http://www.w3.org/Protocols/History.html}.}
+
+\bibitem[Souders 2007]{HighPerformanceWebSites}
+\abntrefinfo{Souders}{SOUDERS}{2007}
+{SOUDERS, S. \textbf{High Performance Web Sites}. [S.l.]: O`Reilly, 2007.}
+
+\end{thebibliography}

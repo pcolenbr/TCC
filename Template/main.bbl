@@ -1,0 +1,162 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.3 }
+
+\bibitem[abnTeX2 e Araujo 2013]{abntex2classe}
+\abntrefinfo{abnTeX2 e Araujo}{ABNTEX2; ARAUJO}{2013}
+{ABNTEX2; ARAUJO, L.~C. \textbf{A classe abntex2: Modelo can{\^o}nico de
+  trabalhos acad{\^e}micos brasileiros compat{\'\i}vel com as normas ABNT NBR
+  14724:2011, ABNT NBR 6024:2012 e outras}.
+[S.l.], 2013. Dispon{\'\i}vel em: \url{http://abntex2.googlecode.com/}.}
+
+\bibitem[Barabasi 2002]{linked}
+\abntrefinfo{Barabasi}{BARABASI}{2002}
+{BARABASI, A.~L. \textbf{Linked: The New Science of Networks}. [S.l.]: Perseus
+  Publishing, 2002.}
+
+\bibitem[Barbosa et al. 2004]{teste:2004}
+\abntrefinfo{Barbosa et al.}{BARBOSA et al.}{2004}
+{BARBOSA, C.; CARDOSO, M. da S.; SILVA, T. da; SOARES, C. \textbf{Testando a
+  utilização de ``et al.''}. 2. ed. Cidade: Editora, 2004.}
+
+\bibitem[BibTeX 2009]{BibTeX2009}
+\abntrefinfo{BibTeX}{BIBTEX}{2009}
+{BIBTEX. \textbf{BibTeX.org}. 2009.
+Dispon{\'\i}vel em: \url{http://www.bibtex.org}. Acesso em: 8 de novembro de
+  2009.}
+
+\bibitem[Buerger 1989]{Buerger1989}
+\abntrefinfo{Buerger}{BUERGER}{1989}
+{BUERGER, D.~J. \textbf{LaTeX for scientists and engineers}. Singapura:
+  McGraw-Hill, 1989.}
+
+\bibitem[Carvalho et al. 2001]{carvalho:2001}
+\abntrefinfo{Carvalho et al.}{CARVALHO et al.}{2001}
+{CARVALHO, C.; FAJARDO, J.; CRUZ, J. Inteligência competitiva numa visão de
+  futuro: proposta metodológica.
+\textbf{DataGramaZero - Revista da Ciência da Informação}, v.~2, n.~3, p.
+  12--16, 2001.}
+
+\bibitem[Chakrabarti e Faloutsos 2006]{acmsurveys}
+\abntrefinfo{Chakrabarti e Faloutsos}{CHAKRABARTI; FALOUTSOS}{2006}
+{CHAKRABARTI, D.; FALOUTSOS, C. Graph mining: Laws, generators, and algorithms.
+\textbf{ACM Computing Surveys}, ACM, New York, NY, USA, v.~38, n.~1, p. 2--59,
+  2006.}
+
+\bibitem[CTAN 2009]{CTAN2009}
+\abntrefinfo{CTAN}{CTAN}{2009}
+{CTAN. \textbf{The comprehensive TeX archive network}. 2009.
+Dispon{\'\i}vel em: \url{http://www.ctan.org}. Acesso em: 8 de novembro de
+  2009.}
+
+\bibitem[Faloutsos et al. 1999]{3faloutsos}
+\abntrefinfo{Faloutsos et al.}{FALOUTSOS et al.}{1999}
+{FALOUTSOS, M.; FALOUTSOS, P.; FALOUTSOS, C. On power-law relationships of the
+  internet topology. In:  \textbf{Book Title}. New York, NY, USA: ACM Press,
+  1999. p. 251--262.
+ISBN 1-58113-135-6.}
+
+\bibitem[Goossens et al. 2007]{Goossens2007}
+\abntrefinfo{Goossens et al.}{GOOSSENS et al.}{2007}
+{GOOSSENS, M.; MITTELBACH, F.; RAHTZ, S.; ROEGEL, D.; VOSS, H. \textbf{The
+  LaTeX graphics companion}. 2. ed. Boston: Addison-Wesley, 2007.}
+
+\bibitem[IRL 2007]{irl:06}
+\abntrefinfo{IRL}{IRL}{2007}
+{IRL. \textbf{Internet Research Laboratory}. 2007.
+  \url{http://irl.cs.ucla.edu/topology}.
+Acesso em março de 2007.}
+
+\bibitem[JabRef 2009]{JabRef2009}
+\abntrefinfo{JabRef}{JABREF}{2009}
+{JABREF. \textbf{JabRef reference manager}. 2009.
+Dispon{\'\i}vel em: \url{http://jabref.sourceforge.net}. Acesso em: 8 de
+  novembro de 2009.}
+
+\bibitem[Kopka e Daly 2003]{Kopka2003}
+\abntrefinfo{Kopka e Daly}{KOPKA; DALY}{2003}
+{KOPKA, H.; DALY, P.~W. \textbf{Guide to LaTeX}. 4. ed. Boston: Addison-Wesley,
+  2003.}
+
+\bibitem[Lamport 1986]{Lamport1986}
+\abntrefinfo{Lamport}{LAMPORT}{1986}
+{LAMPORT, L. \textbf{LaTeX: a document preparation system}. Boston:
+  Addison-Wesley, 1986.}
+
+\bibitem[LaTeX 2009]{LaTeX2009}
+\abntrefinfo{LaTeX}{LATEX}{2009}
+{LATEX. \textbf{The LaTeX project}. 2009.
+Dispon{\'\i}vel em: \url{http://www.latex-project.org}. Acesso em: 8 de
+  novembro de 2009.}
+
+\bibitem[Maturana e Varela 2003]{maturana:2003}
+\abntrefinfo{Maturana e Varela}{MATURANA; VARELA}{2003}
+{MATURANA, H.~R.; VARELA, F.~J. \textbf{A Árvore do Conhecimento}: as bases
+  biológicas da compreenão humana. 3. ed. São Paulo: Editora Palas Athena,
+  2003.}
+
+\bibitem[Mendeley 2009]{Mendeley2009}
+\abntrefinfo{Mendeley}{MENDELEY}{2009}
+{MENDELEY. \textbf{Mendeley: academic software for research papers}. 2009.
+Dispon{\'\i}vel em: \url{http://www.mendeley.com}. Acesso em: 8 de novembro de
+  2009.}
+
+\bibitem[MiKTeX 2009]{MiKTeX2009}
+\abntrefinfo{MiKTeX}{MIKTEX}{2009}
+{MIKTEX. \textbf{The MiKTeX project}. 2009.
+Dispon{\'\i}vel em: \url{http://www.miktex.org}. Acesso em: 8 de novembro de
+  2009.}
+
+\bibitem[Mittelbach et al. 2004]{Mittelbach2004}
+\abntrefinfo{Mittelbach et al.}{MITTELBACH et al.}{2004}
+{MITTELBACH, F.; GOOSSENS, M.; BRAAMS, J.; CARLISLE, D.; ROWLEY, C. \textbf{The
+  LaTeX companion}. 2. ed. Boston: Addison-Wesley, 2004.}
+
+\bibitem[Morin e {Le MOIGNE} 2000]{morinmoigne:2000}
+\abntrefinfo{Morin e {Le MOIGNE}}{MORIN; {Le MOIGNE}}{2000}
+{MORIN, E.; {Le MOIGNE}, J.-L. \textbf{A Inteligência da Complexidade}. São
+  Paulo: Editora Petrópolis, 2000.}
+
+\bibitem[Neubert 2000]{mar00}
+\abntrefinfo{Neubert}{NEUBERT}{2000}
+{NEUBERT, M.~S.
+\textbf{Algoritmos Distribuídos para a Construção de Arquivos Invertidos}.
+Disserta\c{c}\~{a}o (Mestrado) --- Departamento de Ciência da Computação,
+  Universidade Federal de Minas Gerais, Março 2000.}
+
+\bibitem[Pagh 1999]{rp99}
+\abntrefinfo{Pagh}{PAGH}{1999}
+{PAGH, R. Hash and displace: Efficient evaluation of minimal perfect hash
+  functions. In:  \textbf{Workshop on Algorithms and Data Structures}. [S.l.:
+  s.n.], 1999. p. 49--54.}
+
+\bibitem[Souza 2012]{CELSO2012}
+\abntrefinfo{Souza}{SOUZA}{2012}
+{SOUZA, C.~L. de.
+\textbf{Recuperação de Vídeos Baseada em Conteúdo em um Sistema de
+  Informação para Apoio à Análise do Discurso Televisivo}.
+Disserta\c{c}\~{a}o (Mestrado) --- Centro Federal de Educação tecnológica de
+  Minas Gerais, 2012.}
+
+\bibitem[TeX-BR 2009]{TeX-Br2009}
+\abntrefinfo{TeX-BR}{TEX-BR}{2009}
+{TEX-BR. \textbf{Comunidade TeX-Br}. 2009.
+Dispon{\'\i}vel em: \url{http://www.tex-br.org/index.php}. Acesso em: 8 de
+  novembro de 2009.}
+
+\bibitem[TeXnicCenter 2009]{TeXnicCenter2009}
+\abntrefinfo{TeXnicCenter}{TEXNICCENTER}{2009}
+{TEXNICCENTER. \textbf{TeX nicCenter: the center of your LaTeX universe}. 2009.
+Dispon{\'\i}vel em: \url{http://www.texniccenter.org}. Acesso em: 8 de novembro
+  de 2009.}
+
+\bibitem[Wikibooks 2009]{Wikibooks2009}
+\abntrefinfo{Wikibooks}{WIKIBOOKS}{2009}
+{WIKIBOOKS. \textbf{LaTeX}. 2009.
+Dispon{\'\i}vel em: \url{http://en.wikibooks.org/wiki/LaTeX}. Acesso em: 8 de
+  novembro de 2009.}
+
+\end{thebibliography}
