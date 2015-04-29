@@ -1,0 +1,35 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.3 }
+
+\bibitem[Archive 2015]{HttpArchiveContentType2011}
+\abntrefinfo{Archive}{ARCHIVE}{2015a}
+{ARCHIVE, H. \textbf{Http Archive Abril 2011 Query}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://httparchive.org/interesting.php?a=All&l=Apr\%2015\%202011}.}
+
+\bibitem[Archive 2015]{HttpArchiveContentType2015}
+\abntrefinfo{Archive}{ARCHIVE}{2015b}
+{ARCHIVE, H. \textbf{Http Archive Abril 2015 Query}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://httparchive.org/interesting.php?a=All&l=Apr\%2015\%202015}.}
+
+\bibitem[Connolly 2000]{WebHistory}
+\abntrefinfo{Connolly}{CONNOLLY}{2000}
+{CONNOLLY, D. \textbf{The birth of the web}. 2000.
+Dispon{\'\i}vel em: \url{http://www.w3.org/History.html}.}
+
+\bibitem[Group 1999]{RFC2616}
+\abntrefinfo{Group}{GROUP}{1999}
+{GROUP, N.~W. \textbf{RFC 2616}. 1999.
+Dispon{\'\i}vel em: \url{http://tools.ietf.org/html/rfc2616}.}
+
+\bibitem[Tanenbaum 2011]{Tanenbaum}
+\abntrefinfo{Tanenbaum}{TANENBAUM}{2011}
+{TANENBAUM, D. J.~W. A.~S. \textbf{Computer Networks}. 5th. ed. [S.l.: s.n.],
+  2011.}
+
+\end{thebibliography}
