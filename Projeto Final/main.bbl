@@ -22,10 +22,56 @@ Dispon{\'\i}vel em:
 {CONNOLLY, D. \textbf{The birth of the web}. 2000.
 Dispon{\'\i}vel em: \url{http://www.w3.org/History.html}.}
 
+\bibitem[Grigorik 2013]{HighPerformanceBrowserNetworking}
+\abntrefinfo{Grigorik}{GRIGORIK}{2013}
+{GRIGORIK, I. \textbf{High Performance Browser Networking}. 1st. ed. [S.l.]:
+  O'Reilly, 2013.}
+
+\bibitem[Group 2015]{HTTP2Spec}
+\abntrefinfo{Group}{GROUP}{2015}
+{GROUP, H.~W. \textbf{Hypertext Transfer Protocol version 2}. 2015.
+Dispon{\'\i}vel em:
+  \url{https://tools.ietf.org/html/draft-ietf-httpbis-http2-17}.}
+
+\bibitem[Group 1996]{RFC1945}
+\abntrefinfo{Group}{GROUP}{1996}
+{GROUP, N.~W. \textbf{RFC 1945}. 1996.
+Dispon{\'\i}vel em: \url{http://tools.ietf.org/html/rfc1945}.}
+
 \bibitem[Group 1999]{RFC2616}
 \abntrefinfo{Group}{GROUP}{1999}
 {GROUP, N.~W. \textbf{RFC 2616}. 1999.
 Dispon{\'\i}vel em: \url{http://tools.ietf.org/html/rfc2616}.}
+
+\bibitem[Saenz 2015]{ImagemHTTPOverview}
+\abntrefinfo{Saenz}{SAENZ}{2015}
+{SAENZ, J. \textbf{Building Web Apps with Go}. [s.n.], 2015. Dispon{\'\i}vel
+  em:
+  \url{https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details}.}
+
+\bibitem[Souders 2007]{HighPerformance}
+\abntrefinfo{Souders}{SOUDERS}{2007}
+{SOUDERS, S. \textbf{High Performance Web Sites}. 1st. ed. [S.l.: s.n.], 2007.}
+
+\bibitem[Souders 2009]{EvenFaster}
+\abntrefinfo{Souders}{SOUDERS}{2009a}
+{SOUDERS, S. \textbf{Even Faster Web Sites}. 1st. ed. [S.l.: s.n.], 2009.}
+
+\bibitem[Souders 2009]{GoogleIO2009}
+\abntrefinfo{Souders}{SOUDERS}{2009b}
+{SOUDERS, S. Even faster websites. In:  . [s.n.], 2009. Dispon{\'\i}vel em:
+  \url{https://www.youtube.com/watch?feature=player\_embedded&v=aJGC0JSlpPE}.}
+
+\bibitem[Souders 2012]{WebPerformance}
+\abntrefinfo{Souders}{SOUDERS}{2012}
+{SOUDERS, S. \textbf{Web Performance Daybook}. 1st. ed. [S.l.: s.n.], 2012.
+  Two.}
+
+\bibitem[Stenberg 2014]{HTTP2Explained}
+\abntrefinfo{Stenberg}{STENBERG}{2014}
+{STENBERG, D. Http2 explained.
+\textbf{ACM SIGCOMM Computer Communication Review}, 2014.
+Dispon{\'\i}vel em: \url{http://daniel.haxx.se/http2}.}
 
 \bibitem[Tanenbaum 2011]{Tanenbaum}
 \abntrefinfo{Tanenbaum}{TANENBAUM}{2011}

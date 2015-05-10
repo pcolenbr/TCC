@@ -5,3 +5,95 @@
 \chapter{Fundamentação Teórica}
 \label{chap:fundamentacaoTeorica}
 
+Para se obter grandes resultados na otimização de \textit{front-end} de \textit{websites} é essencial ter conhecimento de como o protocolo HTTP evoluiu e como ele funciona assim é possível encontrar seus pontos fracos e trabalhar em maneiras para minimizá-los. Além disso é necessário compreender o que são as chamadas assíncronas de JavaScript e XML, conhecidas como AJAX, e porque elas são tão utilizadas em \textit{websites} e aplicações para a chamada Web 2.0.
+
+\section{O Protocolo HTTP}
+\label{sec:http}
+
+\section{História}
+\label{sec:http_historia}
+
+Em 1989 Tim Berners-Lee propôs uma rede de computadores global para ajudar a comunidade científica a compartilhar o conhecimento gerado em diferentes partes do mundo, acelerando assim o desenvolvimento tecnológico. Ao final de 1990 o cientista do CERN já tinha desenvolvido em um computador de seu laboratório o primeiro navegador \textit{web} (chamado de WorldWideWeb), uma linguagem de marcação de hipertextos (o HTML) e um protocolo para a transferência de hipertextos (o HTTP).
+
+O HTTP recebeu sua primeira documentação oficial em 1991, quando passou a ser chamado de HTTP/0.9. Como esclarece \cite{HighPerformanceBrowserNetworking}, todas as versões anteriores passaram a ser consideradas iterações com o objetivo de se chegar a versão HTTP/0.9, então todas elas acabaram recebendo o rótulo de HTTP/0.9.
+
+Essa primeira versão do protocolo era extremamente simples. A ideia é explicada por \cite{HighPerformanceBrowserNetworking} da seguinte maneira:
+
+\begin{itemize}
+	\item A requisição do cliente é uma cadeia simples de caracteres ASCII
+	\item A resposta do servidor é uma torrente de caracteres ASCII
+	\item A resposta do servidor é um HTML
+	\item A conexão é fechada após o transferência do documento 
+\end{itemize}
+
+Com o passar dos anos a \textit{World Wide Web} de Tim Berners-Lee cresceu rapidamente e isso fez com que o uso do HTTP aumentasse muito em pouco tempo. Viu-se a necessidade de um protocolo mais robusto e estruturado, mas que mantivesse a simplicidade do HTTP/0.9, pois esse era o segredo por trás de seu sucesso. Então o IETF  passou a coordenar a criação de especificações para o HTTP e criou o HTTP-WG que tinha como função criar definição das versões seguintes do protocolo. Então, em 1996 foi definida a versão HTTP/1.0 \cite{RFC1945}, em 1999 a versão HTTP/1.1 \cite{RFC2616} e em 2015 foi aprovada a especificação para a versão HTTP2 \cite{HTTP2Spec}.
+
+\section{Visão Geral}
+\label{sec:http_visão_geral}
+
+Como dito por \cite{Tanenbaum}, o HTTP é um simples protocolo de requisições e respostas que normalmente funciona em cima do protocolo TCP. As requisições e respostas são compostas por um cabeçalho HTTP e um conteúdo, e são enviadas do cliente para o servidor. O modelo, ilustrado na \autoref{fig:httpoverview}, é bem simples e direto, fácil de ser replicado.
+
+\begin{figure}[!htb]
+    \centering
+    \caption{Visão Geral do Protocolo HTTP}
+    \includegraphics[width=0.3\textwidth]{./04-figuras/fund-teorica/http_overview}
+    \fonte{Adaptado de  \citeonline{ImagemHTTPOverview}}
+    \label{fig:httpoverview}
+\end{figure}
+
+O protocolo foi desenvolvido para funcionar na camada de Aplicação do protocolo TCP, conectando as ações do usuário a camada de Apresentação. Contudo de acordo com \cite{Tanenbaum}, de certa forma o HTTP se transformou em um protocolo da camada de Transporte, criando uma maneira de processos se comunicarem através de diferentes redes. Hoje em dia não são apenas os navegadores \textit{web} que utilizam o protocolo HTTP para se comunicar com servidores, tocadores de mídias, anti-vírus, programas de fotos, dentre outros tipos de aplicações utilizam o HTTP para recolher informações de servidores de maneira simples e rápida.
+
+Os cabeçalhos HTTP definem características desejadas ou esperadas pelas aplicações e servidores, como tipo de codificação de caracteres ou tipo de compressão dos dados. Existem várias etiquetas padrões que podem ser utilizadas nos cabeçalhos e a desenvolvedores podem ainda criar etiquetas próprias para serem utilizadas dentro das aplicações (caso um cliente ou servidor receba uma etiqueta que não reconhece ele simplesmente a ignora). No \autoref{qua:cabecalhoshttp} são apresentadas algumas das etiquetas mais utilizadas, mas existem muitas outras que não foram citadas e que podem variar com a versão do protocolo utilizada por ambas as partes envolvidas na troca de dados.
+
+\input{./06-quadros/fund-teorica/cabecalhos-http}
+
+O conteúdo de uma resposta HTTP pode variar de formato (HTML, CSS, JavaScript, etc), a definição desse formato é feita com a etiqueta \textit{Content-Type} enviada no cabeçalho de resposta. O conteúdo é a maior parte de uma resposta HTTP e os desenvolvedores devem se esforçar para deixá-lo o menor possível, possibilitando assim que a comunicação de dados seja mais rápida.
+
+Por rodar em cima do protocolo TCP o HTTP precisa que uma conexão TCP seja aberta para poder realizar a troca de dados entre o cliente e o servidor. Como essa conexão é gerenciada vai depender da versão do protocolo. Após a abertura da conexão a requisição pode ser enviada. Na primeira linha da requisição são definidas a versão do protocolo e a operação que será realizada. Apesar de ter sido criado apenas para recuperar páginas \textit{web} de um servidor, o HTTP foi intencionalmente desenvolvido de forma genérica, possibilitando a extensibilidade do seu uso. Sendo assim o protocolo suporta diferentes operações, chamadas de métodos, além da tradicional requisição de páginas \textit{web}. A lista completa de métodos com suas descrições pode ser vista no \autoref{qua:metodoshttp}.
+
+\input{./06-quadros/fund-teorica/metodos-http}
+
+Destes métodos vale a pena enfatizar os métodos GET e POST que são os mais utilizados pelos navegadores \textit{web} e os que serão mais utilizados neste trabalho. O método GET é utilizado para recuperar informações do servidor e o método POST para enviar informações para o servidor.
+
+Sempre que uma requisição é enviada ela recebe uma resposta, mesmo que a requisição falhe. Na primeira linha do cabeçalho de resposta se encontra o código do estado da resposta em formato numérico de três dígitos. O primeiro digito deste código define a qual sub-grupo ele pertence. O \autoref{qua:estadoshttp} mostra os sub-grupos existentes e o significado de cada um deles. Cada um destes sub-grupos possui vários códigos  com diferentes significados e com a evolução do protocolo mais códigos foram sendo inseridos para lidar com necessidades especificas.
+
+\input{./06-quadros/fund-teorica/estados-http}
+
+A \textit{cache} é uma característica importante do HTTP. O protocolo foi construído com suporte integrado para lidar com este importante requisito de desempenho. Os clientes e os servidores conseguem gerenciar \textit{caches} com a ajuda dos cabeçalhos de requisição e resposta, e o tamanho da \textit{cache} é definido pelo navegador. O problema destas memórias locais é saber o momento de utilizar os dados armazenados nelas ou de pedir novos dados ao servidor. Para isso existem variadas técnicas, como as propostas por \cite{HighPerformance}, que devem ser analisadas e utilizadas de acordo com a situação.
+
+As versões do protocolo HTTP foram aprimorando falhas identificadas quando ele passou a ser utilizado em larga escala. Mas apesar das mudanças a essência do protocolo sempre continuou a mesma: um simples protocolo de requisição e resposta. Nas próximas seções será apresentada uma comparação entre as versões do HTTP, com ênfase nas mudanças que ajudaram a melhorar a performance dos \textit{websites} e aplicações \textit{web}.
+
+\section{HTTP/1.0 VS HTTP/1.1}
+\label{sec:http_10_vs_http_11}
+
+Com a popularização da Internet no inicio da década de 1990 o uso do HTTP estava crescendo muito rápido. Com isso o IETF teve que se apressar para criar um documento de consulta para desenvolvedores que queriam utilizar o protocolo em suas aplicações. Sendo assim, apesar de todo o debate por trás da \cite{RFC1945}, aprovada em 1996, o documento apenas explicou os usos comuns do HTTP/1.0, mas não chegou a definir padrões de como utiliza-lo, como explica \cite{KeyDifferencesHTTP}. Por isso logo após a sua aprovação o HTTP-WG já começou a trabalhar na \cite{RFC2616}, para poder corrigir os erros existentes no HTTP/1.0 com a criação de uma nova versão, o HTTP/1.1.
+
+Várias funcionalidades importantes foram adicionadas no HTTP/1.1, e existiu uma preocupação muito grande com a compatibilidade entre as versões do protocolo, afinal de contas o HTTP/1.0 já era amplamente utilizado e não podia se esperar que todos os\textit{websites} e aplicações se adaptassem de uma hora para outra. Esse fato também levou o HTTP-WG a criar um protocolo que suportasse futuras mudanças (lembrando que no HTTP todas as etiquetas que um cliente ou servidor não reconhecem são simplesmente ignoradas). Pensando na extensibilidade do protocolo as primeiras mudanças no protocolo HTTP/1.1 foram a criação de duas novas etiquetas para cabeçalhos, \textit{Upgrade} - uma maneira do cliente informar qual versão do protocolo ele suporta - e \textit{Via} - que define uma lista dos protocolos suportados pelos clientes ao longo do caminho de uma transmissão.
+
+Como dito anteriormente o protocolo HTTP foi construído com suporte integrado para \textit{cache}. Mas o mecanismo de \textit{cache} do HTTP/1.0 era muito simples e não permitia que o cliente ou o servidor definissem instruções diretas de como a memória deveria ser utilizada. O HTTP/1.1 tentou corrigir esse problema com a criação de novas etiquetas para cabeçalhos. A primeira delas é a \textit{ETag}, que define uma cadeia de caracteres única para um arquivo. Além do próprio conteúdo, essa cadeia utiliza a data e a hora da última modificação no arquivo, logo pode ser utilizada para verificar se dois arquivos são idênticos. O HTTP/1.1 também definiu novas etiquetas condicionais para complementar a já existente \textit{If-Modified-Since}, as \textit{If-None-Match}, \textit{If-Match} e \textit{If-Unmodified-Since}, que podem ser usada para verificar se arquivos em \textit{cache} estão atualizados ou não. Uma das mudanças mais significativas no mecanismo de \textit{cache}, foi a etiqueta \textit{Cache-Control} que permiti definir novas diretrizes para o uso da \textit{cache}, como tempo de expiração relativos e arquivos que não devem ser armazenados.
+
+O HTTP/1.0 tinha muitos problemas em gerenciar a largura de banda, por exemplo não era possível enviar partes de arquivos, logo, mesmo se o cliente não precisasse de um arquivo inteiro, ele teria de recebe-lo. No HTTP/1.1 foram então criados a etiqueta \textit{Range}, o tipo \textit{MIME} \textit{multipat/byteranges} e o tipo de compressão \textit{Chuncked} para que cliente e servidores pudessem trocar mensagens com partes de arquivos. Para complementar esse novo mecanismo foi incluído um novo código de resposta, 100, para informar um cliente que o corpo de sua requisição deve ser enviado. Além de poder enviar partes de arquivos o HTTP/1.1 se preocupou em garantir a compressão dos dados durante todo o caminho da transmissão, então foi incluída a etiqueta \textit{Transfer-Encoding}, que complementa a \textit{Content-Encoding} indicando quando codificação foi utilizada de um ponto para o outro.
+
+O modelo original do protocolo HTTP utilizava uma conexão TCP para cada transmissão. Esse processo era extremamente danoso para o desempenho de \textit{websites} e aplicações, pois se gastava muito tempo na criação e configuração de novas conexões e nos primeiros momentos da iniciais da conexão (quando ela é mais lenta por definição). Para corrigir esse problema o HTTP/1.1 define conexões persistentes como seu padrão. Conexões persistentes permitem que clientes e servidores assumam que uma conexão TCP continuará aberta após a transmissão de dados, e que esta pode ser utilizada para uma nova transmissão. Além disso foi definido que o HTTP/1.1 utilizaria \textit{pipeline}, isto que dizer que clientes não precisam aguarda a resposta de uma requisição para mandarem uma nova requisição, como era o padrão do HTTP/1.0. Os ganhos com essas novas técnicas podem ser notados na \autoref{fig:httpconexaopersistente}.
+
+\begin{figure}[!htb]
+    \centering
+    \caption{HTTP com (a) múltiplas conexões e requisições sequenciais. (b) Uma conexão persistente e requisições sequenciais. (c) Uma conexão persistente e requisições em pipeline}
+    \includegraphics[width=0.3\textwidth]{./04-figuras/fund-teorica/httpconexaopersistente}
+    \fonte{Adaptado de  \citeonline{Tanenbaum}}
+    \label{fig:httpconexaopersistente}
+\end{figure}
+
+
+Uma funcionalidade desejada no HTTP/1.1 era a de poder fazer requisições para servidores outros além do da página principal sendo acessada. Isso possibilita que desenvolvedores hospedem arquivos CSS e JavaScript em um servidor e imagens em outro por exemplo. Isso se tornou possível com a adição da etiqueta \textit{Host}, onde o cliente pode definir que é o caminho do servidor que será utilizado na requisição. Caso a etiqueta \textit{Host} não esteja definida no cabeçalho é assumido que o caminho do servidor é o caminho da página principal.
+
+Como conclui \cite{KeyDifferencesHTTP}: os protocolos HTTP/1.0 e HTTP/1.1 diferem em diversas maneiras. Enquanto muitas dessas mudanças têm o objetivo de melhorar o HTTP, a descrição do protocolo mais do que triplicou de tamanho, e muitas dessas funcionalidades foram introduzidas sem testes em ambientes reais. Esse aumento de complexidade causou muito trabalho para os desenvolvedores de clientes e servidores \textit{web}. 
+
+No \autoref{qua:http11novo} encontra-se um resumo das mudanças introduzidos no protocolo HTTP/1.1. Observa-se que nem todas as mudanças mostradas no \autoref{qua:http11novo} foram explicadas anteriormente, mas servem para ilustrar que existem ainda outras diferenças entre as versões 1.0 e 1.1 do protocolo que para os fins deste trabalho elas não são relevantes.
+
+\begin{quadro}[H]
+	\caption{Mudanças introduzidas no HTTP/1.1}
+	\centering
+	\includegraphics[width=1.0\textwidth]{./04-figuras/fund-teorica/http11novo}
+	\label{qua:http11novo}
+\end{quadro}

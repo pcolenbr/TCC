@@ -1,23 +1,29 @@
 \changetocdepth {4}
 \select@language {brazil}
 \contentsline {chapter}{\chapternumberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
-\contentsline {chapter}{\chapternumberline {2}Trabalhos Relacionados}{3}{chapter.2}
-\contentsline {chapter}{\chapternumberline {3}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{4}{chapter.3}
-\contentsline {chapter}{\chapternumberline {4}Metodologia}{5}{chapter.4}
-\contentsline {section}{\numberline {4.1}Delineamento da pesquisa}{5}{section.4.1}
-\contentsline {section}{\numberline {4.2}Coleta de dados}{5}{section.4.2}
-\contentsline {chapter}{\chapternumberline {5}An\IeC {\'a}lise de Resultados}{6}{chapter.5}
-\contentsline {section}{\numberline {5.1}Situa\IeC {\c c}\IeC {\~a}o atual}{6}{section.5.1}
-\contentsline {section}{\numberline {5.2}An\IeC {\'a}lise dos dados coletados}{6}{section.5.2}
-\contentsline {chapter}{\chapternumberline {6}Conclus\IeC {\~a}o}{7}{chapter.6}
-\contentsline {chapter}{Refer\^encias}{8}{section*.14}
+\contentsline {section}{\numberline {1.1}Motiva\IeC {\c c}\IeC {\~a}o}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{3}{section.1.2}
+\contentsline {chapter}{\chapternumberline {2}Trabalhos Relacionados}{4}{chapter.2}
+\contentsline {chapter}{\chapternumberline {3}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}O Protocolo HTTP}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Hist\IeC {\'o}ria}{5}{section.3.2}
+\contentsline {section}{\numberline {3.3}Vis\IeC {\~a}o Geral}{6}{section.3.3}
+\contentsline {section}{\numberline {3.4}HTTP/1.0 VS HTTP/1.1}{9}{section.3.4}
+\contentsline {chapter}{\chapternumberline {4}Metodologia}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Delineamento da pesquisa}{12}{section.4.1}
+\contentsline {section}{\numberline {4.2}Coleta de dados}{12}{section.4.2}
+\contentsline {chapter}{\chapternumberline {5}An\IeC {\'a}lise de Resultados}{13}{chapter.5}
+\contentsline {section}{\numberline {5.1}Situa\IeC {\c c}\IeC {\~a}o atual}{13}{section.5.1}
+\contentsline {section}{\numberline {5.2}An\IeC {\'a}lise dos dados coletados}{13}{section.5.2}
+\contentsline {chapter}{\chapternumberline {6}Conclus\IeC {\~a}o}{14}{chapter.6}
+\contentsline {chapter}{Refer\^encias}{15}{section*.14}
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{9}{section*.15}
-\contentsline {appendix}{\chapternumberline {A}Nome do Ap\IeC {\^e}ndice}{10}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Nome do Ap\IeC {\^e}ndice}{11}{appendix.B}
+\contentsline {part}{Ap\^endices}{16}{section*.15}
+\contentsline {appendix}{\chapternumberline {A}Nome do Ap\IeC {\^e}ndice}{17}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Nome do Ap\IeC {\^e}ndice}{18}{appendix.B}
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
-\contentsline {part}{Anexos}{12}{section*.16}
-\contentsline {appendix}{\chapternumberline {A}Nome do Anexo}{13}{appendix.anexochapback.1}
-\contentsline {appendix}{\chapternumberline {B}Nome do Anexo}{14}{appendix.anexochapback.2}
+\contentsline {part}{Anexos}{19}{section*.16}
+\contentsline {appendix}{\chapternumberline {A}Nome do Anexo}{20}{appendix.anexochapback.1}
+\contentsline {appendix}{\chapternumberline {B}Nome do Anexo}{21}{appendix.anexochapback.2}

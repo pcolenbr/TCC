@@ -1,0 +1,36 @@
+\begin{quadro}[!htb]
+	\centering
+	\caption{Etiquetas para cabeçalhos HTTP.\label{qua:cabecalhoshttp}}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		\textbf{Etiqueta} & \textbf{Tipo} & \textbf{Conteúdo}                                       \\
+		\hline
+		\textit{Accept}             & Requisição    & Tipo de páginas que o cliente suporta                   \\
+		\hline
+		\textit{Accept-Encoding}    & Requisição    & Tipo de codificação que o cliente suporta               \\
+		\hline
+		\textit{If-Modified-Since}  & Requisição    & Data e hora para checar atualidade do conteúdo          \\
+		\hline
+		\textit{Authorization}      & Requisição    & Uma lista de credencias do cliente                      \\
+		\hline
+		\textit{Cookie}             & Requisição    & Cookie definido previamente enviado para o servidor     \\
+		\hline
+		\textit{Content-Encoding}   & Resposta      & Como o conteúdo foi codificado (ex. \textit{gzip})               \\
+		\hline
+		\textit{Content-Length}     & Resposta      & Tamanho da página em \textit{bytes}                              \\
+		\hline
+		\textit{Content-Type}       & Resposta      & Tipo de \textit{MIME} da página                                  \\
+		\hline
+		\textit{Last-Modified}      & Resposta      & Data e hora que a página foi modificada pela última vez \\
+		\hline
+		\textit{Expires}            & Resposta      & Data e hora quando a página deixa de ser válida         \\
+		\hline
+		\textit{Cache-Control}      & Both          & Diretiva de como tratar \textit{cache}                           \\
+		\hline
+		\textit{ETag}               & Both          & Etiqueta para o conteúdo da página                      \\
+		\hline
+		\textit{Upgrade}            & Both          & O protocolo para o qual o cliente deseja alterar        \\	
+		\hline
+	\end{tabular}
+	\fonte{Adaptado de \citeonline{Tanenbaum}}
+\end{quadro}

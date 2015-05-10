@@ -1,3 +1,5 @@
 \select@language {brazil}
 \contentsline {figure}{\numberline {1}{\ignorespaces M\IeC {\'e}dia de Bytes por P\IeC {\'a}gina por Tipo de Conte\IeC {\'u}do em 2011}}{1}{figure.1.1}
 \contentsline {figure}{\numberline {2}{\ignorespaces M\IeC {\'e}dia de Bytes por P\IeC {\'a}gina por Tipo de Conte\IeC {\'u}do em 2015}}{1}{figure.1.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Vis\IeC {\~a}o Geral do Protocolo HTTP}}{6}{figure.3.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces HTTP com (a) m\IeC {\'u}ltiplas conex\IeC {\~o}es e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (b) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (c) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es em pipeline}}{10}{figure.3.4}
