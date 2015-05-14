@@ -9,21 +9,22 @@
 \contentsline {section}{\numberline {3.2}Hist\IeC {\'o}ria}{5}{section.3.2}
 \contentsline {section}{\numberline {3.3}Vis\IeC {\~a}o Geral}{6}{section.3.3}
 \contentsline {section}{\numberline {3.4}HTTP/1.0 VS HTTP/1.1}{9}{section.3.4}
-\contentsline {chapter}{\chapternumberline {4}Metodologia}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}Delineamento da pesquisa}{12}{section.4.1}
-\contentsline {section}{\numberline {4.2}Coleta de dados}{12}{section.4.2}
-\contentsline {chapter}{\chapternumberline {5}An\IeC {\'a}lise de Resultados}{13}{chapter.5}
-\contentsline {section}{\numberline {5.1}Situa\IeC {\c c}\IeC {\~a}o atual}{13}{section.5.1}
-\contentsline {section}{\numberline {5.2}An\IeC {\'a}lise dos dados coletados}{13}{section.5.2}
-\contentsline {chapter}{\chapternumberline {6}Conclus\IeC {\~a}o}{14}{chapter.6}
-\contentsline {chapter}{Refer\^encias}{15}{section*.14}
+\contentsline {section}{\numberline {3.5}HTTP/1.1 VS HTTP/2}{13}{section.3.5}
+\contentsline {chapter}{\chapternumberline {4}Metodologia}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Delineamento da pesquisa}{17}{section.4.1}
+\contentsline {section}{\numberline {4.2}Coleta de dados}{17}{section.4.2}
+\contentsline {chapter}{\chapternumberline {5}An\IeC {\'a}lise de Resultados}{18}{chapter.5}
+\contentsline {section}{\numberline {5.1}Situa\IeC {\c c}\IeC {\~a}o atual}{18}{section.5.1}
+\contentsline {section}{\numberline {5.2}An\IeC {\'a}lise dos dados coletados}{18}{section.5.2}
+\contentsline {chapter}{\chapternumberline {6}Conclus\IeC {\~a}o}{19}{chapter.6}
+\contentsline {chapter}{Refer\^encias}{20}{section*.14}
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{16}{section*.15}
-\contentsline {appendix}{\chapternumberline {A}Nome do Ap\IeC {\^e}ndice}{17}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Nome do Ap\IeC {\^e}ndice}{18}{appendix.B}
+\contentsline {part}{Ap\^endices}{21}{section*.15}
+\contentsline {appendix}{\chapternumberline {A}Nome do Ap\IeC {\^e}ndice}{22}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Nome do Ap\IeC {\^e}ndice}{23}{appendix.B}
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
-\contentsline {part}{Anexos}{19}{section*.16}
-\contentsline {appendix}{\chapternumberline {A}Nome do Anexo}{20}{appendix.anexochapback.1}
-\contentsline {appendix}{\chapternumberline {B}Nome do Anexo}{21}{appendix.anexochapback.2}
+\contentsline {part}{Anexos}{24}{section*.16}
+\contentsline {appendix}{\chapternumberline {A}Nome do Anexo}{25}{appendix.anexochapback.1}
+\contentsline {appendix}{\chapternumberline {B}Nome do Anexo}{26}{appendix.anexochapback.2}

@@ -21,9 +21,14 @@
 \backcite {Tanenbaum}{{7}{1}{quadro.3.1}}
 \backcite {Tanenbaum}{{8}{2}{quadro.3.2}}
 \backcite {Tanenbaum}{{8}{3}{quadro.3.3}}
-\backcite {HighPerformance}{{8}{3.3}{quadro.3.3}}
+\backcite {HighPerformance}{{9}{3.3}{quadro.3.3}}
 \backcite {RFC1945}{{9}{3.4}{section.3.4}}
 \backcite {KeyDifferencesHTTP}{{9}{3.4}{section.3.4}}
 \backcite {RFC2616}{{9}{3.4}{section.3.4}}
-\backcite {Tanenbaum}{{10}{4}{figure.3.4}}
 \backcite {KeyDifferencesHTTP}{{10}{3.4}{figure.3.4}}
+\backcite {Tanenbaum}{{11}{4}{figure.3.4}}
+\backcite {HTTP2Explained}{{13}{3.5}{section.3.5}}
+\backcite {HTTP2Explained}{{14}{3.5}{section.3.5}}
+\backcite {HPACKSpec}{{14}{3.5}{figure.3.5}}
+\backcite {HTTP2Explained}{{15}{5}{figure.3.5}}
+\backcite {HTTP2Spec}{{16}{3.5}{figure.3.5}}

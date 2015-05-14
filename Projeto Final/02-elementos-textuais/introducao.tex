@@ -4,53 +4,49 @@
 
 \chapter{Introdução}\label{chap:introducao}
 
-Desde que o modelo atual da Internet foi proposto pelo cientista e pesquisador britânico Tim Bernes-Lee em 1989 \cite{WebHistory}, as páginas \textit{web} vêm mudando de maneira acelerada como pode ser percebido observando os gráficos nas \autoref{fig:httpcontenttype2011} e \autoref{fig:httpcontenttype2015}, gerados com a ajuda do \textit{website} \href{http://httparchive.org/}{HTTP Archieve}. O primeiro foi gerado com dados de 15 de Abril de 2011 e o segundo com dados de 15 de Abril de 2015 e os dois mostram a média de \textit{bytes} por página por tipo de conteúdo nas páginas \textit{web}. Mas a informação mais relevante está localizado na parte debaixo do gráfico e mostra o tamanho médio de uma página \textit{web} nas respectivas dadas.
+Desde que a \textit{World Wide Web} foi proposta pelo cientista e pesquisador britânico Tim Bernes-Lee em 1989 \cite{WebHistory}, as páginas \textit{web} vêm mudando de maneira acelerada como pode ser percebido observando os gráficos nas \autoref{fig:httpcontenttype2011} e \autoref{fig:httpcontenttype2015}, gerados com a ajuda do \textit{website} HTTP Archive \footnote{http://httparchive.org/}. O primeiro foi gerado com dados de 15 de Abril de 2011 e o segundo com dados de 15 de Abril de 2015 e os dois mostram a média de \textit{bytes} por página por tipo de conteúdo nas páginas \textit{web}. Mas a informação mais relevante está localizado na parte debaixo do gráfico e mostra o tamanho médio de uma página \textit{web} nas respectivas dadas.
 
 \begin{figure}[!htb]
     \centering
     \caption{Média de Bytes por Página por Tipo de Conteúdo em 2011}
-    \includegraphics[width=0.3\textwidth]{./04-figuras/introducao/bytes_content_type_april_2011}
-    \fonte{\citeonline{HttpArchiveContentType2011}}
+    \includegraphics[width=1.0\textwidth]{./04-figuras/introducao/bytes_content_type_april_2011}
+    \fonte{Adaptado de \citeonline{HttpArchiveContentType2011}}
     \label{fig:httpcontenttype2011}
 \end{figure}
 
 \begin{figure}[!htb]
     \centering
     \caption{Média de Bytes por Página por Tipo de Conteúdo em 2015}
-    \includegraphics[width=0.3\textwidth]{./04-figuras/introducao/bytes_content_type_april_2015}
-    \fonte{\citeonline{HttpArchiveContentType2015}}
+    \includegraphics[width=1.0\textwidth]{./04-figuras/introducao/bytes_content_type_april_2015}
+    \fonte{Adaptado de \citeonline{HttpArchiveContentType2015}}
     \label{fig:httpcontenttype2015}
 \end{figure}
 
-Nos últimos 4 anos o tamanho médio de uma página \textit{web} passou de 769kb para 2061kb, um impressionante aumento de 168\%! Apesar dessa grande mudança no tamanho das páginas (e consequentemente dos \textit{websites}) a maneira como \textit{websites} são entregues dos servidores para os clientes não sofreu nenhuma alteração desde 1999, ano de lançamento da RFC 2616 que especificou o HTTP/1.1 \cite{RFC2616}. Como explicado por \cite{Tanenbaum}, o HTTP é um simples protocolo de pedidos e respostas que roda em cima do protocolo TCP. O HTTP ficou famoso por ser fácil de entender e implementar e ao mesmo tempo cumprir sua função com um bom desempenho. Contudo, o aumento no tamanho dos \textit{websites} começou a fazer com que o tempo de resposta das páginas \textit{web} ficasse muito grande, e como mudanças no HTTP não eram possíveis, os desenvolvedores passaram a ter de criar outras formas de resolver esse problema.
+Nos últimos 4 anos, o tamanho médio de uma página \textit{web} passou de 769kB para 2061kB, um expressivo aumento de 168\%. Apesar dessa grande mudança no tamanho das páginas (e consequentemente dos \textit{websites}), a maneira como \textit{websites} são entregues dos servidores para os clientes não sofreu nenhuma alteração desde 1999, ano de lançamento da RFC 2616 que especificou o HTTP/1.1 \cite{RFC2616}. Como explicado por \cite{Tanenbaum}, o HTTP é um protocolo simples na camada de aplicação de requisições e respostas que é executado em cima da camada de transporte do protocolo TCP. O HTTP ficou famoso por ser fácil de entender e implementar e ao mesmo tempo cumprir sua função de transferência de recursos em rede com um bom desempenho. Contudo, o aumento no tamanho dos \textit{websites} começou a fazer com que o tempo de resposta das páginas \textit{web} ficasse muito grande e, como mudanças no HTTP seriam muito difíceis, pois teriam de envolver esforços de muitas partes interessadas na \textit{World Wide Web} (como fabricantes de navegadores e mantenedores de servidores), os desenvolvedores passaram a ter de criar outras formas de resolver esse problema.
 
-Técnicas de otimização de desempenho passaram a ser estudadas e implementadas por muitas empresas que queriam ter seus \textit{websites} entregues mais rapidamente à seus clientes. por muitos anos a grande maioria dessas empresas focou seus esforços em otimizações para o \textit{back-end}, principalmente para os seus servidores, o que hoje em dia pode ser considerado um erro. Como explicado por \cite{HighPerformance} no que ele chamou de "Regra de Ouro do Desempenho":
+Técnicas de otimização de desempenho passaram a ser estudadas e implementadas por muitas empresas que queriam ter seus \textit{websites} entregues mais rapidamente a seus clientes. Por muitos anos, a grande maioria dessas empresas focou seus esforços em otimizações para o \textit{back-end}, principalmente para os seus servidores, o que hoje em dia pode ser considerado um erro. Como explicado por \cite[p.~35]{HighPerformance} no que ele chamou de "Regra de Ouro do Desempenho": "Apenas 10-20\% do tempo de resposta do usuário final são gastos baixando o documento HTML. Os outros 80-90\% são gastos baixando todos os componentes da página.".
 
-\begin{citacao}
-"Apenas 10-20\% do tempo de resposta do usuário final são gastos baixando o documento HTML. Os outros 80-90\% são gastos baixando todos os componentes da página"
-\end{citacao}
-
-Dessa forma ficou claro que técnicas de otimização de desempenho para o \textit{front-end} dos \textit{websites} deveriam se tornar prioridade quando procura-se melhorar o tempo de resposta para o usuário final. Para entender o quão importante esse tempo de resposta se tornou para empresas que dependem da Internet para sobreviver, basta observar os dados da tabela \autoref{tab:impactodesempenho} expostos por Steve Souders na conferência Google I/O de 2009:
+Dessa forma ficou claro que técnicas de otimização de desempenho para o \textit{front-end} dos \textit{websites} deveriam se tornar prioridade quando procura-se melhorar o tempo de resposta para o usuário final. Para entender o quão importante esse tempo de resposta se tornou para empresas que baseiam seus negócios em vendas de serviços ou produtos na Internet, basta observar os dados da tabela \autoref{tab:impactodesempenho} expostos por Steve Souders na conferência Google I/O de 2009:
 
 \input{./05-tabelas/tabimpactodesempenho}
 
-Steve Souders tornou-se um grande evangelizador da área de otimização de desempenho de \textit{front-end} de \textit{websites}. Em seus livros, \textit{High Performance Websites} \cite{HighPerformance} e \textit{Even Faster Websites} \cite{EvenFaster} ele ensina técnicas de como tornar \textit{websites} mais rápidos focando nos componentes das páginas. E em 2012 ele lançou seu terceiro livro, \textit{Web Performance Daybook} \cite{WebPerformance}, como um guia para desenvolvedores que trabalham com otimização de desempenho de \textit{websites}.
+Steve Souders tornou-se um grande evangelizador da área de otimização de desempenho de \textit{front-end} de \textit{websites}. Em seus livros, \textit{High Performance Websites} \cite{HighPerformance} e \textit{Even Faster Websites} \cite{EvenFaster} ele ensina técnicas de como tornar \textit{websites} mais rápidos, focando nos componentes das páginas. E em 2012, ele lançou seu terceiro livro, \textit{Web Performance Daybook} \cite{WebPerformance}, como um guia para desenvolvedores que trabalham com otimização de desempenho de \textit{websites}.
 
 \section{Motivação}
 \label{sec:motivacao}
 
-Após mais de 15 anos sem mudanças, o protocolo HTTP (finalmente) receberá uma atualização. A nova versão do protocolo, chamada de HTTP2, teve sua especificação aprovada no dia 11 de Fevereiro de 2015, \cite{HTTP2Spec}, e deverá começar a ser implantada a partir de 2016. Muitas mudanças foram feitas com o objetivo de melhorar o desempenho e a segurança da Internet. Além disso o HTTP2 foi desenvolvido para ser compatível com seus versões anteriores, não sendo necessárias mudanças em servidores e aplicações antigos para funcionar em cima do novo protocolo.
+Após mais de 15 anos sem mudanças, o protocolo HTTP (finalmente) receberá uma atualização. A nova versão do protocolo, chamada de HTTP2, teve sua especificação aprovada no dia 11 de Fevereiro de 2015, \cite{HTTP2Spec}, e deverá começar a ser implantada, a partir de 2016. Muitas mudanças foram feitas com o objetivo de melhorar o desempenho e a segurança da \textit{web}. Além disso, o HTTP2 foi desenvolvido para ser compatível com suas versões anteriores, não sendo necessárias mudanças em servidores e aplicações antigos para funcionar baseados no novo protocolo.
 
-Com as novas funcionalidades do HTTP2 a caminho algumas coisas devem mudar na área de otimização de desempenho de \textit{websites}. Como pode ser percebido em \cite{HTTP2Explained}, o HTTP2 foi desenvolvido para melhorar o desempenho de todos os \textit{websites} e aplicações \textit{web}, e não apenas dos poucos que podem aplicar técnicas de otimização. Então fica difícil de prever o resultado da aplicação de técnicas desenvolvidas para os protocolos HTTP/1.0 e HTTP/1.1. Acredita-se que algumas das técnicas antigas podem não apenas não melhorar o desempenho dos \textit{websites} como podem acabar piorando o tempo de resposta para o usuário final.
+Com as novas funcionalidades do HTTP2 a caminho algumas coisas devem mudar na área de otimização de desempenho de \textit{websites}. Como pode ser percebido em \cite{HTTP2Explained}, o HTTP2 foi desenvolvido para melhorar o desempenho de todos os \textit{websites} e aplicações \textit{web}, e não apenas dos poucos que podem aplicar técnicas de otimização. Isso torna difícil uma previsão o resultado da aplicação de técnicas desenvolvidas para os protocolos HTTP/1.0 e HTTP/1.1. Acredita-se que algumas das técnicas antigas podem não apenas não melhorar o desempenho dos \textit{websites} como podem acabar piorando o tempo de resposta para o usuário final.
 
-No decorrer dos próximos anos o HTTP2 deve seguir o mesmo caminho do HTTP/1.1 e se tornar o protocolo mais utilizado da Internet. Apesar de todo o esforço do HTTPbis (grupo responsável por desenvolver a especificação do HTTP2) em desenvolver um protocolo que garanta o melhor desempenho de \textit{websites} e aplicações sempre é possível ser mais rápido se as medidas certas forem tomadas.
+No decorrer dos próximos anos o HTTP2 deve seguir o mesmo caminho do HTTP/1.1 e se tornar o protocolo mais utilizado da \textit{web}. Apesar de todo o esforço do HTTPbis (grupo responsável por desenvolver a especificação do HTTP2) em desenvolver um protocolo que garanta o melhor desempenho de \textit{websites} e aplicações, sempre é possível ser mais rápido se as medidas certas forem tomadas.
 
 \section{Objetivos}
 \label{sec:objetivos}
 
-Este trabalho tem como objetivo analisar o comportamento de técnicas de otimização de desempenho de \textit{websites} desenvolvidas para os protocolos HTTP/1.0 e HTTP/1.1 quando aplicadas em cima do protocolo HTTP2 e, se necessário, propor técnicas especificas para o novo protocolo.
+Este trabalho tem como objetivo analisar o comportamento de técnicas de otimização de desempenho de \textit{websites} desenvolvidas para os protocolos HTTP/1.0 e HTTP/1.1 quando aplicadas a \textit{websites} usando o protocolo HTTP2 e, se necessário, propor técnicas específicas para o novo protocolo.
 
-Para realização do objetivo principal os seguintes objetivos específicos foram determinados:
+Para realização do objetivo principal, os seguintes objetivos específicos foram determinados:
 
 \begin{enumerate}
 	\item Fazer uma análise comparativa das versões do protocolo HTTP
