@@ -34,12 +34,14 @@
 %\usepackage{times}                                 % Usa a fonte Times
 %\usepackage{lmodern}                               % Usa a fonte Latin Modern
 %\usepackage{color, colortbl}                       % Comandos de cores
+\usepackage[table,xcdraw]{xcolor}                   % Comandos de cores hexadecimais
 %\usepackage{listings}                              % Importação de códigos fonte
-%\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
+\usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
 %\usepackage{subfig}                                % Posicionamento de figuras
 %\usepackage{scalefnt}                              % Permite redimensionar tamanho da fonte
 %\usepackage{lscape}                                % Permite páginas em modo "paisagem"
 %\usepackage{picinpar}                              % Dispor imagens em parágrafos
+\usepackage{ltablex}
 
 % Inclui o preâmbulo do documento
 \include{./01-elementos-pre-textuais/preambulo}
@@ -95,8 +97,8 @@
     % Elementos textuais
     \textual
     \include{./02-elementos-textuais/introducao}            % Introdução
-    \include{./02-elementos-textuais/trab-relacionados}     % Trabalhos relacionados
     \include{./02-elementos-textuais/fund-teorica}          % Fundamentação teórica
+    \include{./02-elementos-textuais/trab-relacionados}     % Trabalhos relacionados
     \include{./02-elementos-textuais/metodologia}           % Metodologia
     \include{./02-elementos-textuais/resultados}            % Resultados
     \include{./02-elementos-textuais/conclusao}             % Conclusão

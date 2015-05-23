@@ -1,0 +1,103 @@
+\begin{quadro}[!htb]
+	\centering
+	\caption{Mudanças introduzidas no HTTP/1.1.\label{qua:http11novo}}
+\end{quadro}
+\begin{tabularx}{\textwidth}{| X | X |}
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Cabeçalhos}} \\
+	\hline
+	\textbf{Etiqueta} & \textbf{Descrição} \\
+	\hline
+	\textit{Accept-Encoding}\footnote{A etiqueta \textit{Accept-Encoding} já existia no HTTP/1.0, mas era pouco utilizada por causa da sua especificação consufa, por isso por redefinida na versão 1.1.} & Lista de codificações aceitas. \\
+	\hline
+	\textit{Age} & O tempo que o conteúdo está salvo no \textit{proxy} em segundos. \\
+	\hline
+	\textit{Cache-Control} & Notifica todos os mecanismos de cache do cliente ao servidor se o conteúdo deve ser salvo. \\
+	\hline
+	\textit{Connection} & Controla a conexão atual. \\
+	\hline
+	\textit{Content-MD5} & Codificação binária de base-64 para verificar conteúdo da resposta. \\
+	\hline
+	\textit{ETag} & Identificador único de um conteúdo. \\
+	\hline
+	\textit{Host} & Indica o endereço e a porta do servidor que deve ser utilizado pela mensagem. \\
+	\hline
+	\textit{If-Match} & Realize a ação requisitada se, e somente se, o conteúdo do cliente é igual ao conteúdo do servidor. \\
+	\hline
+	\textit{If-None-Match} & Retorna código 304 se o conteúdo não foi modificado. \\
+	\hline
+	\textit{If-Range} & Se o conteúdo não foi modificado, envie a parte solicitada, se não, envie o conteúdo novo. \\
+	\hline
+	\textit{If-Unmodified-Since} & Envie o conteúdo se, e somente se, ele não foi modificado na data esperada. \\
+	\hline
+	\textit{Proxy-Authentication} & Pede uma,requisição de autenticação de um \textit{proxy}. \\
+	\hline
+	\textit{Proxy-Autorization} & Credenciais de autorização para se conectar a um \textit{proxy}. \\
+	\hline
+	\textit{Range} & Faz a requisição de apenas uma parte de um conteúdo. \\
+	\hline
+	\textit{Trailer} & Indica que o grupo de cabeçalhos está presente em uma mensagem. \\
+	\hline
+	\textit{Transfer-Encoding} & A forma de codificação usada para se transferir o conteúdo para o usuário. \\
+	\hline
+	\textit{Upgrade} & Pede para o servidor atualizar para outro protocolo. \\
+	\hline
+	\textit{Vary} & Informa quais partes do cabeçalho de requisição devem ser levadas em conta para descobrir se um recurso em \textit{cache} deve ser utilizado ou se este recurso deve ser solicitado no servidor. \\
+	\hline
+	\textit{Via} & Informa o servidor de proxies pelos quais a requisição passou. \\
+	\hline
+	\textit{Warning} & Mensagem genérica de cuidado para possíveis problemas no corpo da mensagem. \\
+	\hline
+	\textit{WWW-Authenticate} & Indica tipo de autenticação que deve ser utilizada para acessar entidade requerida. \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Métodos}} \\
+	\hline
+	\textbf{Método} & \textbf{Descrição} \\
+	\hline
+	\textit{OPTIONS} & Requer informações sobre os recursos que o servidor suporta. \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Estados}\footnote{Além dos citados ainda foram adicionados outros estados no HTTP/1.1, mas a lista ficaria muito extensa. Logo foram descritos os estados que podem influenciar no desempenho do \textit{front-end}}} \\
+	\hline
+	\textbf{Código} & \textbf{Descrição} \\
+	\hline
+	100 & Confirma que o servidor recebeu o cabeçalho de requisição e que o cliente deve continuar a enviar a mensagem desejada. \\
+	\hline
+	206 & O servidor está entregando apenas uma parte de um conteúdo por causa da etiqueta de Range na requisição do cliente. \\
+	\hline
+	300 & Indica as multiplas opções disponíveis para o cliente. \\
+	\hline
+	409 & Indica que a requisição não pôde prosseguir por causa de um conflito. \\
+	\hline
+	410 & Indica que o conteúdo requisitado não está mais disponível e não estará disponível no futuro.\\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Diretivas}} \\
+	\hline
+	\textbf{Diretiva} & \textbf{Descrição} \\
+	\hline
+	\textit{chuncked} & Utilizado para envie de conteúdo em partes. \\
+	\hline
+	\textit{max-age} & Determina qual é o tempo máximo que um conteúdo deve ficar salvo em \textit{cache}. \\
+	\hline
+	\textit{no-store} & Indica que o conteúdo não deve ser salvo em \textit{cache}. \\
+	\hline
+	\textit{no-transform} & Indica,que o conteúdo não deve ser modificado por \textit{proxies}. \\
+	\hline
+	\textit{private} & Indica que o conteúdo não deve ser acessado sem autenticação. \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Tipos de MIME}} \\
+	\hline
+	\textbf{Tipo} & \textbf{Descrição} \\
+	\hline
+	\textit{multipart/byteranges} & Indica que o conteúdo que está sendo enviado é apenas uma parte de um todo. \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Funcionalidades}} \\
+	\hline
+	\textbf{Nome} & \textbf{Descrição} \\
+	\hline
+	\textit{Content negotitation} & Escolhe a melhor representação disponível para um conteúdo. \\
+	\hline
+	\textit{Persistent connection} & Após o termino de uma requisição HTTP a conexão continua aberta e pode ser utilizada por outras requisições. \\
+	\hline
+	\textit{Pipeline} & O cliente não precisa esperar que a resposta de uma requisição retorne antes de enviar outra requisição. \\
+	\hline
+\end{tabularx}

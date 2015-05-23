@@ -1,6 +1,9 @@
 \select@language {brazil}
 \contentsline {figure}{\numberline {1}{\ignorespaces M\IeC {\'e}dia de Bytes por P\IeC {\'a}gina por Tipo de Conte\IeC {\'u}do em 2011}}{1}{figure.1.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces M\IeC {\'e}dia de Bytes por P\IeC {\'a}gina por Tipo de Conte\IeC {\'u}do em 2015}}{1}{figure.1.2}
-\contentsline {figure}{\numberline {3}{\ignorespaces Vis\IeC {\~a}o Geral do Protocolo HTTP}}{6}{figure.3.3}
-\contentsline {figure}{\numberline {4}{\ignorespaces HTTP com (a) m\IeC {\'u}ltiplas conex\IeC {\~o}es e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (b) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (c) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es em pipeline}}{11}{figure.3.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Multiplexa\IeC {\c c}\IeC {\~a}o de \textit {strems} no HTTP/2 (a) duas \textit {streams} separadas (b) \textit {streams} multiplexadas}}{15}{figure.3.5}
+\contentsline {figure}{\numberline {2}{\ignorespaces M\IeC {\'e}dia de Bytes por P\IeC {\'a}gina por Tipo de Conte\IeC {\'u}do em 2015}}{2}{figure.1.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Exemplo de requisi\IeC {\c c}\IeC {\~a}o HTTP}}{6}{figure.2.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Exemplo de resposta HTTP}}{6}{figure.2.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Vis\IeC {\~a}o Geral do Protocolo HTTP}}{7}{figure.2.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces HTTP com (a) m\IeC {\'u}ltiplas conex\IeC {\~o}es e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (b) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (c) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es em pipeline}}{11}{figure.2.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Multiplexa\IeC {\c c}\IeC {\~a}o de fluxos no HTTP/2 (a) dois fluxos separadas (b) fluxos multiplexadas}}{17}{figure.2.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o entre modelo de \textit {web} original e modelo utilizando AJAX}}{20}{figure.2.8}

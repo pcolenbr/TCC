@@ -22,6 +22,12 @@ Dispon{\'\i}vel em:
 {CONNOLLY, D. \textbf{The birth of the web}. 2000.
 Dispon{\'\i}vel em: \url{http://www.w3.org/History.html}.}
 
+\bibitem[Garrett 2005]{AJAX}
+\abntrefinfo{Garrett}{GARRETT}{2005}
+{GARRETT, J.~J. \textbf{Ajax: A New Approach to Web Applications}. 2005.
+Dispon{\'\i}vel em:
+  \url{http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications/}.}
+
 \bibitem[Grigorik 2013]{HighPerformanceBrowserNetworking}
 \abntrefinfo{Grigorik}{GRIGORIK}{2013}
 {GRIGORIK, I. \textbf{High Performance Browser Networking}. 1st. ed. [S.l.]:
@@ -49,18 +55,34 @@ Dispon{\'\i}vel em: \url{http://tools.ietf.org/html/rfc1945}.}
 {GROUP, N.~W. \textbf{RFC 2616}. 1999.
 Dispon{\'\i}vel em: \url{http://tools.ietf.org/html/rfc2616}.}
 
-\bibitem[Krishnamurthy Jeffrey C.~Mogul 1999]{KeyDifferencesHTTP}
-\abntrefinfo{Krishnamurthy Jeffrey C.~Mogul}{KRISHNAMURTHY JEFFREY
-  C.~MOGUL}{1999}
-{KRISHNAMURTHY JEFFREY C.~MOGUL, D. M.~K. B. Key differences between http/1.0
-  and http/1.1.
+\bibitem[Inc. 2012]{SPDY}
+\abntrefinfo{Inc.}{INC.}{2012}
+{INC., G. \textbf{SPDY}. 2012.
+Dispon{\'\i}vel em: \url{http://dev.chromium.org/spdy}.}
+
+\bibitem[Krishnamurthy et al. 1999]{KeyDifferencesHTTP}
+\abntrefinfo{Krishnamurthy et al.}{KRISHNAMURTHY et al.}{1999}
+{KRISHNAMURTHY, B.; MOGUL, J.~C.; KRISTOL, D.~M. Key differences between
+  http/1.0 and http/1.1.
 \textbf{Elsevier Science B.V}, 1999.}
+
+\bibitem[O'Reilly 2005]{Web20}
+\abntrefinfo{O'Reilly}{O'REILLY}{2005}
+{O'REILLY, T. \textbf{What Is Web 2.0}. 2005.
+Dispon{\'\i}vel em:
+  \url{http://www.oreilly.com/pub/a/web2/archive/what-is-web-20.html?page=1}.}
 
 \bibitem[Saenz 2014]{ImagemHTTPOverview}
 \abntrefinfo{Saenz}{SAENZ}{2014}
 {SAENZ, J. \textbf{Building Web Apps with Go}. [s.n.], 2014. Dispon{\'\i}vel
   em:
   \url{https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details}.}
+
+\bibitem[Scott 2007]{FigAjax}
+\abntrefinfo{Scott}{SCOTT}{2007}
+{SCOTT, T. 2007.
+Dispon{\'\i}vel em:
+  \url{http://derivadow.com/2007/01/05/ajax-what-is-it-its-not-dhtml/}.}
 
 \bibitem[Souders 2007]{HighPerformance}
 \abntrefinfo{Souders}{SOUDERS}{2007}

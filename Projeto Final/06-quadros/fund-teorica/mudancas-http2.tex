@@ -1,0 +1,27 @@
+\begin{quadro}[!htb]
+	\centering
+	\caption{Mudanças introduzidas no HTTP/2. \label{qua:http2novo}}
+	\begin{tabularx}{\textwidth}{| X | X |}
+		\hline
+		\textbf{Funcionalidade} & \textbf{Descrição} \\
+		\hline
+		HTTP/2 binário & Ao invés de utilizar caracteres ASCII para representar informações, o HTTP/2 é binário, o que facilita a comparação de informações, o envio de dados e outras funcionalidades. \\
+		\hline
+		Fluxos multiplexados & Se existem dois componentes para serem enviados, o protocolo pode optar por multiplexa-los em uma única stream e enviar os dois ao mesmo tempo. \\
+		\hline
+		Prioridades e dependencias & Caso existam, o cliente pode definir quais componentes possuem prioridade para serem baixados primeiro. Além disso pode informar se existem dependencias entre os  componentes para garantir que quando um arquivo seja baixado todos os outros necessários para o seu funcionamento já estejam no cliente. \\
+		\hline
+		\textit{HPACK} & Novo sistema de compressão de cabeçalhos para o HTTP/2. \\
+		\hline
+		RST\_STREAM & Uma maneira de cancelar o envio de componentes. \\
+		\hline
+		\textit{Server Push} & Habilidade do servidor de enviar um arquivo X para o cliente caso ele veja como provável que o cliente vai precisar desse arquivo no futuro próximo. \\
+		\hline
+		Janelas individuais de fluxo & Cada fluxo de envio possui sua própria janela que pode ser gerenciada individualmente, assim caso um fluxo falhe os outros continuam. \\
+		\hline
+		\textit{BLOCKED} & Forma do cliente ou servidor informar a outra parte que existe algo impedindo que o envio de dados continue. \\
+		\hline
+		Alt-Svc & O servidor pode informa ao cliente de caminhos alternativos para acessar os dados requisitados. \\
+		\hline
+	\end{tabularx}
+\end{quadro}

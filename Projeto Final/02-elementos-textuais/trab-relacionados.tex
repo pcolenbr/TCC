@@ -3,5 +3,195 @@
 %
 
 \chapter{Trabalhos Relacionados}
+Desenvolvedores estão sempre a procura de maneiras para torna suas aplicações mais rápidas aos olhos dos usuários finais, isto não foi diferente com os \textit{websites}. A área de otimização de desempenho para páginas \textit{web} é tão antiga quanto a \textit{World Wide Web}, mas por muito tempo os esforços foram dedicados à otimização de \textit{back-end} o que \cite{HighPerformance} provou não ser o melhor caminho para se atingir o objetivo desejado. De acordo com \citeonline[p.~5]{HighPerformance}: "Apenas 10-20\% do tempo de resposta do usuário final são gastos baixando o documento HTML. Os outros 80-90\% são gastos baixando todos os componentes da página." Então os desenvolvedores podem obter resultados mais significativos caso trabalhem para otimizar o desempenho do \textit{front-end} de seus \textit{websites} ao invés do \textit{back-end}.
 
+Neste capítulo serão apresentadas as ideias principais dos dois livros  de Steve Souders que tornaram o conhecimento sobre a otimização de desempenho de \textit{front-end} de \textit{websites} acessíveis a todos os desenvolvedores e ajudaram a melhorar a \textit{web} nos últimos anos.
 
+\section{\textit{High Performance Web Sites}}
+\label{sec:highperformancewebsites}
+
+Neste livro, publicado em Setembro de 2007, Steve Souders descreve 14 regras para a otimização de desempenho de \textit{front-end} de \textit{websites}. De acordo com \citeonline[p.~5]{HighPerformance}: "Se você seguir todas as regras aplicáveis à seu \textit{website}, você vai fazer sua página 25-50\% rápida e melhorar a experiencia do usuário.". As regras são muito variadas e cobrem configurações básicas de servidores, redução do tamanho de arquivos e melhores práticas de programação.
+
+A seguir serão explicadas as 14 regras encontradas no livro, ordenadas, de acordo com Steve Souders, das que causam maior impacto no desempenho às que causam menor impacto.
+
+\subsection{Regra 1: Faça menos requisições HTTP}
+\label{subsec:highperformance_regra1}
+Cada componente de uma página \textit{web} gera pelo menos uma requisição e uma resposta HTTP para chegar do servidor ao cliente. Essas chamadas HTTP são o maior gargalo de desempenho para \textit{websites} e aplicações \textit{web}, pois como explicou \cite{HighPerformance}, 80-90\% do tempo de montagem dessas páginas é gasto baixando componentes outros do HTML. Assim uma solução para diminuir o tempo de resposta para o usuário final é diminuir o número de componentes que precisam ser baixados. Com esse objetivo as seguintes técnicas devem ser utilizadas:
+	\begin{itemize}
+		\item CSS \textit{Sprites} \footnote{http://www.w3schools.com/css/css\_image\_sprites.asp}
+		\item Images em linha
+		\item Combinar \textit{scripts} e folhas de estilo \footnote{A técnica não sugere a união de \textit{scripts} com folhas de estilo, e sim \textit{scripts} com \textit{scripts} e folhas de estilo com folhas de estilo, diminuindo o número de arquivos existentes.}
+	\end{itemize}
+
+\subsection{Regra 2: Use Redes de Entrega de Conteúdo (CDN)}
+\label{subsec:highperformance_regra2}
+No HTTP/1.1 o número de conexões TCP que os navegadores \textit{web} abrem paralelamente com o mesmo domínio é limitado para garantir a qualidade de cada conexão e apesar desse número ser maior no HTTP/1.0 continua existindo um limite para essas conexões paralelas. Além disso essas conexões são afetadas com a distância física entre clientes e servidores, logo um usuário que esteja no Brasil vai demorar mais para acessar um componente que esteja hospedado na China do que um hospedado nos Estados Unidos. Uma maneira de resolver esses dois problemas simultaneamente são as CDNs. Ao invés de hospedar todos os componentes do \textit{website} no mesmo servidor, os desenvolvedores deveriam utilizar das CDNs para garantir maior paralelismo e diminuir as distâncias geográficas entre seus sistemas  e seus usuários.
+
+\subsection{Regra 3: Adicione cabeçalhos de expiração}
+\label{subsec:highperformance_regra3}
+O HTTP foi desenvolvido com suporte integrado para gerenciamento de \textit{cache}, mas para essa \textit{cache} funcionar de maneira eficiente é necessário que os desenvolvedores configurem seus servidores para informar aos navegadores \textit{web} que certos arquivos devem ficar salvos localmente. Para garantir que os arquivos vão ficar salvos em \textit{cache} o servidor deve enviar a etiqueta \textit{Expires} no cabeçalho HTTP da resposta que possui o componente, informando até quando o componente é válido. Essa configuração não é definida por padrão nos servidores, então os desenvolvedores devem analisar quais arquivos devem utilizar desse recurso e por quanto tempo eles serão válidos. A \textit{cache} é uma ferramente muito importante na otimização de desempenho, e deixar de usa-la causa grandes danos no tempo de resposta de \textit{websites} e aplicações \textit{web}.
+
+\subsection{Regra 4: Utilize \textit{gzip} no componentes}
+\label{subsec:highperformance_regra4}
+De acordo com \citeonline[p.~29]{HighPerformance} essa é a técnica mais simples e que causa maior efeito no peso das páginas \textit{web}. O HTTP e os navegadores \textit{web} possuem suporte para compressão de todos os tipos de arquivos os desenvolvedores só precisa garantir que os clientes e os servidores informem uns aos outros que a essa técnica deve ser habilitada. Para fazer isso a etiqueta de cabeçalho \textit{Accept-Encoding} deve ser definida com os formatos de compressão suportados. O \textit{gzip} é um formato de compressão criado especialmente para a \textit{web} e é o mais eficiente para ser utilizado no HTTP, por isso deve sempre ser habilitado.
+
+\subsection{Regra 5: Coloque folhas de estilo no topo da página}
+\label{subsec:highperformance_regra5}
+Como disse \citeonline[p.~38]{HighPerformance}, "essa regra tem menos haver com melhorar o tempo de carregamento da página e mais haver com como o navegador \textit{web} reage a ordem dos componentes.". Por definição os navegadores não mostram os elementos da tela até que todas as folhas de estilo tenham sido carregadas, para evitar erros de renderização, logo os desenvolvedores devem colocar as folhas de estilo no topo da página (de preferencia dentro da etiqueta HTML \textit{HEAD}), pois essas devem ser os primeiros componentes a serem baixados.
+
+\subsection{Regra 6: Coloque \textit{scripts} no fim da página}
+\label{subsec:highperformance_regra6}
+Ao contrário das folhas de estilo que as arquivos de \textit{script} devem ser colocados no final da página. Componentes localizados abaixo de arquivos de \textit{script} são bloqueados de serem baixados e renderizados até que o \textit{script} tenha terminado de ser baixado. Isso porque o navegador quer garantir que o \textit{script} esteja carregado caso ele vá executar alguma alteração no restante da página.s
+
+\subsection{Regra 7: Evite expressões CSS}
+\label{subsec:highperformance_regra7}
+Apesar de já não serem suportadas na maioria dos navegadores \textit{web} os desenvolvedores não devem utilizar expressões CSS em nenhum caso, mesmo se o navegador dê esta alternativa. Este tipo de expressão é calculada toda vez que há uma alteração na página e isso pode afetar em muito a performance de um \textit{website} ou aplicação \textit{web}.
+
+\subsection{Regra 8: Faça arquivo \textit{JavaScripts} e folhas de estilo externos}
+\label{subsec:highperformance_regra8}
+Existem duas maneiras de incluir folhas de estilo de \textit{scripts} em um \textit{website} ou em uma aplicação \textit{web}. A primeira delas é inserir os código em linha, ou seja, coloca-se os código dentro dos próprios arquivos HTML, em qualquer parte do corpo do arquivo (de preferência seguindo as Regras 5 e 6). Apesar de funcionar essa maneira impede um bom uso da \textit{cache}, porque arquivos HTML geralmente não são salvos em \textit{cache}, logo os estilos e \textit{scripts} têm de ser baicados todas as vezes que a página é carregada. Sendo assim a maneira mais eficiente de se inserir estilos e \textit{scripts} em uma página é colocando eles em arquivos externos e adicionando os arquivos no HTML. Dessa forma os arquivos externos podem ser salvos em \textit{cache} e evitar de serem baixados todas as vezes que o HTML é requisitado.
+
+\subsection{Regra 9: Reduza o número de pesquisas de DNS}
+\label{subsec:highperformance_regra9}
+Usar diferentes domínios para hospedar componentes é uma maneira de possibilitar que esses componentes sejam baixados em paralelo. Mas a pesquisa por domínios é cara e pode acabar influenciando no tempo de carregamento de uma página. Por isso os navegadores salvam os domínios que já sabem em \textit{cache}. Então existe um limite para até quando hospedar componentes em domínios diferentes é benéfico, têm de se analisar o quantidade de pesquisas de DNS para domínios únicos (que não estão em \textit{cache}) estão sendo feitas no carregamento da página. Como regra geral os desenvolvedores deveriam distribuir seus componentes em pelo menos dois e no máximo quatro domínios.
+
+\subsection{Regra 10: Mimifique arquivo \textit{JavaScript}}
+\label{subsec:highperformance_regra10}
+Mimificar é a técnica de reduzir caracteres desnecessários de códigos. Essa técnica pode ser utilizada para qualquer tipo de arquivo CSS, JS, PHP, HTML, dentre outros. A mimificação reduz o tempo de carregamento de páginas \textit{web} porque reduz o tamanho do arquivo diminuindo o tempo gasto para baixa-lo.
+
+\subsection{Regra 11: Evite redirecionamentos}
+\label{subsec:highperformance_regra11}
+Redirecionamentos são as situações onde o usuário tenta acessar uma página \textit{web} e essa página diz que ele deve ir para outra página. São feitos através dos códigos da família 3xx do protocolo HTTP, onde os diferentes códigos dessa família informam a razão para o redirecionamento.
+
+Redirecionamentos são extremamente danosos para a experiência de uso de \textit{websites} e aplicações \textit{web}, pois nada é mostrado para o usuário até que o redirecionamento seja feito e o conteúdo HTML termine de ser carregado. Logo desenvolvedores não devem usar redirecionamento a não ser em casos onde são indispensáveis.
+
+\subsection{Regra 12: Remova \textit{scripts} duplicados}
+\label{subsec:highperformance_regra12}
+Em projetos grandes é comum que vários desenvolvedores mexam no código e isso pode fazer com que o mesmo código seja inserido mais de uma vez. \textit{Scripts} duplicados aumentam o número de chamadas HTTP e isso é muito prejudicial ao desempenho de \textit{websites} e aplicações \textit{web}. Sendo assim os desenvolvedores devem ser muito cuidadosos quanto aos \textit{scripts} que estão sendo carregados em suas páginas e ter certeza de que todos são únicos e necessários.
+
+\subsection{Regra 13: Configure \textit{ETags}}
+\label{subsec:highperformance_regra13}
+Muitas vezes os desenvolvedores não configuram como funcionará o mecanismo de \textit{ETags} de seus servidores e isso pode fazer com que o funcionamento do sistema de \textit{cache} fique prejudicado. Como o valor do \textit{ETag} de um componente é único para cada servidor, se o cliente requisitar um componente no servidor X e mais tarde requisitar o mesmo componente no servidor Y, mesmo que este tenha sido salvo na \textit{cache} do navegador na primeira vez ele será baixado novamente. Na maioria das vezes é melhor desabilitar a opção de \textit{ETags} do que correr o risco de influenciar negativamente no sistema de \textit{cache}.
+
+\subsection{Regra 14: Habilite \textit{cache} para AJAX}
+\label{subsec:highperformance_regra14}
+As chamadas AJAX melhoram muito a experiência do usuário, pois tornam as páginas \textit{web} mas dinâmicas e responsivas. O problema é que muitas vezes elas não são salvas em \textit{cache} e isso pode afetar o desempenho dos \textit{websites} e aplicações \textit{web}. Para garantir que as chamadas AJAX serão salvas em \textit{cache} os desenvolvedores devem seguir seguir as regras 1 à 13 também para esse tipo de componente, principalmente adicionar uma etiqueta \textit{Expires}.
+
+\section{\textit{Even Faster Web Sites}}
+\label{sec:evenfasterwebsites}
+
+Continuando seu trabalho de evangelizar técnicas de otimização para \textit{front-end} de \textit{websites} Steve Souders lançou em 2009 seu segundo livro, intitulado \textit{High Performance Web Sites}. Nesta obra Souders teve a contribuição de outros 8 profissionais da área de otimização que escreveram 6 dos 14 capítulos do livro.
+
+As técnicas descritas em \textit{Even Faster Web Sites}, são mais avançadas, e consequentemente mais difíceis de serem aplicadas, do que as da obra anterior de Steve Souders. Além disso, elas não vêm em formato de regras a serem seguidas, o que facilitava a aplicação das regras descritas em \textit{High Performance Web Site}. Alguns capítulos do livro explicam melhores técnicas de programação, outros o funcionamento de navegadores e outros reforçam ideias anteriores.
+
+Nesta seção serão descritas resumidamente as ideias principais de cada capítulo focando principalmente em como as técnicas podem ser aplicadas para otimizar o desempenho de \textit{websites}.
+
+\subsection{Entendendo performance em AJAX}
+\label{subsec:evenfaster_cap1}
+Para saber se vale a pena otimizar o desempenho de um \textit{website} ou de uma aplicação \textit{web}, os desenvolvedores devem levar em conta o tempo e o esforço que deverão ser empregados no processo de otimização, e quanto essa otimização pode melhorar a experiência do usuário. Desta forma pode-se decidir se compensa fazer um investimento nesse processo. Otimizar componentes que não tem contribuição expressiva no tempo de carregamento de uma página \textit{web} não é muito relevante para a experiencia do usuário.
+
+Os componentes AJAX representam parte importante das aplicações na Web 2.0. Esses componentes são carregados enquanto o usuário está navegando na página, então deve-se evitar qualquer cenário onde a aplicação congele. Os desenvolvedores devem identificar quais componentes devem ser otimizados utilizando os "Eixos do Erro", descrito por \citeonline[p.~2]{EvenFaster} e focar seus esforços nesse componentes.
+
+Durante o processo de otimização de componentes AJAX, os desenvolvedores devem se lembrar:
+\begin{itemize}
+	\item A maior parte do tempo do navegador é gasta na construção do DOM e não no \textit{JavaScript}
+	\item Códigos organizados são mais fáceis de serem otimizados
+	\item Iterações afetam muito o desempenho de uma aplicação \textit{web}
+	\item Evite truques, a não ser que eles se provem realmente eficientes
+\end{itemize}
+
+\subsection{Criando aplicações \textit{web} responsivas}
+\label{subsec:evenfaster_cap2}
+Aplicações responsivas são aquelas que respondem ao usuário de maneira rápida e eficiente, fazendo com que ele não sinta que está esperando. Atrasos maiores do que 0,2 segundos causam no usuário a sensação de que o navegador está tendo problemas para conseguir sua resposta, e isso afeta em muito sua experiência. O mecanismo responsável pela responsividade das aplicações é o AJAX.
+
+Em aplicações maiores muitas chamadas AJAX pode ser executadas ao mesmo tempo e isso é um problema para o \textit{JavaScript}. De acordo com Brendan Eich, criador do \textit{JavaScript}, sua linguagem não possui e nunca vai possuir \textit{threads}. Assim fica por responsabilidade dos desenvolvedores encontrar técnicas para melhorar o paralelismo de suas aplicações. Um cuidado que deve ser tomado é com o uso de memória. Diferente de Java, o \textit{JavaScript} não possui um coletor de lixo, e o uso excessivo de memória pode afetar o desempenho das páginas \textit{web}.
+
+\subsection{Dividindo carga inicial}
+\label{subsec:evenfaster_cap3}
+O tempo inicial de carregamento de uma página é um fator muito importante na otimização de desempenho. Usuários não gostam de esperar para poder interagir com uma aplicação ou \textit{website} e a grande maioria desses usuários desiste de esperar se o tempo for muito longo. Sendo assim, os desenvolvedores devem definir quais métodos de seus \textit{scripts} são necessários no evento evento \textit{onload} (evento executado assim que a página é carregada) e separa-los em arquivos diferentes dos outros métodos. Os métodos que devem ser executados logo que a página for carregada devem ser declarados no inicio do documento HTML. Os outros podem ser declarados ao final da página ou até mesmo de maneira assíncrona.
+
+\subsection{Carregando \textit{scripts} sem bloqueios}
+\label{subsec:evenfaster_cap4}
+\textit{Scripts} possuem um efeito muito negativo no carregamento de páginas. Enquanto estão sendo baixado e executados eles bloqueiam o carregamento de componentes localizados abaixo deles. Então, é muito importante definir quais \textit{scripts} podem ser baixados independentes do resto da página e encontrar maneiras de requisitar esses \textit{scripts} sem bloquear o resto da página. No Capítulo 4 de seu livro, \citeonline{EvenFaster} descreve 6 técnicas de como carregar arquivos externos de \textit{script} de forma assíncrona:
+
+\begin{itemize}
+	\item \textit{XHR Eval}, \cite[p.~29]{EvenFaster}
+	\item \textit{XHR Injection}, \cite[p.~31]{EvenFaster}
+	\item \textit{Script in Iframe}, \cite[p.~31]{EvenFaster}
+	\item \textit{Script in DOM Element}, \cite[p.~32]{EvenFaster}
+	\item \textit{Script Defer}, \cite[p.~32]{EvenFaster}
+	\item \textit{document.write Script Tag}, \cite[p.~33]{EvenFaster}
+\end{itemize}
+
+Não existe uma solução única para todos os \textit{websites} e aplicações \textit{web}, então os desenvolvedores devem analisar qual é a melhor para sua situação especifica. E caso seja definido que a página terá de ser congelada por algum tempo, os desenvolvedores devem se certificar de que algum indicador de navegador ocupado está sendo mostrado ao usuário\footnote{http://www.stevesouders.com/blog/2013/06/16/browser-busy-indicators/}.
+
+\subsection{Lidando com \textit{scripts} assíncronos}
+\label{subsec:evenfaster_cap5}
+Quando as técnicas descritas no Capítulo 4, \cite[p.~27]{EvenFaster}, são utilizadas para carregar \textit{scripts} sem bloqueios cria-se outro problema. Quando componentes são carregados de maneira assíncrona, eles estão sujeitos a condições de corrida\footnote{http://en.wikipedia.org/wiki/Race\_condition}. Essas tornam imprevisível a ordem na qual os \textit{scripts} serão carregados, o que pode fazer com que ocorram falhas nas dependências de funções. Para evitar essas falhar, Steve Souders descreve 5 técnicas de como garantir que os \textit{scripts} serão carregador em uma ordem na qual serão executados sem erros de dependências:
+
+\begin{itemize}
+	\item \textit{Hardcoded Callback}, \cite[p.~46]{EvenFaster}
+	\item \textit{Windows Onload}, \cite[p.~47]{EvenFaster}
+	\item \textit{Timer}, \cite[p.~48]{EvenFaster}
+	\item \textit{Script Onload}, \cite[p.~49]{EvenFaster}
+	\item \textit{Degading Script Tags}, \cite[p.~50]{EvenFaster}
+\end{itemize}
+
+Ao final do capítulo, Souders ainda explica descreve uma técnica que chamou de "Solução Geral", , \cite[p.~59]{EvenFaster}.
+
+\subsection{Posicionando blocos de \textit{scripts}}
+\label{subsec:evenfaster_cap6}
+Apesar de não gerarem novas requisições HTTP, \textit{scripts} em bloco, posicionados dentro do documento HTML, bloqueiam outros componentes de serem carregados enquanto eles estão sendo executados e isso impede o desenho progressivo da página. Para evitar esse efeito, \textit{scripts} em bloco devem ser movidos para o final da página e, se possível, ser executados de maneira assíncrona. Outro grave problema com esse tipo de \textit{script} é que, quando eles são antecedidos por folhas de estilo, eles não começam a executar enquanto os estilos não são carregados. Dessa forma é uma boa técnica não colocar \textit{scripts} em bloco logo após chamadas a folhas de estilo.
+
+\subsection{Escrevendo \textit{JavaScripts} eficientes}
+\label{subsec:evenfaster_cap7}
+Neste capitulo Nicholas Zakas descreve boas técnicas de programação para \textit{JavaScripts} que visam otimizar o desempenho do código. As técnicas descritas são:
+
+\begin{itemize}
+	\item Melhor gerenciamento de escopos, \cite[p.79]{EvenFaster}
+	\item Use variáveis locais, \cite[p.~81]{EvenFaster}
+	\item Otimize acesso à dados frequentes, \cite[p.~85]{EvenFaster}
+	\item Use condicionais mais eficientes, \cite[p.~89]{EvenFaster}
+	\item Use iterações mais eficientes, \cite[p.~93]{EvenFaster}
+	\item Otimize cadeias de caracteres, \cite[p.~99]{EvenFaster}
+	\item Evite função com tempo de execução longo, \cite[p.~102]{EvenFaster}
+	\item Habilite contadores de tempo, \cite[p.~103]{EvenFaster}
+\end{itemize}
+
+\subsection{Escalando usando \textit{Comet}}
+\label{subsec:evenfaster_cap8}
+Quando dados precisam ser entregues de maneira assíncrona, o mecanismo de AJAX pode não ser o suficiente. \textit{Comet} é um termo que se refere a uma coleção de técnicas, protocolos e implementações que tem como objetivo melhor o tráfego de dados em baixa latência \footnote{http://ajaxexperience.techtarget.com/images/Presentations/Carter\_Michael\_ScalableComet.pdf}.
+
+\subsection{Indo além do \textit{gzip}}
+\label{subsec:evenfaster_cap9}
+Mesmo com o suporte à compressão de dados com \textit{gzip} habilitado nos \textit{websites} e aplicações, uma média de 15\% dos usuários continua recebendo dados sem compressão alguma. A maior causa disso são \textit{proxies} e os programas de anti-vírus, que modificam os cabeçalhos HTTP para poderem ter acesso aos dados que estão sendo enviados. Se essas entregas sem compressão fossem dissolvidas entre todos os usuários o problema seria menos relevante. Mas o que ocorre é que 15\% dos usuário estão sempre acessando \textit{websites} e aplicações de forma mais lenta, o que acaba com a experiência desses usuários e os desencoraja de voltar a acessar a página.
+
+Considerando este fato, Tony Gentilcore, reforça as ideias expostas por Steve Souder em seu primeiro livro, \cite{HighPerformance}, de que os desenvolvedores devem ser esforçar para para fazer seus arquivos os menos possíveis e reduzir o número de chamadas HTTP.
+
+\subsection{Otimizando imagens}
+\label{subsec:evenfaster_cap10}
+Imagens são consideradas ótimos componentes para se conseguir melhora de desempenho sem ter de abrir mão de funcionalidades. Existem vários padrões de formato para imagens\footnote{http://en.wikipedia.org/wiki/Image\_file\_formats}, cada um deles é determinado pelo tipo de compressão que usa e cada um deles possui seus prós e contras. Sendo assim, ao desenvolver um \textit{website} ou uma aplicação \textit{web} os desenvolvedores devem decidir que tipo de qualidade que eles desejam em suas imagens, então selecionar o formato que se adeque à suas necessidades e otimizar essas imagens o máximo possível.
+
+Como regra geral, os desenvolvedores devem optar por utilizar o formato PNG sempre que possível.
+
+\subsection{Quebrando domínios dominantes}
+\label{subsec:evenfaster_cap11}
+Mesmo que isso aumento a quantidade de pesquisas de DNS, muitas vezes aumentar o número de domínios nos quais componentes estão hospedados melhora o desempenho de \textit{websites} e aplicações \textit{web}. O motivo disso é que mais componentes podem ser baixados em paralelo o que diminui o tempo total. O desafio é encontrar o número de domínios que resulta no menor tempo de carregamento da página. Como regra geral \cite[p.~168]{EvenFaster} determina que dividir componentes entre dois domínios gera resultados satisfatórios.
+
+\subsection{Entregando o documento cedo}
+\label{subsec:evenfaster_cap12}
+Por padrão uma página \textit{web} só começa a baixar os seus componentes depois que o documento HTML é totalmente carregado pelo navegador. Sendo assim durante algum tempo a única atividade que está sendo realizada pelo navegador é esperar que o HTML seja baixado. Contudo existem técnicas para diminuir esse tempo de espera e consequentemente o tempo de carregamento de uma página.
+
+Uma boa prática é entregar o HTML em partes para o navegador, desde que essas partes possam acelerar o processo de carregamento. Para isso Steve Souders sugere que o cabeçalho HTML, onde normalmente são declaradas as folhas de estilo, seja entregue assim que estiver pronto, dessa forma o navegador começa a baixar esses componentes antes mesmo do HTML complete estar concluído. Essa técnica é possível graças à etiqueta \textit{Chuncked Encoding}, adicionada no HTTP/1.1, e à funções de descarregamento de linguagens de \textit{script} como PHP e NodeJS.
+
+\subsection{Usando \textit{Iframes} com moderação}
+\label{subsec:evenfaster_cap13}
+\textit{Iframes} são componentes HTML que permitem incorporar documentos dentro de documentos. Apesar de terem sido muito utilizados no passado, principalmente para publicidade, os \textit{Iframes} são pouco usados nos dias de hoje. A razão disso é que são componentes muito pesados e que bloqueiam o desenho das páginas \textit{web}.
+
+Como regra geral Steve Souders aconselha a não utilização destes componentes.
+
+\subsection{Simplificando seletor CSS}
+\label{subsec:evenfaster_cap14}
+Na Web 2.0, folhas de estilo são tão populares quanto \textit{scripts}. \textit{Websites} possuem várias folhas de estilo, mas pouco esforço é empregado em otimizar esses arquivos.
+
+Neste capítulo Souders explica que os navegadores fazem buscas por componentes em folhas de estilo da direita para esquerda, logo os identificadores mais à direito devem ser os mais específicos, para diminuir o tempo de busca. Além disso ele alerta para o mal de códigos duplicados e cita boas praticas de programação para CSS,  \cite[p.~195]{EvenFaster}.
