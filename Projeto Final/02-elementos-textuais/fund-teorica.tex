@@ -17,7 +17,7 @@ O protocolo HTTP baseava-se na troca de informações por meio de mensagens form
 \begin{figure}[!htb]
     \centering
     \caption{Exemplo de requisição HTTP}
-    \includegraphics[width=0.2\textwidth]{./04-figuras/fund-teorica/http_exemplo_requisicao}
+    \includegraphics[width=0.3\textwidth]{./04-figuras/fund-teorica/http_exemplo_requisicao}
     \label{fig:exemplorequisicaohttp}
 \end{figure}
 
@@ -147,19 +147,21 @@ O documento completo com toda a especificação do HTTP/2 pode ser encontrado em
 \newpage
 \section{AJAX}
 \label{sec:ajax}
-AJAX é a sigla em inglês para "Assíncrono JavaScript + XML" e foi inventada por \cite{AJAX}. Mas isso não quer dizer que Garrett inventou o modelo de AJAX utilizado pelos \textit{websites} e aplicações.
+AJAX é a sigla em inglês para "Assíncrono JavaScript + XML", e foi inventada por \citeonline{AJAX}. Mas isso não quer dizer que Garrett tenha inventado o modelo AJAX utilizado pelos \textit{websites} e aplicações.
 
 Como dito pelo próprio \citeonline{AJAX}, "AJAX não é uma tecnologia". Na realidade AJAX é a definição de como várias tecnologias podem ser utilizadas em conjunto para ler componentes \textit{web} de maneira assíncrona. Estas tecnologias incluem:
 	\begin{itemize}
-		\item HTML ou XHTML
+		\item HTML ou XHTML\footnote{http://en.wikipedia.org/wiki/XHTML}
 		\item CSS
 		\item JavaScript
-		\item DOM
-		\item XML e XSLT
-		\item Requisições XMLHttp (\textit{XMLHttpRequest})
+		\item DOM\footnote{http://www.w3.org/DOM/}
+		\item XML e XSLT\footnote{http://www.w3schools.com/xml/, http://www.w3schools.com/xsl/}
+		\item Requisições XMLHttp (\textit{XMLHttpRequest})\footnote{https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest}
 	\end{itemize}
 
-A \autoref{fig:compajax} mostra uma comparação entre o modelo clássico de chamadas \textit{web} e o modelo utilizando AJAX. O AJAX adiciona uma camada intermediaria entre o usuário e o servidor. Quando o usuário interage com a página \textit{web} ele manda uma mensagem para essa nova camada, desenvolvida em JavaScript, que é responsável por requisitar do servidor somente os dados necessários para a interação do usuário e atualizar apenas a parte da página necessária para terminar essa interação. Impedindo que as páginas tenham de ser inteiramente recarregadas a cada interação o AJAX consegue melhorar em muito a experiência do usuário.
+A \autoref{fig:compajax} mostra uma comparação entre o modelo clássico de chamadas \textit{web} e o modelo utilizando AJAX. O modelo AJAX adiciona uma camada intermediária entre o usuário e o servidor.
+
+Quando o usuário interage com a página \textit{web} ele manda uma mensagem para essa nova camada, desenvolvida em JavaScript, que é responsável por requisitar do servidor somente os dados necessários para a interação do usuário e atualizar apenas a parte da página necessária para terminar essa interação. Dessa forma o AJAX impede que as páginas tenham de ser inteiramente recarregadas a cada interação e consegue melhorar a experiência do usuário.
 
 \begin{figure}[!htb]
     \centering
@@ -172,6 +174,6 @@ A \autoref{fig:compajax} mostra uma comparação entre o modelo clássico de cha
 
 \section{Web 2.0}
 \label{sec:web20}
-A \textit{Web} 2.0 não é uma nova versão da \textit{World Wide Web} criada por Tim Berners-Lee. Como explica \cite{Web20}, o termo \textit{Web} 2.0 surgiu de uma discussão entre a companhia de mídia O'Reilly e a empresa de produção de MediaLive, quando estavam preparando uma conferencia sobre a \textit{web}. O que eles chamaram de \textit{Web} 2.0 foi a nova forma como a criação de Berners-Lee estava sendo utilizada.
+A \textit{Web} 2.0 não é uma nova versão da \textit{World Wide Web} criada por Tim Berners-Lee. Como explica \citeonline{Web20}, o termo \textit{Web} 2.0 surgiu de uma discussão entre a companhia de mídia O'Reilly e a empresa de produção de MediaLive, quando estavam preparando uma conferencia sobre a \textit{web}. O que eles chamaram de \textit{Web} 2.0 foi a nova forma como a criação de Berners-Lee estava sendo utilizada pelas pessoas.
 
-O desenvolvimento de técnicas AJAX e o conceito de conhecimento coletivo fez com que a \textit{web} deixasse de ser utilizada apenas para mostrar páginas estáticas e passasse a explorar a interação com o usuário. Sendo assim \textit{websites} se tornaram aplicações \textit{web}, que melhoravam a medida que os usuários iam alimentando-as com novas informações. Como exemplo de aplicações que exploram os conceitos definidos na \textit{Web} 2.0 podemos citar a Wikipedia \footnote{https://www.wikipedia.org/}, o Facebook \footnote{https://www.facebook.com/} e o Google Maps \footnote{https://www.maps.google.com/}. Todas essas aplicações utilizam de técnicas AJAX para garantir uma boa experiência e são alimentadas com informações entradas pelos usuários, o que as torna mais dinâmicas e flexíveis do que os \textit{websites} do que ficou conhecido como \textit{Web} 1.0.
+O desenvolvimento de técnicas AJAX e o conceito de conhecimento coletivo fez com que a \textit{web} deixasse de ser utilizada apenas para mostrar páginas estáticas e passasse a explorar a interação com o usuário. Sendo assim \textit{websites} se tornaram aplicações \textit{web}, que melhoravam a medida que os usuários iam alimentando-as com novas informações. Como exemplo de aplicações que exploram os conceitos definidos na \textit{Web} 2.0 podemos citar a Wikipedia \footnote{https://www.wikipedia.org/}, o Facebook \footnote{https://www.facebook.com/} e o Google Maps \footnote{https://www.maps.google.com/}. Todas essas aplicações utilizam de técnicas AJAX para garantir uma boa experiência e são alimentadas com informações entradas pelos usuários, o que as torna mais dinâmicas e flexíveis do que os \textit{websites} da \textit{Web} 1.0 (como ficou conhecida a primeira fase da \textit{web}).

@@ -35,9 +35,10 @@
 \backcite {AJAX}{{19}{2.5}{section.2.5}}
 \backcite {AJAX}{{19}{2.5}{section.2.5}}
 \backcite {FigAjax}{{20}{8}{figure.2.8}}
-\backcite {Web20}{{20}{2.6}{section.2.6}}
+\backcite {Web20}{{21}{2.6}{section.2.6}}
 \backcite {HighPerformance}{{22}{3}{chapter.3}}
 \backcite {HighPerformance}{{22}{3}{chapter.3}}
+\backcite {HighPerformance}{{22}{3.1}{section.3.1}}
 \backcite {HighPerformance}{{22}{3.1}{section.3.1}}
 \backcite {HighPerformance}{{22}{3.1.1}{subsection.3.1.1}}
 \backcite {HighPerformance}{{23}{3.1.4}{subsection.3.1.4}}
@@ -50,7 +51,7 @@
 \backcite {EvenFaster}{{28}{3.2.4}{subsection.3.2.4}}
 \backcite {EvenFaster}{{28}{3.2.4}{subsection.3.2.4}}
 \backcite {EvenFaster}{{28}{3.2.4}{subsection.3.2.4}}
-\backcite {EvenFaster}{{28}{3.2.5}{subsection.3.2.5}}
+\backcite {EvenFaster}{{29}{3.2.5}{subsection.3.2.5}}
 \backcite {EvenFaster}{{29}{3.2.5}{subsection.3.2.5}}
 \backcite {EvenFaster}{{29}{3.2.5}{subsection.3.2.5}}
 \backcite {EvenFaster}{{29}{3.2.5}{subsection.3.2.5}}
@@ -58,11 +59,11 @@
 \backcite {EvenFaster}{{29}{3.2.5}{subsection.3.2.5}}
 \backcite {EvenFaster}{{29}{3.2.5}{subsection.3.2.5}}
 \backcite {EvenFaster}{{29}{3.2.7}{subsection.3.2.7}}
-\backcite {EvenFaster}{{29}{3.2.7}{subsection.3.2.7}}
-\backcite {EvenFaster}{{29}{3.2.7}{subsection.3.2.7}}
-\backcite {EvenFaster}{{29}{3.2.7}{subsection.3.2.7}}
-\backcite {EvenFaster}{{29}{3.2.7}{subsection.3.2.7}}
-\backcite {EvenFaster}{{29}{3.2.7}{subsection.3.2.7}}
+\backcite {EvenFaster}{{30}{3.2.7}{subsection.3.2.7}}
+\backcite {EvenFaster}{{30}{3.2.7}{subsection.3.2.7}}
+\backcite {EvenFaster}{{30}{3.2.7}{subsection.3.2.7}}
+\backcite {EvenFaster}{{30}{3.2.7}{subsection.3.2.7}}
+\backcite {EvenFaster}{{30}{3.2.7}{subsection.3.2.7}}
 \backcite {EvenFaster}{{30}{3.2.7}{subsection.3.2.7}}
 \backcite {EvenFaster}{{30}{3.2.7}{subsection.3.2.7}}
 \backcite {HighPerformance}{{30}{3.2.9}{subsection.3.2.9}}

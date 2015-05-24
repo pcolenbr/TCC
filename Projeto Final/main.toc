@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {2.3}HTTP/1.0 VS HTTP/1.1}{9}{section.2.3}
 \contentsline {section}{\numberline {2.4}HTTP/1.1 VS HTTP/2}{15}{section.2.4}
 \contentsline {section}{\numberline {2.5}AJAX}{19}{section.2.5}
-\contentsline {section}{\numberline {2.6}Web 2.0}{20}{section.2.6}
+\contentsline {section}{\numberline {2.6}Web 2.0}{21}{section.2.6}
 \contentsline {chapter}{\chapternumberline {3}Trabalhos Relacionados}{22}{chapter.3}
 \contentsline {section}{\numberline {3.1}\textit {High Performance Web Sites}}{22}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Regra 1: Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP}{22}{subsection.3.1.1}
@@ -23,16 +23,16 @@
 \contentsline {subsection}{\numberline {3.1.9}Regra 9: Reduza o n\IeC {\'u}mero de pesquisas de DNS}{25}{subsection.3.1.9}
 \contentsline {subsection}{\numberline {3.1.10}Regra 10: Mimifique arquivo \textit {JavaScript}}{25}{subsection.3.1.10}
 \contentsline {subsection}{\numberline {3.1.11}Regra 11: Evite redirecionamentos}{25}{subsection.3.1.11}
-\contentsline {subsection}{\numberline {3.1.12}Regra 12: Remova \textit {scripts} duplicados}{25}{subsection.3.1.12}
+\contentsline {subsection}{\numberline {3.1.12}Regra 12: Remova \textit {scripts} duplicados}{26}{subsection.3.1.12}
 \contentsline {subsection}{\numberline {3.1.13}Regra 13: Configure \textit {ETags}}{26}{subsection.3.1.13}
 \contentsline {subsection}{\numberline {3.1.14}Regra 14: Habilite \textit {cache} para AJAX}{26}{subsection.3.1.14}
 \contentsline {section}{\numberline {3.2}\textit {Even Faster Web Sites}}{26}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Entendendo performance em AJAX}{26}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Entendendo performance em AJAX}{27}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Criando aplica\IeC {\c c}\IeC {\~o}es \textit {web} responsivas}{27}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Dividindo carga inicial}{27}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Dividindo carga inicial}{28}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Carregando \textit {scripts} sem bloqueios}{28}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Lidando com \textit {scripts} ass\IeC {\'\i }ncronos}{28}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Posicionando blocos de \textit {scripts}}{29}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.5}Lidando com \textit {scripts} ass\IeC {\'\i }ncronos}{29}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Posicionando blocos de \textit {scripts} em linha}{29}{subsection.3.2.6}
 \contentsline {subsection}{\numberline {3.2.7}Escrevendo \textit {JavaScripts} eficientes}{29}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Escalando usando \textit {Comet}}{30}{subsection.3.2.8}
 \contentsline {subsection}{\numberline {3.2.9}Indo al\IeC {\'e}m do \textit {gzip}}{30}{subsection.3.2.9}
@@ -40,7 +40,7 @@
 \contentsline {subsection}{\numberline {3.2.11}Quebrando dom\IeC {\'\i }nios dominantes}{31}{subsection.3.2.11}
 \contentsline {subsection}{\numberline {3.2.12}Entregando o documento cedo}{31}{subsection.3.2.12}
 \contentsline {subsection}{\numberline {3.2.13}Usando \textit {Iframes} com modera\IeC {\c c}\IeC {\~a}o}{31}{subsection.3.2.13}
-\contentsline {subsection}{\numberline {3.2.14}Simplificando seletor CSS}{31}{subsection.3.2.14}
+\contentsline {subsection}{\numberline {3.2.14}Simplificando seletor CSS}{32}{subsection.3.2.14}
 \contentsline {chapter}{\chapternumberline {4}Metodologia}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}Delineamento da pesquisa}{33}{section.4.1}
 \contentsline {section}{\numberline {4.2}Coleta de dados}{33}{section.4.2}
