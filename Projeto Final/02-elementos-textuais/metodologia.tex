@@ -4,12 +4,57 @@
 
 \chapter{Metodologia}
 
-Inserir seu texto aqui...
+Este trabalho foi desenvolvido através de uma pesquisa quantitativa das técnicas propostas por Steve Souders em seus dois livro, \textit{High Performance Web Sites}, \cite{HighPerformance}, e \textit{Even Faster Web Sites}, \cite{EvenFaster}. O trabalho foi divido em quatro etapas:
 
-\section{Delineamento da pesquisa}
+\begin{itemize}
+	\item Etapa 1: Análise e seleção das técnicas de Steve Souders;
+	\item Etapa 2: Realização dos testes das técnicas selecionadas;
+	\item Etapa 3: Coleta de dados;
+	\item Etapa 4: Analise dos resultados.
+\end{itemize}
 
-Inserir seu texto aqui...
+Neste capítulo serão descritas as etapas deste trabalho.
 
-\section{Coleta de dados}
+\section{Análise e seleção das técnicas de melhora de desempenho}
 
-Inserir seu texto aqui...
+Em seus livros, Steve Souders descreve várias técnicas para melhorar o desempenho de \textit{front-end} de \textit{websites}. Enquanto algumas destas técnicas são regras simples de serem reproduzidas por desenvolvedores ou ferramentas de auxilo, outras são descrições de boas práticas de programação ou dicas de como seguir as regras propostas. Como o objetivo deste trabalho é analisar o comportamento da técnicas propostas por Souders no HTTP/2, aquelas que não tem como objetivo primário diminuir o tempo de resposta de páginas \textit{web} não são relevantes para o escopo do trabalho. Outro fator que deve ser levado em conta na escolha das técnicas que serão testadas, é se as mudanças que ocorreram no HTTP podem influenciar no funcionamento delas. Como exemplo de uma técnica que não terá seu funcionamento afetado pela nova versão do protocolo, pode-se citar a técnica descrita na sub-seção \autoref{subsec:evenfaster_cap10}. Esta técnica visa reduzir o tamanho de imagens, e independente da versão do protocolo HTTP, requisições e respostas menores terão sempre desempenho melhor. Por outro lado a técnica descrita na sub-seção \autoref{subsec:highperformance_regra1} pode ser afetada pela nova definição do protocolo, então é relevante realizar testes para entender seu funcionamento no HTTP/2.
+
+Resumindo, para escolher as técnicas que serão testadas duas perguntas devem ser respondidas:
+
+\begin{itemize}
+	\item Essa técnica tem como objetivo principal reduzir o tempo que o navegador \textit{web} leva para carregar uma página \textit{web}?
+	\item Essa técnica pode ter o seu funcionamento afetado pela mudança do protocolo HTTP/1.1 para o HTTP2?
+\end{itemize}
+
+Caso a resposta para essas duas perguntas for positiva a técnica será analisada.
+
+\section{Ferramentas de teste}
+
+Considerando sua popularidade, o servidor escolhido para a realização dos testes foi o Apache\footnote{http://httpd.apache.org/}. De acordo com dados da \citeonline{Apache}, o Apache é o servidor \textit{web} mais utilizado no mundo, sendo assim foi considerado o mais adequado para este trabalho. Este servidor será implantado em uma maquina virtual instanciada no serviço de servidores em nuvem da empresa americana Amazon\footnote{http://www.amazon.com/}, o Amazon AWS\footnote{http://aws.amazon.com/}. O sistema operacional escolhido para este servidor de testes é o Ubuntu 14.04 LTS\footnote{https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes}. O servidor será criado com localidade definida para São Paulo e será do tipo \textit{t1.micro}. As instancias de servidores do tipo \textit{t1.micro} possuem as seguintes configurações:
+
+\begin{itemize}
+	\item Processador de 32-bit ou 64-bit
+	\item 1 CPU
+	\item 0,613 Gb de memória RAM
+	\item Capacidade de armazenamento EBS\footnote{http://aws.amazon.com/ebs/}
+	\item Performance de rede muito baixo
+    \fonte{Adaptado de \citeonline{AmazonT1Micro}}
+\end{itemize}
+
+Além do servidor para a hospedagem das páginas \textit{web}, a realização dos testes de desempenho dependem de um navegador \textit{web}. Seguindo a mesma ideia de escolher ferramentas populares, para poder entender os resultados das melhorais no mundo real, os navegadores Google Chrome\footnote{Navegador \textit{web} desenvolvido e mantido pela Google e o mais utilizado do mundo} versão 43.0 e Mozilla Firefox\footnote{Navegador \textit{web} desenvolvido e mantido pela Mozilla e segundo mais utilizado do mundo} versão 38.0 foram os escolhidos. Vale ressaltar que a maioria dos resultados independe do navegador utilizado.
+
+\section{Testes e Coleta de dados}
+
+Dois tipos de testes foram executados para cada uma das técnicas de otimização escolhidas.
+
+No primeiro tipo foram criadas páginas especiais para cada teste. Estas páginas continham apenas os elementos necessários para analisar os resultados obtidos com a técnica em questão. Cada página foi carregada 100 vezes e o tempo de carregamento foi registrado. Esses testes provaram se as técnicas têm seu funcionamento alterado com a mudança de versão do protocolo HTTP.
+
+No segundo tipo as técnicas foram testadas uma a uma em um \textit{website} já existente. O \textit{website} escolhido foi o da empresa \textit{Avenue Code}\footnote{A \textit{Avenue Code} é uma empresa americana de desenvolvimento de \textit{software} e consultória especializada em metodologias Ágil. http://www.avenuecode.com}, que foi então clonado para o servidor de teste utilizado neste trabalho e teve seu código modificado. Dentro deste \textit{website} foram analisadas as 6 páginas principais: Inicio, Sobre, Carreiras, Serviços, Contato e \textit{Code Highway}, que é o \textit{blog} da empresa. Com esses testes pôde-se ter uma ideia de como as técnicas afetam \textit{websites} com uma grande quantidade de componentes. Por fim, todas as técnicas que apresentaram resultados positivos foram aplicadas ao \textit{website} da \textit{Avenue Code} ao mesmo tempo e o tempo de carregamento das 6 páginas principais foram analisados.
+
+Para cada uma das técnicas escolhidas foram realizados testes com a \textit{cache} do navegador vazia e teste com a \textit{cache} do navegador previamente carregada. Esses dois cenários foram analisados separadamente, mas comparados para mostrar o efeito da \textit{cache}.
+
+Todos os dados de tempo de carregamento das páginas analisadas foram coletados via \textit{JavaScript}. O (ANEXO X) contém o código do \textit{script} utilizado para a coleta de dados.
+
+\section{Análise de resultados}
+
+As técnicas que apresentaram resultados diferentes entre as versões do protocolo HTTP foram estudadas para entender a causa dessas mudanças. Caso tenham sido identificados os fatores que afetam a técnica em questão, essa técnica foi modificada para funcionar na versão HTTP/2. Caso tenha sido concluído que de nenhuma forma a técnica pode diminuir o tempo de carregamento de páginas \textit{web} na nova versão do protocolo, essa foi descartada. E ao final, cada uma das novas funcionalidades do HTTP/2 foi analisada a procura de novas alternativas para otimização de desempenho.
