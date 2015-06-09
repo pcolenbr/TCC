@@ -42,20 +42,22 @@
 \contentsline {subsection}{\numberline {3.2.13}Usando \textit {Iframes} com modera\IeC {\c c}\IeC {\~a}o}{31}{subsection.3.2.13}
 \contentsline {subsection}{\numberline {3.2.14}Simplificando seletor CSS}{32}{subsection.3.2.14}
 \contentsline {chapter}{\chapternumberline {4}Metodologia}{33}{chapter.4}
-\contentsline {section}{\numberline {4.1}Delineamento da pesquisa}{33}{section.4.1}
-\contentsline {section}{\numberline {4.2}Coleta de dados}{33}{section.4.2}
-\contentsline {chapter}{\chapternumberline {5}An\IeC {\'a}lise de Resultados}{34}{chapter.5}
-\contentsline {section}{\numberline {5.1}Situa\IeC {\c c}\IeC {\~a}o atual}{34}{section.5.1}
-\contentsline {section}{\numberline {5.2}An\IeC {\'a}lise dos dados coletados}{34}{section.5.2}
-\contentsline {chapter}{\chapternumberline {6}Conclus\IeC {\~a}o}{35}{chapter.6}
-\contentsline {chapter}{Refer\^encias}{36}{section*.14}
+\contentsline {section}{\numberline {4.1}An\IeC {\'a}lise e sele\IeC {\c c}\IeC {\~a}o das t\IeC {\'e}cnicas de melhora de desempenho}{33}{section.4.1}
+\contentsline {section}{\numberline {4.2}Ferramentas de teste}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}Testes e Coleta de dados}{35}{section.4.3}
+\contentsline {section}{\numberline {4.4}An\IeC {\'a}lise de resultados}{35}{section.4.4}
+\contentsline {chapter}{\chapternumberline {5}An\IeC {\'a}lise de Resultados}{36}{chapter.5}
+\contentsline {section}{\numberline {5.1}Situa\IeC {\c c}\IeC {\~a}o atual}{36}{section.5.1}
+\contentsline {section}{\numberline {5.2}An\IeC {\'a}lise dos dados coletados}{36}{section.5.2}
+\contentsline {chapter}{\chapternumberline {6}Conclus\IeC {\~a}o}{37}{chapter.6}
+\contentsline {chapter}{Refer\^encias}{38}{section*.14}
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{38}{section*.15}
-\contentsline {appendix}{\chapternumberline {A}Nome do Ap\IeC {\^e}ndice}{39}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Nome do Ap\IeC {\^e}ndice}{40}{appendix.B}
+\contentsline {part}{Ap\^endices}{40}{section*.15}
+\contentsline {appendix}{\chapternumberline {A}Nome do Ap\IeC {\^e}ndice}{41}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Nome do Ap\IeC {\^e}ndice}{42}{appendix.B}
 \cftinsert {AAA}
 \renewcommand *{\cftappendixname }{ANEXO \space }
-\contentsline {part}{Anexos}{41}{section*.16}
-\contentsline {appendix}{\chapternumberline {A}Nome do Anexo}{42}{appendix.anexochapback.1}
-\contentsline {appendix}{\chapternumberline {B}Nome do Anexo}{43}{appendix.anexochapback.2}
+\contentsline {part}{Anexos}{43}{section*.16}
+\contentsline {appendix}{\chapternumberline {A}Nome do Anexo}{44}{appendix.anexochapback.1}
+\contentsline {appendix}{\chapternumberline {B}Nome do Anexo}{45}{appendix.anexochapback.2}

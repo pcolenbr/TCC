@@ -22,6 +22,11 @@ Dispon{\'\i}vel em:
 {CONNOLLY, D. \textbf{The birth of the web}. 2000.
 Dispon{\'\i}vel em: \url{http://www.w3.org/History.html}.}
 
+\bibitem[Foundation 2015]{Apache}
+\abntrefinfo{Foundation}{FOUNDATION}{2015}
+{FOUNDATION, T. A.~S. \textbf{Apache HTTP Server Project}. 2015.
+Dispon{\'\i}vel em: \url{http://httpd.apache.org/ABOUT\_APACHE.html}.}
+
 \bibitem[Garrett 2005]{AJAX}
 \abntrefinfo{Garrett}{GARRETT}{2005}
 {GARRETT, J.~J. \textbf{Ajax: A New Approach to Web Applications}. 2005.
@@ -83,6 +88,11 @@ Dispon{\'\i}vel em:
 {SCOTT, T. 2007.
 Dispon{\'\i}vel em:
   \url{http://derivadow.com/2007/01/05/ajax-what-is-it-its-not-dhtml/}.}
+
+\bibitem[Services 2015]{AmazonT1Micro}
+\abntrefinfo{Services}{SERVICES}{2015}
+{SERVICES, A.~W. \textbf{Previous Generation Instances}. 2015.
+Dispon{\'\i}vel em: \url{http://aws.amazon.com/ec2/previous-generation/}.}
 
 \bibitem[Souders 2007]{HighPerformance}
 \abntrefinfo{Souders}{SOUDERS}{2007}

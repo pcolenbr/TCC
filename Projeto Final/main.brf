@@ -69,3 +69,7 @@
 \backcite {HighPerformance}{{30}{3.2.9}{subsection.3.2.9}}
 \backcite {EvenFaster}{{31}{3.2.11}{subsection.3.2.11}}
 \backcite {EvenFaster}{{32}{3.2.14}{subsection.3.2.14}}
+\backcite {HighPerformance}{{33}{4}{chapter.4}}
+\backcite {EvenFaster}{{33}{4}{chapter.4}}
+\backcite {Apache}{{34}{4.2}{section.4.2}}
+\backcite {AmazonT1Micro}{{34}{4.2}{section.4.2}}
