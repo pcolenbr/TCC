@@ -1,0 +1,126 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.3 }
+
+\bibitem[Archive 2015]{HttpArchiveContentType2011}
+\abntrefinfo{Archive}{ARCHIVE}{2015a}
+{ARCHIVE, H. \textbf{Http Archive Abril 2011 Query}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://httparchive.org/interesting.php?a=All&l=Apr\%2015\%202011}.}
+
+\bibitem[Archive 2015]{HttpArchiveContentType2015}
+\abntrefinfo{Archive}{ARCHIVE}{2015b}
+{ARCHIVE, H. \textbf{Http Archive Abril 2015 Query}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://httparchive.org/interesting.php?a=All&l=Apr\%2015\%202015}.}
+
+\bibitem[Connolly 2000]{WebHistory}
+\abntrefinfo{Connolly}{CONNOLLY}{2000}
+{CONNOLLY, D. \textbf{The birth of the web}. 2000.
+Dispon{\'\i}vel em: \url{http://www.w3.org/History.html}.}
+
+\bibitem[Foundation 2015]{Apache}
+\abntrefinfo{Foundation}{FOUNDATION}{2015}
+{FOUNDATION, T. A.~S. \textbf{Apache HTTP Server Project}. 2015.
+Dispon{\'\i}vel em: \url{http://httpd.apache.org/ABOUT\_APACHE.html}.}
+
+\bibitem[Garrett 2005]{AJAX}
+\abntrefinfo{Garrett}{GARRETT}{2005}
+{GARRETT, J.~J. \textbf{Ajax: A New Approach to Web Applications}. 2005.
+Dispon{\'\i}vel em:
+  \url{http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications/}.}
+
+\bibitem[Grigorik 2013]{HighPerformanceBrowserNetworking}
+\abntrefinfo{Grigorik}{GRIGORIK}{2013}
+{GRIGORIK, I. \textbf{High Performance Browser Networking}. 1st. ed. [S.l.]:
+  O'Reilly, 2013.}
+
+\bibitem[Group 2015]{HPACKSpec}
+\abntrefinfo{Group}{GROUP}{2015a}
+{GROUP, H.~W. \textbf{HPACK - Header Compression for HTTP/2}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://tools.ietf.org/html/draft-ietf-httpbis-header-compression-12}.}
+
+\bibitem[Group 2015]{HTTP2Spec}
+\abntrefinfo{Group}{GROUP}{2015b}
+{GROUP, H.~W. \textbf{Hypertext Transfer Protocol version 2}. 2015.
+Dispon{\'\i}vel em:
+  \url{https://tools.ietf.org/html/draft-ietf-httpbis-http2-17}.}
+
+\bibitem[Group 1996]{RFC1945}
+\abntrefinfo{Group}{GROUP}{1996}
+{GROUP, N.~W. \textbf{RFC 1945}. 1996.
+Dispon{\'\i}vel em: \url{http://tools.ietf.org/html/rfc1945}.}
+
+\bibitem[Group 1999]{RFC2616}
+\abntrefinfo{Group}{GROUP}{1999}
+{GROUP, N.~W. \textbf{RFC 2616}. 1999.
+Dispon{\'\i}vel em: \url{http://tools.ietf.org/html/rfc2616}.}
+
+\bibitem[Inc. 2012]{SPDY}
+\abntrefinfo{Inc.}{INC.}{2012}
+{INC., G. \textbf{SPDY}. 2012.
+Dispon{\'\i}vel em: \url{http://dev.chromium.org/spdy}.}
+
+\bibitem[Krishnamurthy et al. 1999]{KeyDifferencesHTTP}
+\abntrefinfo{Krishnamurthy et al.}{KRISHNAMURTHY et al.}{1999}
+{KRISHNAMURTHY, B.; MOGUL, J.~C.; KRISTOL, D.~M. Key differences between
+  http/1.0 and http/1.1.
+\textbf{Elsevier Science B.V}, 1999.}
+
+\bibitem[O'Reilly 2005]{Web20}
+\abntrefinfo{O'Reilly}{O'REILLY}{2005}
+{O'REILLY, T. \textbf{What Is Web 2.0}. 2005.
+Dispon{\'\i}vel em:
+  \url{http://www.oreilly.com/pub/a/web2/archive/what-is-web-20.html?page=1}.}
+
+\bibitem[Saenz 2014]{ImagemHTTPOverview}
+\abntrefinfo{Saenz}{SAENZ}{2014}
+{SAENZ, J. \textbf{Building Web Apps with Go}. [s.n.], 2014. Dispon{\'\i}vel
+  em:
+  \url{https://www.gitbook.com/book/codegangsta/building-web-apps-with-go/details}.}
+
+\bibitem[Scott 2007]{FigAjax}
+\abntrefinfo{Scott}{SCOTT}{2007}
+{SCOTT, T. \textbf{AJAX what is it? (it’s not DHTML)}. 2007.
+Dispon{\'\i}vel em:
+  \url{http://derivadow.com/2007/01/05/ajax-what-is-it-its-not-dhtml/}.}
+
+\bibitem[Services 2015]{AmazonT1Micro}
+\abntrefinfo{Services}{SERVICES}{2015}
+{SERVICES, A.~W. \textbf{Previous Generation Instances}. 2015.
+Dispon{\'\i}vel em: \url{http://aws.amazon.com/ec2/previous-generation/}.}
+
+\bibitem[Souders 2007]{HighPerformance}
+\abntrefinfo{Souders}{SOUDERS}{2007}
+{SOUDERS, S. \textbf{High Performance Web Sites}. 1st. ed. [S.l.: s.n.], 2007.}
+
+\bibitem[Souders 2009]{EvenFaster}
+\abntrefinfo{Souders}{SOUDERS}{2009a}
+{SOUDERS, S. \textbf{Even Faster Web Sites}. 1st. ed. [S.l.: s.n.], 2009.}
+
+\bibitem[Souders 2009]{GoogleIO2009}
+\abntrefinfo{Souders}{SOUDERS}{2009b}
+{SOUDERS, S. Even faster websites. In:  . [s.n.], 2009. Dispon{\'\i}vel em:
+  \url{https://www.youtube.com/watch?feature=player\_embedded&v=aJGC0JSlpPE}.}
+
+\bibitem[Souders 2012]{WebPerformance}
+\abntrefinfo{Souders}{SOUDERS}{2012}
+{SOUDERS, S. \textbf{Web Performance Daybook}. 1st. ed. [S.l.: s.n.], 2012.
+  Two.}
+
+\bibitem[Stenberg 2014]{HTTP2Explained}
+\abntrefinfo{Stenberg}{STENBERG}{2014}
+{STENBERG, D. Http2 explained.
+\textbf{ACM SIGCOMM Computer Communication Review}, 2014.
+Dispon{\'\i}vel em: \url{http://daniel.haxx.se/http2}.}
+
+\bibitem[Tanenbaum 2011]{Tanenbaum}
+\abntrefinfo{Tanenbaum}{TANENBAUM}{2011}
+{TANENBAUM, D. J.~W. A.~S. \textbf{Computer Networks}. 5th. ed. [S.l.: s.n.],
+  2011.}
+
+\end{thebibliography}

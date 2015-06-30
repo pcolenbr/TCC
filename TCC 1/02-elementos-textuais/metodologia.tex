@@ -3,6 +3,7 @@
 %
 
 \chapter{Metodologia}
+\label{chap:metodologia}
 
 Para alcançar os objetivos propostos de entender o funcionamento das técnicas de otimização propostas por Steve Souders em seus dois livro, \textit{High Performance Web Sites}, \cite{HighPerformance}, e \textit{Even Faster Web Sites}, \cite{EvenFaster}, quando aplicadas ao HTTP/2 e, se necessário, propor novas técnicas para essa versão do protocolo, este trabalho foi divido em quatro etapas:
 
@@ -16,6 +17,7 @@ Para alcançar os objetivos propostos de entender o funcionamento das técnicas 
 Neste capítulo serão descritas as etapas deste trabalho.
 
 \section{Seleção das técnicas de melhora de desempenho}
+\label{sec:selecaodastecnicasdemelhoradedesempenho}
 
 Em seus livros, Steve Souders descreve várias técnicas para melhorar o desempenho de \textit{front-end} de \textit{websites}. Enquanto algumas destas técnicas são regras simples de serem reproduzidas por desenvolvedores ou ferramentas de auxílio, outras são descrições de boas práticas de programação ou dicas de como seguir as regras propostas.
 
@@ -31,6 +33,7 @@ Sendo assim, para escolher as técnicas que serão testadas, duas perguntas deve
 Caso a resposta para essas duas perguntas seja positiva, então, a técnica será analisada.
 
 \section{Preparação dos testes}
+\label{sec:preparacaodostestes}
 
 Considerando sua popularidade, o servidor escolhido para a realização dos testes foi o Apache\footnote{http://httpd.apache.org/}. De acordo com dados da \citeonline{Apache}, o Apache é o servidor \textit{web} mais utilizado no mundo e, por essa razão, foi considerado o mais adequado para este trabalho. Uma instância desse servidor será implantada em uma maquina virtual instanciada no serviço de servidores em nuvem da empresa americana Amazon\footnote{http://www.amazon.com/}, o Amazon AWS\footnote{http://aws.amazon.com/}. A Amazon foi escolhida por possuir um preço acessível para máquinas de baixo desempenho e possuir instâncias de servidores no Brasil. O sistema operacional escolhido para este servidor de testes é o Ubuntu 14.04 LTS\footnote{https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes}. O servidor será criado com localidade definida para São Paulo e será do tipo \textit{t1.micro}, que possui as seguintes configurações:
 
@@ -48,6 +51,7 @@ Essa configuração de máquina foi escolhida por ser a mais básica (e conseque
 Além do servidor para a hospedagem das páginas \textit{web}, a realização dos testes de desempenho dependem de um navegador \textit{web}. Seguindo o mesmo critério usado na escolha do servidor de teste, e visando compreender os resultados que as melhorais podem ter no mundo real, os navegadores Google Chrome\footnote{Navegador \textit{web} desenvolvido e mantido pela Google e o mais utilizado do mundo} versão 43.0 e Mozilla Firefox\footnote{Navegador \textit{web} desenvolvido e mantido pela Mozilla e segundo mais utilizado do mundo} versão 38.0 foram os escolhidos. Apesar da escolha dos navegadores, espera-se que a maioria dos resultados independe do navegador utilizado.
 
 \section{Realização dos testes e coleta de dados}
+\label{sec:realizacaodostestesecoletadedados}
 
 Dois tipos de testes foram executados para cada uma das técnicas de otimização escolhidas.
 
@@ -57,8 +61,9 @@ No segundo tipo, as técnicas foram testadas uma a uma em um \textit{website} j�
 
 Para cada uma das técnicas escolhidas foram realizados testes com a \textit{cache} do navegador vazia e teste com a \textit{cache} do navegador previamente carregada. Esses dois cenários foram analisados separadamente, mas comparados para mostrar o efeito da \textit{cache} no desempenho de um \textit{website}.
 
-Todos os dados de tempo de carregamento das páginas analisadas foram coletados via \textit{JavaScript}. O (ANEXO X - será criado quando o código estiver pronto) contém o código do \textit{script} utilizado para a coleta de dados.
+Todos os dados de tempo de carregamento das páginas analisadas foram coletados via \textit{JavaScript}. %O (ANEXO X - será criado quando o código estiver pronto) contém o código do \textit{script} utilizado para a coleta de dados.
 
 \section{Análise de resultados}
+\label{sec:analisederesultados}
 
 As técnicas que apresentaram resultados diferentes entre as versões do protocolo HTTP foram estudadas para entender a causa dessas mudanças. Caso tenham sido identificados os fatores que afetam a técnica em questão, essa técnica foi modificada para funcionar no HTTP/2. Caso tenha sido concluído que de nenhuma forma a técnica pode diminuir o tempo de carregamento de páginas \textit{web} na nova versão do protocolo, essa foi descartada. Ao final, cada uma das novas funcionalidades do HTTP/2 foi analisada a procura de novas alternativas para otimização de desempenho.

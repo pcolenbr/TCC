@@ -1,0 +1,24 @@
+%
+% Documento: Conclusão
+%
+
+\chapter{Conclusão}
+\label{chap:conclusao}
+
+A primeira etapa deste trabalho foi dedicada à compreensão dos conceitos teóricos necessários para a realização dos testes futuros e preparação do ambiente de teste.
+
+Este trabalho mostrou que investigar tecnologias muito novas é um grade desafio. O processo de busca de material para o estudo do protocolo HTTP/2 gastou mais tempo do que o esperado e, apesar de todo o esforço despendido, poucos documentos confiáveis foram encontrados. Contudo, foi possível entender as características e funcionalidades do novo protocolo a custo de se atrasar o cronograma planejado.
+
+Após compreender as diferenças existentes entre as versões do protocolo HTTP e analisar, uma a uma, as técnicas de otimização de desempenho propostas por Steve Souders, ficou claro que nem todas elas precisam ser testadas. Essa análise prévia ajudou a economizar esforços que seriam gastos na criação de testes previsíveis. Apesar da maioria das técnicas analisadas terem sido excluídas dos testes, acredita-se que o esforço para demonstrar o funcionamento das que serão testadas irá ajudar os desenvolvedores a compreender como podem criar páginas \textit{web} mais rápidas para o HTTP/2, garantindo assim uma melhor qualidade da \textit{Web} para todos.
+
+A configuração do ambiente para os testes provou-se um desafio maior do que o esperado. Com a falta de um módulo oficial da Apache de suporte para o HTTP/2, foi necessário utilizar uma versão não oficial criada por desenvolvedores autônomos. Apesar deste modulo seguir a descrição do rascunho oficial do HTTP/2, \cite{HTTP2Spec}, não se pode garantir que o seu funcionamento será exatamente o mesmo do oficial quando este for lançado. Ainda que não invalide os testes que serão feitos, a falta de um módulo oficial é um fator de preocupação para a análise dos resultados que serão coletados.
+
+A \textit{Web} não pára de crescer desde sua criação por Tim Berners-Lee e os usuários são cada dia mais exigentes. A otimização do desempenho de \textit{front-end} é uma maneira barata de se melhorar o tempo de carregamento de uma página \textit{web} que pode ser utilizada por qualquer \textit{website} e aplicação e por isso deveria ser mais explorada.
+
+\section{Próximas etapas}
+\label{sec:proximas_etapas}
+
+Este trabalho entrará agora em sua etapa final. Durante os próximos meses, serão construídas páginas de teste para as técnicas escolhidas e estas serão testadas nas versões HTTP/1.1 e HTTP/2. Após os testes individuais de cada técnica, elas serão testadas em um \textit{website} completo. Espera-se que elas se provem eficientes em diminuir o tempo de carregamento das páginas deste \textit{website} e que quando unidas com o HTTP/2 sejam ainda mais poderosas.
+
+Um ponto importante que surgiu da análise do HTTP/2 foi a identificação de características e funcionalidades que podem ser utilizadas para a criação de novas técnicas de otimização de desempenho de \textit{front-end}, específicas para essa versão do protocolo. Na próxima etapa deste trabalho, caso essas características e funcionalidades tenham sido implementadas no módulo escolhido, pretende-se fazer uma análise mais profunda delas para propor novas técnicas e testá-las.
+

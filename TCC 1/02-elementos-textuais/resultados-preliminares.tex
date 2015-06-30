@@ -1,0 +1,138 @@
+%
+% Documento: Resultados Preliminares
+%
+
+\chapter{Resultados Preliminares}
+\label{chap:resultados-preliminares}
+
+Para a primeira etapa do trabalho, as técnicas propostas por Steve Souders foram analisadas e foi decidido quais delas seriam testadas na segunda etapa. Além disso, foram configurados a máquina e o servidor Apache que seriam utilizados para a realização dos testes.
+
+Este capítulo apresenta os resultados obtidos até o momento.
+
+\section{\textit{Técnicas selecionadas para teste}}
+\label{sec:tecnicasselecionadasparateste}
+Os livros de Steve Souders descrevem várias técnicas para a otimização de \textit{websites}, mas como explicado na seção \autoref{sec:selecaodastecnicasdemelhoradedesempenho} do \autoref{chap:metodologia}, nem todas as técnicas serão afetadas pela mudança de protocolo ou estão dentro do escopo deste trabalho. Para determinar quais técnicas serão testadas, foi feita uma análise individual de cada uma delas.
+
+\subsection{Faça menos requisições HTTP}
+\label{subsec:preliminares_tec1}
+Apesar da certeza de que diminuir o número de requisições HTTP diminui o tempo de carregamento de uma página \textit{web}, a característica de multiplexação do HTTP/2 mudará a velocidade das requisições paralelas. Com isso acredita-se que as técnicas de \textbf{juntar arquivos externos} e \textbf{criar CSS \textit{sprites}} não irão melhorar o desempenho do \textit{website} e sim prejudicá-lo. Sendo assim essas duas técnicas serão testadas. 
+
+\subsection{Use Redes de Entrega de Conteúdo (CDN)}
+\label{subsec:preliminares_tec2}
+Além de aumentar o número de conexões paralelas, o uso de CDNs tem como objetivo diminuir a distância geográfica entre o usuário e o componente requisitado. Diminuir a distância física entre dois pontos sempre acarretará em um tempo mais curto de resposta. Com isso em mente, essa técnica não será alterada pelo novo protocolo e, por isso, não será testada.
+
+\subsection{Adicione cabeçalhos de expiração}
+\label{subsec:preliminares_tec3}
+A \textit{cache} continuará sendo uma das maiores ferramentas de auxílio ao desempenho. Utilizar cabeçalhos de expiração melhora o funcionamento da \textit{cache} e, consequentemente, diminui o tempo de carregamento das páginas \textit{web}. Essa técnica não será testada.
+
+\subsection{Utilize \textit{gzip} no componentes}
+\label{subsec:preliminares_tec4}
+Juntamento com o HTTP/2 foi desenvolvido o HPACK que será o novo modelo de compressão de dados do protocolo. Então, o \textit{gzip} deixará de ser utilizado e essa técnica deixará de ser válida. Sendo assim, essa técnica não será testada.
+
+\subsection{Coloque folhas de estilo no topo da página}
+\label{subsec:preliminares_tec5}
+O objetivo principal dessa técnica é melhorar a responsividade das páginas \textit{web} e não diminuir o seu tempo de carregamento, logo, está fora do escopo deste trabalho. Portanto, essa técnica não será testada.
+
+\subsection{Coloque \textit{scripts} no fim da página}
+\label{subsec:preliminares_tec6}
+Assim como a técnica \autoref{subsec:preliminares_tec5}, essa técnica não tem como objetivo reduzir do tempo de carregamento das páginas. Então, ela está fora do escopo deste trabalho e não será testada.
+
+\subsection{Evite expressões CSS}
+\label{subsec:preliminares_tec7}
+Expressões CSS não são mais utilizadas pelos desenvolvedores por causa dos danos que podem causar às páginas \textit{web}. Como a prática caiu em desuso, não é relevante testa-la para o novo protocolo.
+
+\subsection{Faça arquivos \textit{JavaScripts} e folhas de estilo externos}
+\label{subsec:preliminares_tec8}
+Arquivos \textit{JavaScripts} e folhas de estilo externos podem ser salvos em \textit{cache} e por isso devem ser utilizados ao invés de codificação dentro de arquivos HTML. Como a \textit{cache} ainda deve ser uma prioridade para páginas \textit{web} essa técnica não sofrerá alteração com a mudança de protocolo. Com isso, essa técnica não será testada.
+
+\subsection{Reduza o número de pesquisas de DNS}
+\label{subsec:preliminares_tec9}
+A pesquisa por DNSs que não estão em \textit{cache} será alterada com a nova versão do protocolo HTTP. Acredita-se que essas pesquisas não serão mais tão danosas ao tempo de carregamento de páginas \textit{web}. Essa técnica será testada para confirmar essa hipótese.
+
+
+\subsection{Minimizar arquivo \textit{JavaScript}}
+\label{subsec:preliminares_tec10}
+Respostas menores sempre serão vantajosas para o desempenho de uma página. Sendo assim essa técnica continuará funcionando, independente da versão do protocolo HTTP utilizada e, por isso, não será testada.
+
+\subsection{Evite redirecionamentos}
+\label{subsec:preliminares_tec11}
+Nos HTTP/1.0 e HTTP/1.1 o redirecionamento era muito danoso ao desempenho das páginas \textit{web} pois era necessário o envio de pelo menos duas requisições para se conseguir a página desejada. Com o HTTP/2 espera-se que esse processo seja mais rápido e o desempenho dos redirecionamentos melhor. Então, essa técnica será testada.
+
+\subsection{Remova \textit{scripts} duplicados}
+\label{subsec:preliminares_tec12}
+\textit{Scripts} duplicados aumentam o tamanho dos arquivos e isso faz com que as requisições HTTP sejam mais lentas. Essa técnica não será testada pois requisições maiores são mais lentas independente da versão do protocolo HTTP.
+
+\subsection{Configure \textit{ETags}}
+\label{subsec:preliminares_tec13}
+Apesar de serem uma forma de controlar o funcionamento da \textit{cache} dos navegadores, as \textit{ETags} podem acabar atrapalhando mais do que ajudando, por isso Steve Sourders aconselha que sejam desativadas. Como não são utilizadas em larga escala não são relevantes ao escopo deste trabalho. Sendo assim, essa técnica não será testada.
+
+\subsection{Habilite \textit{cache} para AJAX}
+\label{subsec:preliminares_tec14}
+A \textit{cache} melhora o desempenho de páginas \textit{web} independente da versão do protocolo HTTP. Como essa técnica não será afetada pela implantação do HTTP/2 ela não será testada.
+
+\subsection{Dividindo carga inicial}
+\label{subsec:preliminares_tec15}
+O objetivo de dividir a carga inicial é melhorar a responsividade da página, mas essa técnica não afeta o tempo total de carregamento. Por esse motivo ela não será testada.
+
+\subsection{Carregando \textit{scripts} sem bloqueios}
+\label{subsec:preliminares_tec16}
+A característica de bloqueio no carregamento de \textit{scripts} é definida pelo HTML5 e não pelo protocolo HTTP. Sendo assim, ela continuará existindo no HTTP/2 e por isso deve-se evitar colocar \textit{scripts} no topo das páginas \textit{web}. Como continuará sendo um problema independente da versão do protocolo, essa técnica não será testada.
+
+\subsection{Lidando com \textit{scripts} assíncronos}
+\label{subsec:preliminares_tec17}
+Com as funcionalidades de dependência e prioridade do HTTP/2, \textit{scripts} assíncronos não serão mais um problema e essa técnica tende a cair em desuso. Para confirmar essa hipótese, essa técnica será testada.
+
+\subsection{Posicionando blocos de \textit{scripts} em linha}
+\label{subsec:preliminares_tec18}
+O posicionamento de \textit{scripts} em linha é importante para evitar que as páginas fiquem bloqueadas para o usuário. Essa característica é determinada pelo HTML5 e por isso não terá alteração no HTTP/2. Sendo assim, essa técnica não será testada.
+
+\subsection{Escrevendo \textit{JavaScripts} eficientes}
+\label{subsec:preliminares_tec19}
+Escrever \textit{Javascripts} eficientes podem melhorar o funcionamento de uma página e diminuir o tempo de carregamento. Mas está fora do escopo deste trabalho analisar a eficiência de \textit{scripts} e por essa razão essa técnica não será testada.
+
+\subsection{Escalando usando \textit{Comet}}
+\label{subsec:preliminares_tec20}
+O \textit{Comet} melhora o desempenho de aplicações com um número muito grande de chamadas AJAX, mas está fora do escopo deste trabalho analisar o funcionamento dessa técnica. Sendo assim, ela não será testada.
+
+\subsection{Otimizando imagens}
+\label{subsec:preliminares_tec21}
+Otimizar imagens tem como objetivo reduzir o tamanho desses arquivos. Como requisições menores sempre apresentarão desempenho melhor, essa técnica não será alterada pela mudança de versão do protocolo. Logo, ela não será testada.
+
+\subsection{Quebrando domínios dominantes}
+\label{subsec:preliminares_tec22}
+Domínios dominantes diminuem a possibilidade de paralelismo do HTTP. Mas no HTTP/2 a maneira de lidar com o carregamento de componentes que estão no mesmo domínio será alterada graças à multiplexação. Por isso, essa técnica será testada.
+
+\subsection{Entregando o documento cedo}
+\label{subsec:preliminares_tec23}
+Dividir a carga inicial possibilita que as páginas comecem a ser carregadas mais cedo e isso diminui o tempo total de carregamento. Apesar de em primeira análise não parecer que essa técnica sofrerá alterações, isso vai depender de como o HTTP/2 lida com as funções de descarga das linguagens de \textit{back-end}. Logo, essa técnica será testada.
+
+\subsection{Usando \textit{Iframes} com moderação}
+\label{subsec:preliminares_tec24}
+\textit{Iframes} são os componentes HTML que mais prejudicam o tempo de carregamento de uma página por precisarem realizar novas requisições para conseguir seu conteúdo. Por isso, continua sendo aconselhado não utiliza-los e eles continuarão afetando \textit{websites} negativamente. Como suas características são definidas pelo HTML5 e não pelo HTTP, essa técnica não será testada.
+
+\subsection{Simplificando seletor CSS}
+\label{subsec:preliminares_tec25}
+Apesar de diminuírem o tempo de carregamento da página (em escala muito pequena), a pesquisa de seletores CSS é definida pelos navegadores e não pelo protocolo HTTP. Sendo assim, essa técnica está fora do escopo deste trabalho e, por essa razão, não será analisada.
+
+
+\input{./06-quadros/resultados-preliminares/teste}
+
+
+\section{\textit{Configuração}}
+\label{sec:configuracao}
+
+A configuração do ambiente necessário para a realização dos testes passou pelas seguintes etapas:
+
+\begin{enumerate}
+	\item Aquisição de máquina virtual no serviço Amazon EC2
+	\item Instalação do sistema operacional Ubuntu 14.04 LTS
+	\item Instalação de servidor Apache 2
+	\item Aquisição e configuração de certificado SSL
+	\item Instalação de modulo \textit{mod\_spdy} \footnote{O \textit{mod\_spdy} é um módulo para o servidor Apache desenvolvido pela Google. Como foi o HTTP/2 foi desenvolvido com base no protocolo SPDY, o \textit{mod\_spdy} possui características similares as que serão encontradas na nova versão do protocolo.}
+	\title{Etapas da configuração do ambiente}
+	\label{list:lista_configuracao}
+\end{enumerate}
+
+Vale ressaltar a importância do item 4 da lista \autoref{list:lista_configuracao}. Apesar de não ter sido aprovada a obrigatoriedade do protocolo TSL para o uso do HTTP/2, o \textit{mod\_spdy} exige um certificado de segurança e a ativação do módulo \textit{mod\_ssl} \footnote{http://httpd.apache.org/docs/2.2/mod/mod\_ssl.html} para funcionar.
+
+Após configurar a máquina e o servidor de testes, ainda foi necessário habilitar o navegador para aceitar o protocolo HTTP/2. Tal funcionalidade está disponível nos navegadores Google Chrome e Mozilla Firefox. Para o navegador da Google bastou ativar a aceitação ao protocolo SPDY/4, que é considerado o equivalente ao HTTP/2. Já no Firefox foi preciso mudar o valor da variável \textit{network.http.spdy.enabled.http2} para verdadeiro dentro das configurações. Essas opções vêm desativadas por padrão, pois o HTTP/2 ainda não recebeu uma versão oficial para os servidores e ainda é considerado um protocolo em fase de testes.
