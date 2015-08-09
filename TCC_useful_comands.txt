@@ -1,0 +1,26 @@
+Check Apache mods:
+ . apache2ctl -M
+
+Activate mod_expires:
+ . a2enmod expires
+ 
+Google Chrome:
+ . about:cache
+ . about:dns
+ 
+The following should go into the /etc/apache2/sites-available/000-default.config
+Configure Expires Header:
+ . Ex:
+	<IfModule mod_expires.c>
+		<FilesMatch "\.(jpe?g|png|gif|js|css)$">
+			ExpiresActive On
+			ExpiresDefault "access plus 1 week"
+		</FilesMatch>
+	</IfModule>
+	
+Remove ETags
+	Header unset Pragma
+	FileETag None
+	Header unset ETag 
+	
+OBS: CHROME NÃO VAI USAR CACHE SE EU DER REFRESH NA PÁGINA. APENAS SE EU ACESSA-LA VIA UM LINK
