@@ -3,43 +3,49 @@
 app.controller('appController', function ($scope, $http, $interval) {
 	$scope.testData = {
 		url: '',
-		times: 1,
-		browser: ''
+		times: 1
 	}
 
-	$scope.testResult;
+	$scope.testResult = {};
 
 	var apiKey = "A.b5b826959702a0a5b767f9d822bc15a1";
 	var testFinish;
+	var browsersLocations = {
+		chrome: 'ec2-us-east-1:Chrome',
+		ie: 'ec2-us-east-1:IE 11'
+		// ,
+		// firefox: 'ec2-us-east-1:Firefox',
+		// safari: 'ec2-us-east-1:Safari'
+	}
 
-	var poll = function(url){
+	var testPoll = function(url, key){
 		testFinish = $interval(function () {			            
         	$http.get(url).then(function (results) {
-        		console.log("11");
-        		$scope.testResult = results;
+				if(results.data.statusCode == 200) {
+					$scope.testResult.key = results.data;
 					$scope.stopTest();
-				// if(results.data.statusCode == 200) {
-				// 	$scope.testResult = results;
-				// 	$scope.stopTest();
-				// }			
+				}			
 			});    
-        }, 1000);
+        }, 5000);
 	}
 
 	$scope.stopTest = function () {
-		console.log("OI");
 		$interval.cancel(testFinish);
+		console.log($scope.testResult);
 	}
 
 	$scope.executeTest = function () {
-		$http.post("http://www.webpagetest.org/runtest.php?url=www.aol.com&f=json&k=" + apiKey).then(function (results) {
-			console.log(results);
-			
-			poll(results.data.data.jsonUrl);
+		var testUrl = '';
+		for (var key in browsersLocations) {
+			testUrl = "http://www.webpagetest.org/runtest.php?url=" + $scope.testData.url + "&k=" + apiKey + "&runs=" + $scope.testData.times + "&location=" + browsersLocations[key] + "&label=" + key + "&f=json&noimages=1";
 
-			// var myWindow = window.open("data:text/html," + encodeURIComponent(results.data),
-			//                        "_blank");
-			// myWindow.focus();
-		});
+			$http.post(testUrl).then(function (results) {
+				console.log(results.data.data.jsonUrl);
+			
+				testPoll(results.data.data.jsonUrl, key);
+			});
+		}
 	};
+
+
 });
