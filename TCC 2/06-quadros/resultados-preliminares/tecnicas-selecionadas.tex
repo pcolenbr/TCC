@@ -1,0 +1,65 @@
+\begin{quadro}[!htb]
+	\centering
+	\caption{Técnicas selecionadas.\label{qua:tecnicasselecionadas}}
+\end{quadro}
+\begin{tabularx}{\textwidth}{| X | X |}
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Técnicas que serão testadas}} \\
+	\hline
+	\textbf{Técnica} & \textbf{Motivo} \\
+	\hline
+	Faça menos requisições HTTP & A multiplexação mudará a velocidade de carregamento das requisições paralelas. \\
+	\hline
+	Reduza o número de pesquisas de DNS & A pesquisa por DNSs que não estão em \textit{cache} será alterada com a nova versão do protocolo HTTP. \\
+	\hline
+	Lidando com \textit{scripts} assíncronos & Com as funcionalidades de dependência e prioridade do HTTP/2, \textit{scripts} assíncronos não serão mais um problema e essa técnica tende a cair em desuso. \\
+	\hline
+	Evite redirecionamentos & Com o HTTP/2 espera-se que o processo de redirecionamento seja mais rápido e o desempenho dos redirecionamentos melhor. \\
+	\hline
+	Quebrando domínios dominantes & Domínios dominantes diminuem a possibilidade de paralelismo do HTTP. Mas no HTTP/2 a maneira de lidar com o carregamento de componentes que estão no mesmo domínio será alterada graças à multiplexação. \\
+	\hline
+	Entregando o documento cedo & Dividir a carga inicial possibilita que as páginas comecem a ser carregadas mais cedo e isso diminui o tempo total de carregamento. Apesar de em primeira análise não parecer que essa técnica sofrerá alterações, isso vai depender de como o HTTP/2 lida com as funções de descarga das linguagens de \textit{back-end}. \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Técnicas que não serão testadas}} \\
+	\hline
+	\textbf{Técnica} & \textbf{Motivo} \\
+	\hline
+	Use Redes de Entrega de Conteúdo (CDN) & Diminuir a distância física entre dois pontos sempre acarretará em um tempo mais curto de resposta. \\
+	\hline
+	Adicione cabeçalhos de expiração & Utilizar cabeçalhos de expiração melhora o funcionamento da \textit{cache} e, consequentemente, diminui o tempo de carregamento das páginas \textit{web}. \\
+	\hline
+	Utilize \textit{gzip} no componentes & O HPACK que será o novo modelo de compressão de dados do protocolo. \\
+	\hline
+	Coloque folhas de estilo no topo da página & O objetivo principal dessa técnica é melhorar a responsividade das páginas \textit{web} e não diminuir o seu tempo de carregamento. \\
+	\hline
+	Coloque \textit{scripts} no fim da página & Essa técnica não tem como objetivo reduzir do tempo de carregamento das páginas. \\
+	\hline
+	Evite expressões CSS & Expressões CSS não são mais utilizadas pelos desenvolvedores. \\
+	\hline
+	Faça arquivos \textit{JavaScripts} e folhas de estilo externos & Arquivos \textit{JavaScripts} e folhas de estilo externos podem ser salvos em \textit{cache} e isso sempre melhorará o desempenho da páginas. \\
+	\hline
+	Minimizar arquivo \textit{JavaScript} & Respostas menores sempre serão vantajosas para o desempenho de uma página. \\
+	\hline
+	Remova \textit{scripts} duplicados & \textit{Scripts} duplicados aumentam o tamanho dos arquivos e isso faz com que as requisições HTTP sejam mais lentas. \\
+	\hline
+	Configure \textit{ETags} & Como não são utilizadas em larga escala não são relevantes ao escopo deste trabalho. \\
+	\hline
+	Habilite \textit{cache} para AJAX & A \textit{cache} melhora o desempenho de páginas \textit{web} independente da versão do protocolo HTTP. \\
+	\hline
+	Dividindo carga inicial & O objetivo de dividir a carga inicial é melhorar a responsividade da página, mas essa técnica não afeta o tempo total de carregamento. \\
+	\hline
+	Carregando \textit{scripts} sem bloqueios & A característica de bloqueio no carregamento de \textit{scripts} é definida pelo HTML5 e não pelo protocolo HTTP. \\
+	\hline
+	Posicionando blocos de \textit{scripts} em linha & O posicionamento de \textit{scripts} em linha é importante para evitar que as páginas fiquem bloqueadas para o usuário. Essa característica é determinada pelo HTML5 e por isso não terá alteração no HTTP/2. \\
+	\hline
+	Escrevendo \textit{JavaScripts} eficientes & Está fora do escopo deste trabalho analisar a eficiência de \textit{scripts}. \\
+	\hline
+	Escalando usando \textit{Comet} & O \textit{Comet} melhora o desempenho de aplicações com um número muito grande de chamadas AJAX, mas está fora do escopo deste trabalho analisar o funcionamento dessa técnica. \\
+	\hline
+	Otimizando imagens & Otimizar imagens tem como objetivo reduzir o tamanho desses arquivos. Como requisições menores sempre apresentarão desempenho melhor. \\
+	\hline
+	Usando \textit{Iframes} com moderação & Continua sendo aconselhado não utilizar \textit{Iframes} pois eles continuarão afetando \textit{websites} negativamente. \\
+	\hline
+	Simplificando seletor CSS & Apesar de diminuírem o tempo de carregamento da página (em escala muito pequena), a pesquisa de seletores CSS é definida pelos navegadores e não pelo protocolo HTTP. \\
+	\hline
+\end{tabularx}

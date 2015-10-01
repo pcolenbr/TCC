@@ -20,21 +20,16 @@ app.controller('appController', function ($scope, $http, $interval) {
 	var testPoll = function(url, key){
 		testFinish[key] = $interval(function () {			            
         	$http.get(url).then(function (results) {
-        		console.log("2 - " + key);
 				if(results.data.statusCode == 200) {
-					console.log(200);
 					$scope.testResult[key] = results.data;
 					stopTest(key);
 				}			
 			});    
         }, 5000);
-        console.log(testFinish);
 	};
 
 	var stopTest = function (key) {
 		$interval.cancel(testFinish[key]);
-		console.log("kill");
-		console.log(testFinish[key]);
 	};
 
 	var startTest = function (url, key) {
@@ -48,7 +43,7 @@ app.controller('appController', function ($scope, $http, $interval) {
 	$scope.executeTest = function () {
 		var testUrl = '';
 		for (var key in browsersLocations) {
-			testUrl = "http://www.webpagetest.org/runtest.php?url=" + $scope.testData.url + "&k=" + apiKey + "&runs=" + $scope.testData.times + "&location=" + browsersLocations[key] + "&label=" + key + "&f=json&noimages=1";
+			testUrl = "http://www.webpagetest.org/runtest.php?url=" + $scope.testData.url + "&k=" + apiKey + "&runs=" + $scope.testData.times + "&location=" + browsersLocations[key] + "&label=" + key + "&f=json&noimages=1&ignoreSSL=1";
 			
 			startTest(testUrl, key);
 		}
