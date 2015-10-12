@@ -68,26 +68,33 @@ Os testes foram realizados em navegadores \textit{web}, o que torna o processo i
 \subsection{Considerações inicias}
 \label{consideracoesiniciais}
 
-O nghttp2 permite a escolha do uso de HTTP/2 de duas maneiras:
+O \textit{nghttp2} permite a escolha do uso de HTTP/2 de duas maneiras:
 \begin{enumerate}
 	\item Utilização do \textit{nghttpx} para a criação de um \textit{proxy} para servidor HTTP/1.1
 	\item Utilização do servidor \textit{nghttpd}
 \end{enumerate}
 
-Utilizar a primeira opção significa que o navegador vai mandar uma requisição HTTP/2 para a porta que o \textit{proxy} está escutando. Essa requisição vai então ser traduzida para pelo \textit{proxy}, que vai transforma-lá em uma requisição HTTP/1.1 e vai redireciona-lá para o servidor HTTP/1.1 que está escutando outra porta. O servidor HTTP/1.1 vai fazer todas as tarefas necessárias e vai retornar uma resposta HTTP/1.1 para o \textit{proxy}, que vai traduzi-la de volta para o HTTP/2 e retorna-la para o navegador. Esse processo está ilustrado na ADICIONAR FIGURA.
+Utilizar a primeira opção significa que o navegador vai mandar uma requisição HTTP/2 para a porta que o \textit{proxy} está escutando. Essa requisição vai então ser traduzida pelo \textit{proxy}, que vai transforma-lá em uma requisição HTTP/1.1 e vai redireciona-lá para o servidor HTTP/1.1 que está escutando outra porta. O servidor HTTP/1.1 vai fazer todas as operações necessárias e vai retornar uma resposta HTTP/1.1 para o \textit{proxy}, que vai traduzi-la para o HTTP/2 e retorna-la para o navegador. Esse processo está ilustrado na \autoref{fig:http2diagram}.
+
+\begin{figure}[!htb]
+    \centering
+    \caption{Diagrama de funcionamento de proxy HTTP/2.}
+    \includegraphics[width=1.0\textwidth]{./04-figuras/desenvolvimento/http2_proxy_diagram}
+    \label{fig:http2diagram}
+\end{figure}
 
 Apesar de parecer muito custoso, a implementação desse \textit{proxy} já garante ao usuário uma melhora de desempenho de seu servidor, isso porque a comunicação HTTP/2 é mais rápida e melhora o paralelismos das conexões. Além disso, o \textit{proxy} ainda possibilita o uso de funcionalidades especificas do HTTP/2, como o \textit{Server Push}.
 
-A segunda opção utiliza o servidor embutido dentro do nghttp para fazer todo o trabalho. Dessa forma o navegador se comunica com esse servidor que faz todo o processamento necessário e retorna a resposta para o navegador. Tudo isso utilizando o protocolo HTTP/2. A desvantagem desse método é que o \textit{nghttpd} não possui um arquivo de configuração, o que é uma característica típica de servidores como o Apache e o Nginx, e por isso ele acaba sendo limitado em alguns casos. Por exemplo, ainda não é possível utilizar o \textit{Server Push} com o \textit{nghttpd}, pois para configurar essa funcionalidade é necessário um arquivo de configuração.
+A segunda opção utiliza o \textit{nghttpd}, um servidor completo embutido dentro do \textit{nghttp2}, para fazer todo o trabalho. Dessa forma o navegador se comunica com esse servidor que faz todo o processamento necessário e retorna a resposta para o navegador. Tudo isso utilizando o protocolo HTTP/2. A desvantagem desse método é que o \textit{nghttpd} não possui um arquivo de configuração, que é uma característica típica de servidores como o Apache e o Nginx, e por isso ele acaba sendo limitado em alguns casos. Por exemplo, ainda não é possível utilizar o \textit{Server Push} com o \textit{nghttpd}, pois para configurar essa funcionalidade é necessário um arquivo de configuração.
 
-Como os servidores de teste para cada protocolo já são diferentes, houve um grande esforço para deixar as outras configurações do ambiente as mais similares possíveis, tentando evitar diferenças de desempenho. Sendo assim a escolha pela configuração utilizando o \textit{nghttpx} foi descartada. O redirecionamento via \textit{proxy} acrescentaria mais uma etapa no processo de comunicação cliente-servidor, e mesmo que se um outro \textit{proxy} fosse configurado para o servidor HTTP/1.1, ainda assim existe a etapa de tradução que não teria como ser simulada. Com isso, a configuração escolhida foi o uso do \textit{nghttpd}.
+Como os servidores de teste para cada protocolo já são diferentes, houve um grande esforço para deixar as configurações de ambiente restantes as mais similares possíveis, tentando assim evitar diferenças de desempenho provindas de outras configurações além da mudança de protocolo. Dessa forma, a escolha pela configuração utilizando o \textit{nghttpx} foi descartada. O redirecionamento via \textit{proxy} acrescentaria mais uma etapa no processo de comunicação cliente-servidor, e mesmo que se um \textit{proxy} fosse configurado para o servidor HTTP/1.1, ainda assim existe a etapa de tradução que não teria como ser simulada. Com isso, a configuração escolhida foi o uso do \textit{nghttpd}.
 
-Como dito anteriormente, apesar de o HTTP/2 ter sido pensado inicialmente para funcionar apenas sob o protocolo TLS para melhorar a segurança da \textit{Web}, essa proposta não foi aprovada e o protocolo pode ser executado tanto com certificados de segurança como sem. Sendo assim, a intenção inicial era executar os testes nos dois ambientes, HTTP e HTTPS, contudo o \textit{nghttpd} não funcionou corretamente quando o certificado de segurança foi retirado e por isso os testes foram executados apenas com o protocolo HTTPS. Esse tipo de falha no servidor, embora seja um problema para aplicações que querem utilizar do novo protocolo, são esperadas, pois a tecnologia ainda é muito nova e não houve tempo ábil para corrigir todos os erros.
+Como dito anteriormente, apesar de o HTTP/2 ter sido pensado inicialmente para funcionar apenas sob o protocolo TLS para melhorar a segurança da \textit{Web}, essa proposta não foi aprovada e o protocolo pode ser executado tanto com certificados de segurança como sem. Inicialmente a intenção era executar os testes nos dois ambientes, HTTP e HTTPS, contudo o \textit{nghttpd} não funcionou corretamente quando foi executado sem um certificado de segurança por isso os testes foram feitos apenas com o protocolo HTTPS. Esse tipo de falha no servidor, embora seja um problema para aplicações que querem utilizar do novo protocolo, são esperadas, pela tecnologia ser ainda muito nova e não houve tempo ábil para corrigir todos os defeitos.
 
 \subsection{Utilizando o \textit{nghttpd}}
 \label{utilizandoonghttpd}
 
-Para utilizar o \textit{nghttpd} é necessário uma porta possa ser escutada pelo novo servidor, um arquivo de certificado digital e uma chave para tal certificado. Então, tendo o \textit{nghttp2} instalado basta executar o seguinte comando:
+Para utilizar o \textit{nghttpd} foi necessário uma porta possa ser escutada pelo novo servidor, um arquivo de certificado digital e uma chave para tal certificado. Então, tendo o \textit{nghttp2} instalado, basta executar o seguinte comando:
 
 \textbf{sudo nghttpd 83 /etc/apache2/ssl/dreamtech.key /etc/apache2/ssl/dreamtech.crt -d/var/www/html/tcc -v}
 
@@ -105,7 +112,7 @@ Com isso o servidor para o protocolo HTTP/2 já está funcionando, apontando par
 \subsection{Técnicas Escolhidas}
 \label{tecnicasescolhidas}
 
-Após análise das técnicas propostas por Steven Souders em seus livros, foi concluído que cinco técnicas podem sofrer alterações com a implantação do novo protocolo. São essas:
+Após análise das técnicas propostas por Steve Souders em seus livros, foi concluído que cinco técnicas podem sofrer alterações com a implantação do novo protocolo. São essas:
 
 \begin{enumerate}
 	\item Faça menos requisições HTTP
@@ -117,26 +124,28 @@ Após análise das técnicas propostas por Steven Souders em seus livros, foi co
 
 Das cinco técnicas listadas acima apenas três puderão ser testadas. Isso porque para testar a técnica 3 (três) é necessário um arquivo de configurações, o que ainda não é suportado pelo \textit{nghttpd} e a funcionalidade que melhorará o desempenho da técnica 4 (quatro) ainda não foi implementada no \textit{nghttp2}.
 
-Sendo assim apenas três técnicas propostas por Steven Souder foram testadas. Mas, para complementar a análise da melhora de desempenho causada pelo HTTP/2, um quarto teste foi feito utilizando um \textit{template} pronto e simplesmente o executando no HTTP/1.1 e depois no HTTP/2.
+Sendo assim apenas três técnicas propostas por Steve Souder foram testadas. Mas, para complementar a análise da melhora de desempenho causada pelo HTTP/2, um quarto teste foi feito utilizando um \textit{template} pronto e simplesmente o executando no HTTP/1.1 e depois no HTTP/2.
 
-Para cada teste foram criados projetos HTML separados, dessa forma o comportamento de uma técnica não interfere na outra. Além disso foram escolhidos arquivos CSS e \textit{javascript} de maneira aleatória para a realização dos testes. Esses arquivos são de bibliotecas famosas e não foram alterados, apenas concatenados na realização de testes que necessitavam minificação. As bibliotecas escolhidas foram:
+Para cada teste foram criados projetos HTML separados. Dessa forma o comportamento de uma técnica não interfere na outra. Além disso, foram escolhidos arquivos CSS e \textit{javascript} de maneira aleatória para a realização dos testes. Esses arquivos são de bibliotecas famosas e não foram alterados, apenas concatenados na realização de testes que necessitavam o uso dessa técnica. As bibliotecas escolhidas foram:
 
 \begin{itemize}
-	\item Animate CSS: \textit{https://daneden.github.io/animate.css/}
-	\item Bootstrap: \textit{http://getbootstrap.com/}
-	\item JQuery: \textit{https://jquery.com/}
-	\item Font Awesome: \textit{https://fortawesome.github.io/Font-Awesome/}
-	\item Full Calendar: \textit{http://fullcalendar.io/}
-	\item Normalize: \textit{https://necolas.github.io/normalize.css/}
-	\item Skeleton: \textit{http://getskeleton.com/}
-	\item Angular JS: \textit{https://angularjs.org/}
-	\item Backbone JS: \textit{http://backbonejs.org/}
-	\item D3: \textit{http://d3js.org/}
-	\item Ember JS: \textit{http://emberjs.com/}
-	\item High Charts: \textit{http://www.highcharts.com/}
-	\item Moment JS: \textit{http://momentjs.com/}
-	\item Require JS: \textit{http://requirejs.org/}
+	\item Animate CSS (\textit{https://daneden.github.io/animate.css/})
+	\item Bootstrap (\textit{http://getbootstrap.com/})
+	\item JQuery (\textit{https://jquery.com/})
+	\item Font Awesome (\textit{https://fortawesome.github.io/Font-Awesome/})
+	\item Full Calendar (\textit{http://fullcalendar.io/})
+	\item Normalize (\textit{https://necolas.github.io/normalize.css/})
+	\item Skeleton (\textit{http://getskeleton.com/})
+	\item Angular JS (\textit{https://angularjs.org/})
+	\item Backbone JS (\textit{http://backbonejs.org/})
+	\item D3 (\textit{http://d3js.org/})
+	\item Ember JS (\textit{http://emberjs.com/})
+	\item High Charts (\textit{http://www.highcharts.com/})
+	\item Moment JS (\textit{http://momentjs.com/})
+	\item Require JS (\textit{http://requirejs.org/})
 \end{itemize}
+
+Com o intuito de estressar a conexão simulando melhor o número de requisições de um site real, nos três primeiros testes, foram inseridas na página 28 imagens de diferentes tamanhos e formatos. Essa imagens são aleatórias e nunca são alteradas.
 
 Abaixo encontram-se a explicações de cada teste e os códigos fontes podem ser encontrados anexados ao final deste trabalho.
 
@@ -145,26 +154,25 @@ Abaixo encontram-se a explicações de cada teste e os códigos fontes podem ser
 
 Para a realização desse teste vários arquivos CSS e \textit{javascript} foram inseridos na página. Primeiramente os arquivos são inseridos separadamente e depois são concatenados e inseridos de uma só vez. A soma dos tamanhos dos arquivos separados é 285kB maior do que a soma dos arquivos concatenados, isso ocorre por causa da remoção de espaços em branco.
 
-Com o intuito de estressar a conexão simulando melhor o número de requisições de um site real, foram inseridas na página 28 imagens de diferentes tamanhos e formatos. Essa imagens são aleatórias e nunca são alteradas.
-
 O código para o teste com arquivos separados pode ser encontrado no \autoref{apend:codigo_facamenosrequisicoeshttp_sep} e o código para o teste com os arquivos concatenados no \autoref{apend:codigo_facamenosrequisicoeshttp_concat}.
 
 \subsubsection{Reduza o número de pesquisas DNS}
 \label{reduzaonumerodepesquisasdns}
 
-Nesse teste os mesmos arquivos CSS e \textit{javascript} do teste \ref{facamenosrequisicoeshttp} foram utilizados, mas dessa vez, ao invés de serem hospedados juntamente com o arquivo HTML, eles foram inseridos via CDN. Sendo assim a diferença está no numero de CDNs utilizadas. Enquanto no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_mult} são utilizadas 4 CNDs diferentes, no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_unic} apenas uma é utilizada. Com isso, no primeiro teste são feitas quatro consultas de DNS e no segundo apenas uma.
+Nesse teste os mesmos arquivos CSS e \textit{javascript} do teste \ref{facamenosrequisicoeshttp} foram utilizados, mas dessa vez, ao invés de serem hospedados no mesmo servidor dos arquivos HTML, eles foram inseridos via CDN. Sendo assim a diferença está no numero de CDNs utilizadas. Enquanto no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_mult} são utilizadas 4 CNDs diferentes, no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_unic} apenas uma é utilizada. Com isso, no primeiro teste são feitas quatro consultas de DNS e no segundo apenas uma.
 
 \subsubsection{Quebrando domínios dominantes}
 \label{quebrandodominiosdominantes}
 
-Enquanto que no teste \autoref{reduzaonumerodepesquisasdns} o número de pesquisas de DNS vai um extremo ao outro, passa de 4 para 1, nesse teste as medições são repetidas para 2 e 3 DNS diferentes na página, com o intuito de se encontrar o número ideal de consultas de DNS que diminui o tempo de pesquisas e aumenta o paralelismo das requisições. O código para esse teste encontra-se no \autoref{apend:quebrandodominiodominantes}.
+Enquanto que no teste \autoref{reduzaonumerodepesquisasdns} o número de pesquisas de DNS vai de um extremo ao outro, passa de 4 para 1, nesse teste as medições são repetidas para 2 e 3 DNS diferentes na página, com o intuito de se encontrar o número ideal de consultas de DNS que diminui o tempo de pesquisas e aumenta o paralelismo das requisições. O código para esse teste encontra-se no \autoref{apend:quebrandodominiodominantes}.
 
 \subsection{Realização dos testes}
 \label{realizacaodostestes}
 
-Para iniciar os testes foi necessário garantir que os navegadores escolhidos estavam com a opção de realizar requisições HTTP/2 habilitada. Enquanto que no Google Chrome está opção já vem habilitada por padrão e não existe mais jeito de desabilita-la, no Mozilla Firefox foi necessário seguir o procedimento descrito à seguir para garantir que o navegador fizesse as requisições com o novo protocolo.
+Para iniciar os testes foi necessário garantir que os navegadores escolhidos estavam com a opção de realizar requisições HTTP/2 habilitada. Enquanto que nas versões mais atuais do Google Chrome está opção já vem habilitada por padrão e não existe mais uma forma de desabilita-la, no Mozilla Firefox foi necessário seguir o procedimento descrito abaixo para garantir que o navegador fizesse as requisições com o novo protocolo.
 
 \begin{enumerate}
+	\item Abre o navegador
 	\item Digite \textit{about:config} na barra de navegação
 	\item Confirme que deseja alterar as configurações do seu navegador
 	\item Na barra de pesquisa, procure por \textit{network.http.spdy.enabled.http2draft}
@@ -173,24 +181,24 @@ Para iniciar os testes foi necessário garantir que os navegadores escolhidos es
 	\item Clique duas vezes na preferência e confirma que seu resultado foi alterado para verdadeiro	
 \end{enumerate}
 
-Em seguida, para garantir que os navegadores estavam fazendo requisições HTTP/2, bastou iniciar o servidor \textit{nghttpd} e utilizar as ferramentas de desenvolvedor de cada navegador.
+Por fim, para garantir que os navegadores estavam fazendo requisições HTTP/2, bastou iniciar o servidor \textit{nghttpd} e utilizar as ferramentas de desenvolvedor de cada navegador.
 
 \begin{figure}[!htb]
     \centering
     \caption{Ferramentas do desenvolvedor do Google Chrome mostrando protocolo usado na requisição.}
-    \includegraphics[width=0.7\textwidth]{./04-figuras/desenvolvimento/http2_chrome}
+    \includegraphics[width=1.0\textwidth]{./04-figuras/desenvolvimento/http2_chrome}
     \label{fig:httpcontenttype2011}
 \end{figure}
 
 \begin{figure}[!htb]
     \centering
     \caption{Ferramentas do desenvolvedor do Mozilla Firefox mostrando protocolo usado na requisição.}
-    \includegraphics[width=0.7\textwidth]{./04-figuras/desenvolvimento/http2_firefox}
+    \includegraphics[width=1.0\textwidth]{./04-figuras/desenvolvimento/http2_firefox}
     \label{fig:httpcontenttype2011}
 \end{figure}
 
-Esse processo garantiu que o servidor e os navegadores funcionam, pois ambos podem se comunicar utilizando o protocolo HTTP/2. Sendo assim, pôde se dar inicio o processo de realização dos testes.
+Esse processo garantiu que o servidor e os navegadores funcionam, pois ambos podem se comunicar utilizando o protocolo HTTP/2. Sendo assim, pôde se dar inicio ao processo de realização dos testes.
 
-Como o servidor \textit{nghttpd} não possui um arquivo de configuração, foi necessário colocar cada caso de teste em pastas diferentes e quando um caso novo ia ser testado o servidor tinha de ser reiniciado e apontado para outra pasta.
+Como o servidor \textit{nghttpd} não possui um arquivo de configuração, foi necessário colocar cada caso de teste em pastas diferentes e quando um caso novo fosse ser testado o servidor tinha de ser reiniciado e apontado para outra pasta.
 
 Para cada técnica de otimização escolhida a página foi carregado 20 vezes utilizando o protocolo HTTP/1.1 no servidor \textit{Nginx} e 20 vezes utilizando o protocolo HTTP/2 no servidor \textit{nghttpd}. Os tempos de carregamentos das páginas foram registrado e foram calculadas as médias e medianas para cada técnica de otimização.

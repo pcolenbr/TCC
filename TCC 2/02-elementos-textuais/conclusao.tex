@@ -1,0 +1,27 @@
+%
+% Documento: Conclusão
+%
+
+\chapter{Conclusão}
+
+A \textit{Web} é a aplicação mais utilizada na rede mundial de computadores, a Internet, e grande parte das trocas de informações na \textit{Web} ocorrem utilizando o protocolo HTTP. O protocolo HTTP define cabeçalhos para requisições e respostas e com esses cabeçalhos consegue formalizar como será feita a transferência de dados entre clientes e servidores. Após quase 17 anos o protocolo finalmente está para receber uma atualização e a a versão conhecida como HTTP/2 foi aprovada e está sendo adotada aos poucos.
+
+Dentro da \textit{Web} os \textit{websites} são ferramentas muito importantes para a economia global e o dia a dia de bilhões de pessoas. A medida que a \textit{Web} foi evoluindo os \textit{websites} deixaram de ser páginas estáticas com conteúdo textual e passaram a interagir com os usuários, passaram a se movimentar e a depender de imagens e vídeos para transmitir as ideias desejadas por seus proprietários. O problema do aumento de elementos visuais nas páginas \textit{web} é que eles aumentam a quantidade de dados que trafegam na rede, e mesmo com a melhora na velocidade das conexões mais tem de ser feito para garantir a qualidade do serviço. Durante muitos anos todo o tempo dedicado à otimização de desempenho de \textit{websites} focou-se no \textit{back-end}, até que Steve Souders mostrou que 80-90\% do tempo de carregamento das páginas era gasto no \textit{front-end}. Por esse motivo Souders propôs várias técnicas que poderiam ser utilizadas para tornar as páginas \textit{web} mais rápidas e comprovou a eficacia dessas técnicas no HTTP/1.1.
+
+Este trabalho tentou analisar como as técnicas propostas por Steve Souders se comportariam quando aplicadas em páginas \textit{web} que utilizassem o protocolo HTTP/2. Como pré-requisito à análise das técnicas, foi feita uma comparação entre as versões HTTP/1.1 e HTTP/2 e antes de começar qualquer configuração ou implementação, foi necessário definir quais técnicas poderiam sofrer alterações com a mudança de versão do protocolo. Sabendo quais técnicas seriam testadas foi feita uma busca por implementações gratuitas do novo protocolo e a configuração de um servidor para servir um único \textit{websie} nas versões HTTP/1.1 e HTTP/2. Com o servidor funcionando bastou comparar o tempo de carregamento das páginas nas diferentes versões.
+
+Como o protocolo HTTP/2 ainda é muito recente não foi possível encontrar um único servidor que tivesse suporte à ele e ao HTTP/1.1. Então, após várias tentativas falhas com outras implementações, ficou definido que o \textit{nghttp2} seria a implementação escolhida para se executar o HTTP/2. Já para a execução do HTTP/1.1, a decisão ficou entre os servidores Apache e Nginx. Por apresentar melhor desempenho de carregamento de páginas o Nginx foi o escolhido. Apesar de a utilização de servidores diferentes para executar cada versão do procolo dificultar a comparação de desempenho entre eles, acreditava-se que seria possível ver as vantagens do HTTP/2 e o efeito que ele teria nas técnicas analisadas.
+
+No entanto o que ocorreu foi que, apesar de apresentar um comportamento diferente do HTTP/1.1, aumentando o paralelismo dos \textit{downloads} dos componentes de uma página, o HTTP/2 acabou apresentando desempenho pior do que o HTTP/1.1. Além disso a análise das técnicas de Steve Souders escolhidas não foram os esperados.
+
+Apesar de ser difícil de explicar o motivo que as testes não obtiveram os resultados esperados, acredita-se que as diferenças entre os servidores possam ter sido determinantes para o tempo de carregamento das páginas. Além disso, como o protocolo HTTP/2 ainda é muito novo e não possui uma versão oficial estável é de se esperar que ela ainda não esteja completamente funcional.
+
+\section{Principais contribuições}
+\label{principaiscontribuicoes}
+
+Ainda que os resultados esperados não tenham sido obtidos, este trabalho é uma importante ferramenta de comparação entre as diferentes versões do protocolo HTTP e de explicação do que se esperar no novo protocolo HTTP/2. Não obstante, ele demonstra maneiras errôneas de se configurar o módulo \textit{mod\_h2}, que será o módulo oficial para o HTTP/2 no servidor Apache, que podem evitar que novas tentativas de configuração falhem. Por fim, este trabalho apresenta uma maneira detalhada de como se configurar o \textit{nghttp2}, que é o projeto de código aberto mais estável da nova versão do protocolo.
+
+\section{Trabalhos futuros}
+\label{trabalhosfuturos}
+
+Tendo em vista os esforços feitos para se definir uma nova versão para o protocolo HTTP, acredita-se que existiraá um esforço da comunidade para a implantação e expansão do mesmo. Dessa forma novas implementações do HTTP/2 surgiram ao longo dos próximos anos e versões estáveis e oficiais são aguardadas em breve. Quando o protocolo se popularizar serão necessárias análises detalhas do efeito das técnicas utilizadas para o HTTP/1.1 na nova versão. Além disso serão necessárias novas técnicas de otimização de desempenho que funcionem especificamente para o HTTP/2.
