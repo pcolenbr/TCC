@@ -4,14 +4,74 @@
 
 \chapter{Desenvolvimento}
 
-O desenvolvimento desse trabalho passou por três etapas principais, a configuração do servidor de teste, a implementação dos testes e a execução dos testes. Neste capítulo serão descritos os detalhes dessas três etapas e as dificuldades encontradas em cada uma delas.
+O desenvolvimento desse trabalho passou por três etapas principais, a configuração do servidor de testes, a implementação dos testes e a execução dos testes. Neste capítulo serão descritos os detalhes dessas três etapas e as dificuldades encontradas em cada uma delas.
+
+\section{Técnicas Escolhidas}
+\label{tecnicasescolhidas}
+
+Após análise das técnicas propostas por Steve Souders em seus livros, foi concluído que cinco técnicas podem sofrer alterações com a implantação do novo protocolo. São essas:
+
+\begin{enumerate}
+	\item Faça menos requisições HTTP
+	\item Reduza o número de pesquisas DNS
+	\item Evite redirecionamentos
+	\item Lidando com \textit{scripts} assíncronos
+	\item Quebrando domínios dominantes
+\end{enumerate}
+
+Das cinco técnicas listadas acima apenas quatro puderão ser testadas. Isso porque e a funcionalidade que melhorará o desempenho da técnica 4 (quatro) ainda não foi implementada no servidor de teste escolhidos. Mas, para complementar a análise da melhora de desempenho causada pelo HTTP/2, um quinto teste foi feito utilizando um \textit{template} de página \textit{web} e simplesmente o executando no HTTP/1.1 e depois no HTTP/2.
+
+Para cada teste foram criados projetos HTML separados. Dessa forma o comportamento de uma técnica não interfere na outra. Além disso, foram escolhidos arquivos CSS e \textit{javascript} de maneira aleatória para a realização dos testes. Esses arquivos são de bibliotecas famosas e não foram alterados, apenas concatenados na realização de testes que necessitavam o uso dessa técnica. As bibliotecas escolhidas foram:
+
+\begin{itemize}
+	\item Animate CSS (\textit{https://daneden.github.io/animate.css/})
+	\item Bootstrap (\textit{http://getbootstrap.com/})
+	\item JQuery (\textit{https://jquery.com/})
+	\item Font Awesome (\textit{https://fortawesome.github.io/Font-Awesome/})
+	\item Full Calendar (\textit{http://fullcalendar.io/})
+	\item Normalize (\textit{https://necolas.github.io/normalize.css/})
+	\item Skeleton (\textit{http://getskeleton.com/})
+	\item Angular JS (\textit{https://angularjs.org/})
+	\item Backbone JS (\textit{http://backbonejs.org/})
+	\item D3 (\textit{http://d3js.org/})
+	\item Ember JS (\textit{http://emberjs.com/})
+	\item High Charts (\textit{http://www.highcharts.com/})
+	\item Moment JS (\textit{http://momentjs.com/})
+	\item Require JS (\textit{http://requirejs.org/})
+\end{itemize}
+
+Com o intuito de estressar a conexão simulando melhor o número de requisições de um site real, nos quatro primeiros testes, foram inseridas na página 28 imagens de diferentes tamanhos e formatos. Essa imagens são aleatórias e nunca são alteradas.
+
+Abaixo encontram-se a explicações de cada teste e os códigos fontes podem ser encontrados anexados ao final deste trabalho.
+
+\subsubsection{Faça menos requisições HTTP}
+\label{facamenosrequisicoeshttp}
+
+Para a realização desse teste vários arquivos CSS e \textit{javascript} foram inseridos na página. Primeiramente os arquivos são inseridos separadamente e depois são concatenados e inseridos de uma só vez. A soma dos tamanhos dos arquivos separados é 285kB maior do que a soma dos arquivos concatenados, isso ocorre por causa da remoção de espaços em branco.
+
+O código para o teste com arquivos separados pode ser encontrado no \autoref{apend:codigo_facamenosrequisicoeshttp_sep} e o código para o teste com os arquivos concatenados no \autoref{apend:codigo_facamenosrequisicoeshttp_concat}.
+
+\subsubsection{Reduza o número de pesquisas DNS}
+\label{reduzaonumerodepesquisasdns}
+
+Nesse teste os mesmos arquivos CSS e \textit{javascript} do teste \ref{facamenosrequisicoeshttp} foram utilizados, mas dessa vez, ao invés de serem hospedados no mesmo servidor dos arquivos HTML, eles foram inseridos via CDN. Sendo assim a diferença está no numero de CDNs utilizadas. Enquanto no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_mult} são utilizadas 4 CNDs diferentes, no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_unic} apenas uma é utilizada. Com isso, no primeiro teste são feitas quatro consultas de DNS e no segundo apenas uma.
+
+\subsubsection{Evite redirecionamentos}
+\label{eviteredirecionamentos}
+
+A realização desse teste não depende apenas da página \textit{web} utilizada, mas também de mudanças na configuração do servidor. Sendo assim a página \textit{web} utilizada para o primeiro teste também foi reutilizada e foi feita uma mudança no arquivo de configuração do servidor. Essa mudança definia que casa uma requisição fosse recebida pelo servidor em uma determinada porta, ela deveria ser redirecionada para outra porta.
+
+\subsubsection{Quebrando domínios dominantes}
+\label{quebrandodominiosdominantes}
+
+Enquanto que no teste \autoref{reduzaonumerodepesquisasdns} o número de pesquisas de DNS vai de um extremo ao outro, passa de 4 para 1, nesse teste as medições são repetidas para 2 e 3 DNS diferentes na página, com o intuito de se encontrar o número ideal de consultas de DNS que diminui o tempo de pesquisas e aumenta o paralelismo das requisições. O código para esse teste encontra-se no \autoref{apend:quebrandodominiodominantes}.
 
 \section{O servidor}
 \label{oservidor}
 
 Em poucas palavras, um servidor é um programa de computador que recebe requisições e envia respostas. Na \textit{Web}, o tipo mais comum de requisição e resposta são as requisições e respostas HTTP. Sendo assim, a função primaria de um servidor \textit{web} é aguardar por requisições HTTP e servir páginas \textit{web}.
 
-Os servidores \textit{web} mais populares do mundo atualmente são o Apache\footnote{http://www.apache.org/} e o Nginx\footnote{http://nginx.org/}.
+Para este trabalho três servidores foram considerados. Os dois primeiras são servidores \textit{web} mais populares do mundo atualmente são o Apache\footnote{http://www.apache.org/} e o Nginx\footnote{http://nginx.org/}. Mas como esses servidores ainda não possuem versões oficiais estáveis que suportem o HTTP/2, o \textit{nghttp2} foi o servidor considerado para lidar com o novo protocolo.
 
 \subsection{Apache}
 \label{apache}
@@ -23,14 +83,21 @@ O servidor \textit{web} Apache foi lançado em 1995 por um grupo de entusiastas 
 
 Assim como o Apache, o Nginx é um projeto de código livre de servidor HTTP. Começou a ser desenvolvido em 2002 e teve sua primeira versão pública lançada em 2004. A motivação para a criação do Nginx foi encontrar uma solução para o problema C10K\footnote{http://www.kegel.com/c10k.html}, que diz que um servidor \textit{web} deve suportar 10 mil conexões paralelas. Sendo assim, como explica \citeonline{Nginx}, o servidor foi construído com um arquitetura completamente assíncrona que beneficia de pequenos serviços de hospedagem à grandes sistemas de computação paralela.
 
+\subsubsection{Nghttp2}
+\label{nghttp2}
+
+O \textit{nghttp}, desenvolvido por \citeonline{nghttp}, é uma implementação em linguagem C do HTTP/2 e do protocolo de compressão HPACK. Essa implementação possui um cliente, um servidor, um \textit{proxy} e uma ferramente de teste para o servidor. O mod\_h2, escolhido para ser o módulo oficial do Apache, usa o \textit{nghttp2} como base de sua implementação. Apesar do nome sugerir que existe alguma ligação entre o Nginx e o \textit{nghttp2}, não foi possível encontrar nada que relacione os dois servidores.
+
+Apesar de os passos para a instalação do \textit{nghttp2} estarem documentados no site do projeto, algumas etapas importantes sobre instalação de dependências necessárias para fazer a aplicação funcionar corretamente não estão bem explicadas. Sendo assim, foram encontradas dificuldades no processo de instalação. Mas após superar essas dificuldades a aplicação foi configurada e foi possível confirmar seu funcionamento com a ajuda de um navegador que estava aceitando requisições e respostas HTTP/2. O processo de instalação está descrito no \autoref{apend:configurandonghttp2}.
+
 \subsection{A escolha do servidor}
 \label{aescolhadoservidor}
 
 Para executar os testes propostos foi necessário utilizar um servidor que suportasse tanto requisições HTTP/1.1 quanto HTTP/2. Como o HTTP/2 ainda é recente, encontrar um servidor com tal característica se mostrou um grande desafio.
 
-Existem várias implementações do protocolo no mercado, cada uma com características diferentes e em estados diferentes de maturidade\footnote{Para obter mais informações sobre as diferentes implementações do HTTP/2 acesse o link a seguir. https://github.com/http2/http2-spec/wiki/Implementations}. Mas o grande problema é que a grande maioria dessas implementações são privadas e especificas para as empresas que as desenvolveram. Para o Apache e o Nginx ainda não foram lançadas versões oficiais do protocolo.
+Existem várias implementações do protocolo no mercado, cada uma com características diferentes e em estados diferentes de maturidade\footnote{Para obter mais informações sobre as diferentes implementações do HTTP/2 acesse o link a seguir. https://github.com/http2/http2-spec/wiki/Implementations}. Mas o grande problema é que a grande maioria dessas implementações são privadas e especificas para as empresas que as desenvolveram. Até o dia 1 de Agosto de 2015 (data quando os testes foram executados pela primeira vez) não existiam versões oficiais do protocolo para o Apache e o Nginx.
 
-Apesar de não existir uma versão oficial do HTTP/2 para o Apache, existe um projeto de código aberto chamado \textit{mod\_h2}, desenvolvido por \citeonline{ModH2}, que se tornará a versão oficial do protocolo quando atingir um nível de maturidade e estabilidade considerado aceitável pela Apache Foundation. Já para o Nginx, não existe ainda uma extensão oficial nem um projeto de grande porte que implemente o novo protocolo dentro do servidor. Sendo assim o Apache seria a melhor escolha de servidor de teste.
+Apesar de não existir uma versão oficial do HTTP/2 para o Apache, existe um projeto de código aberto chamado \textit{mod\_h2}, desenvolvido por \citeonline{ModH2}, que se tornará a versão oficial do protocolo quando atingir um nível de maturidade e estabilidade considerado aceitável pela Apache Foundation. Como para o Nginx não existia ainda uma extensão que implementasse o novo protocolo dentro do servidor, o Apache seria a melhor escolha de servidor de teste.
 
 As instruções para a instalação do mod\_h2 podem ser encontradas no site oficial do módulo e incluem:
 \begin{enumerate}
@@ -41,27 +108,20 @@ As instruções para a instalação do mod\_h2 podem ser encontradas no site ofi
 	\item Ativar suporte ao novo protocolo
 \end{enumerate}
 
-Apesar da simplicidade, após várias tentativas, não foi concluir a configuração do módulo. Os arquivos foram compilados e foi gerado o arquivo executável necessário para a utilização do mod\_h2. Sendo assim, o próximo passo seria configurar o servidor para utilizar o novo protocolo como preferencial nas requisições e respostas HTTP. Mas, apesar de seguir todas as instruções descritas no site do mod\_h2, não foi possível fazer com que o Apache executasse o HTTP/2. O processo final utilizado está descrito no \autoref{apend:tentativadeconfiguracaomodh2}.
+Apesar da simplicidade, após várias tentativas, não foi possível concluir a configuração do módulo. Os arquivos foram compilados e foi gerado o arquivo executável necessário para a utilização do mod\_h2. Sendo assim, o próximo passo seria configurar o servidor para utilizar o novo protocolo como preferencial nas requisições e respostas HTTP. Mas, apesar de seguir todas as instruções descritas no site do mod\_h2, não foi possível fazer com que o Apache executasse o HTTP/2. O processo final utilizado está descrito no \autoref{apend:tentativadeconfiguracaomodh2}.
 
-Como a configuração do servidor Apache falhou e o Nginx ainda não possuí suporte para o HTTP/2, foi necessário encontrar uma solução alternativa para executar o protocolo.
+Como a configuração do servidor Apache falhou, foi necessário encontrar uma solução alternativa para executar o protocolo.
 
-\subsubsection{O nghttp2}
-\label{onghttp2}
-
-O \textit{nghttp}, desenvolvido por \citeonline{nghttp}, é uma implementação em linguagem C do HTTP/2 e do protocolo de compressão HPACK. Essa implementação possui um cliente, um servidor, um \textit{proxy} e uma ferramente de teste para o servidor. O próprio mod\_h2, escolhido para ser o módulo oficial do Apache, usa o \textit{nghttp2} como base de sua implementação. Apesar do nome sugerir que existe alguma ligação entre o Nginx e o \textit{nghttp2}, não foi possível encontrar nada que relacione os dois servidores.
-
-Apesar de os passos para a instalação do \textit{nghttp2} estarem documentados no site do projeto, algumas etapas importantes sobre instalação de dependências necessárias para fazer a aplicação funcionar corretamente não estão bem explicadas. Sendo assim, foram encontradas dificuldades no processo de instalação. Mas após superar essas dificuldades a aplicação foi configurada e foi possível confirmar seu funcionamento com a ajuda de um navegador que estava aceitando requisições e respostas HTTP/2. O processo de instalação está descrito no \autoref{apend:configurandonghttp2}.
-
-\subsubsection{Escolha final}
-\label{escolhafinal}
+\subsubsection{A primeira escolha do servidor}
+\label{aprimeiraescolhadoservidor}
 
 Apesar dos esforços para encontrar um servidor que suportasse às várias versões do protocolo HTTP, tal feito não foi possível. Sendo assim, ficou decido que seriam utilizados dois servidores diferentes para a realização dos testes, um para o HTTP/1.1 e outro para o HTTP/2.
 
 Como o \textit{nghttp2} foi o único servidor com suporte ao HTTP/2 que a instalação foi feita com sucesso, ele foi escolhido como o servidor de teste para o novo protocolo. E por apresentar performance melhor do que o Apache, o Nginx foi escolhido como o servidor de teste para o HTTP/1.1.
 
 
-\section{Descrição dos testes}
-\label{descricaodostestes}
+\section{Execução dos testes}
+\label{execuçãodostestes}
 
 Os testes foram realizados em navegadores \textit{web}, o que torna o processo independente do sistema operacional. Mas o servidor foi configurado em uma máquina utilizando o sistema Ubuntu 14.04LTS, sendo assim, vale ressaltar, que os comandos descritos não vão necessariamente funcionar em sistemas operacionais diferentes do utilizado neste trabalho.
 
@@ -109,70 +169,13 @@ Para utilizar o \textit{nghttpd} foi necessário uma porta possa ser escutada pe
 
 Com isso o servidor para o protocolo HTTP/2 já está funcionando, apontando para a pasta /var/www/html/tcc e já pode ser acessado pela porta 83.
 
-\subsection{Técnicas Escolhidas}
-\label{tecnicasescolhidas}
-
-Após análise das técnicas propostas por Steve Souders em seus livros, foi concluído que cinco técnicas podem sofrer alterações com a implantação do novo protocolo. São essas:
-
-\begin{enumerate}
-	\item Faça menos requisições HTTP
-	\item Reduza o número de pesquisas DNS
-	\item Evite redirecionamentos
-	\item Lidando com \textit{scripts} assíncronos
-	\item Quebrando domínios dominantes
-\end{enumerate}
-
-Das cinco técnicas listadas acima apenas três puderão ser testadas. Isso porque para testar a técnica 3 (três) é necessário um arquivo de configurações, o que ainda não é suportado pelo \textit{nghttpd} e a funcionalidade que melhorará o desempenho da técnica 4 (quatro) ainda não foi implementada no \textit{nghttp2}.
-
-Sendo assim apenas três técnicas propostas por Steve Souder foram testadas. Mas, para complementar a análise da melhora de desempenho causada pelo HTTP/2, um quarto teste foi feito utilizando um \textit{template} pronto e simplesmente o executando no HTTP/1.1 e depois no HTTP/2.
-
-Para cada teste foram criados projetos HTML separados. Dessa forma o comportamento de uma técnica não interfere na outra. Além disso, foram escolhidos arquivos CSS e \textit{javascript} de maneira aleatória para a realização dos testes. Esses arquivos são de bibliotecas famosas e não foram alterados, apenas concatenados na realização de testes que necessitavam o uso dessa técnica. As bibliotecas escolhidas foram:
-
-\begin{itemize}
-	\item Animate CSS (\textit{https://daneden.github.io/animate.css/})
-	\item Bootstrap (\textit{http://getbootstrap.com/})
-	\item JQuery (\textit{https://jquery.com/})
-	\item Font Awesome (\textit{https://fortawesome.github.io/Font-Awesome/})
-	\item Full Calendar (\textit{http://fullcalendar.io/})
-	\item Normalize (\textit{https://necolas.github.io/normalize.css/})
-	\item Skeleton (\textit{http://getskeleton.com/})
-	\item Angular JS (\textit{https://angularjs.org/})
-	\item Backbone JS (\textit{http://backbonejs.org/})
-	\item D3 (\textit{http://d3js.org/})
-	\item Ember JS (\textit{http://emberjs.com/})
-	\item High Charts (\textit{http://www.highcharts.com/})
-	\item Moment JS (\textit{http://momentjs.com/})
-	\item Require JS (\textit{http://requirejs.org/})
-\end{itemize}
-
-Com o intuito de estressar a conexão simulando melhor o número de requisições de um site real, nos três primeiros testes, foram inseridas na página 28 imagens de diferentes tamanhos e formatos. Essa imagens são aleatórias e nunca são alteradas.
-
-Abaixo encontram-se a explicações de cada teste e os códigos fontes podem ser encontrados anexados ao final deste trabalho.
-
-\subsubsection{Faça menos requisições HTTP}
-\label{facamenosrequisicoeshttp}
-
-Para a realização desse teste vários arquivos CSS e \textit{javascript} foram inseridos na página. Primeiramente os arquivos são inseridos separadamente e depois são concatenados e inseridos de uma só vez. A soma dos tamanhos dos arquivos separados é 285kB maior do que a soma dos arquivos concatenados, isso ocorre por causa da remoção de espaços em branco.
-
-O código para o teste com arquivos separados pode ser encontrado no \autoref{apend:codigo_facamenosrequisicoeshttp_sep} e o código para o teste com os arquivos concatenados no \autoref{apend:codigo_facamenosrequisicoeshttp_concat}.
-
-\subsubsection{Reduza o número de pesquisas DNS}
-\label{reduzaonumerodepesquisasdns}
-
-Nesse teste os mesmos arquivos CSS e \textit{javascript} do teste \ref{facamenosrequisicoeshttp} foram utilizados, mas dessa vez, ao invés de serem hospedados no mesmo servidor dos arquivos HTML, eles foram inseridos via CDN. Sendo assim a diferença está no numero de CDNs utilizadas. Enquanto no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_mult} são utilizadas 4 CNDs diferentes, no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_unic} apenas uma é utilizada. Com isso, no primeiro teste são feitas quatro consultas de DNS e no segundo apenas uma.
-
-\subsubsection{Quebrando domínios dominantes}
-\label{quebrandodominiosdominantes}
-
-Enquanto que no teste \autoref{reduzaonumerodepesquisasdns} o número de pesquisas de DNS vai de um extremo ao outro, passa de 4 para 1, nesse teste as medições são repetidas para 2 e 3 DNS diferentes na página, com o intuito de se encontrar o número ideal de consultas de DNS que diminui o tempo de pesquisas e aumenta o paralelismo das requisições. O código para esse teste encontra-se no \autoref{apend:quebrandodominiodominantes}.
-
-\subsection{Realização dos testes}
-\label{realizacaodostestes}
+\subsection{A primeira execução dos testes}
+\label{aprimeiraexecucaodostestes}
 
 Para iniciar os testes foi necessário garantir que os navegadores escolhidos estavam com a opção de realizar requisições HTTP/2 habilitada. Enquanto que nas versões mais atuais do Google Chrome está opção já vem habilitada por padrão e não existe mais uma forma de desabilita-la, no Mozilla Firefox foi necessário seguir o procedimento descrito abaixo para garantir que o navegador fizesse as requisições com o novo protocolo.
 
 \begin{enumerate}
-	\item Abre o navegador
+	\item Abra navegador
 	\item Digite \textit{about:config} na barra de navegação
 	\item Confirme que deseja alterar as configurações do seu navegador
 	\item Na barra de pesquisa, procure por \textit{network.http.spdy.enabled.http2draft}
@@ -187,18 +190,67 @@ Por fim, para garantir que os navegadores estavam fazendo requisições HTTP/2, 
     \centering
     \caption{Ferramentas do desenvolvedor do Google Chrome mostrando protocolo usado na requisição.}
     \includegraphics[width=1.0\textwidth]{./04-figuras/desenvolvimento/http2_chrome}
-    \label{fig:httpcontenttype2011}
 \end{figure}
 
 \begin{figure}[!htb]
     \centering
     \caption{Ferramentas do desenvolvedor do Mozilla Firefox mostrando protocolo usado na requisição.}
     \includegraphics[width=1.0\textwidth]{./04-figuras/desenvolvimento/http2_firefox}
-    \label{fig:httpcontenttype2011}
 \end{figure}
 
 Esse processo garantiu que o servidor e os navegadores funcionam, pois ambos podem se comunicar utilizando o protocolo HTTP/2. Sendo assim, pôde se dar inicio ao processo de realização dos testes.
 
 Como o servidor \textit{nghttpd} não possui um arquivo de configuração, foi necessário colocar cada caso de teste em pastas diferentes e quando um caso novo fosse ser testado o servidor tinha de ser reiniciado e apontado para outra pasta.
 
-Para cada técnica de otimização escolhida a página foi carregado 20 vezes utilizando o protocolo HTTP/1.1 no servidor \textit{Nginx} e 20 vezes utilizando o protocolo HTTP/2 no servidor \textit{nghttpd}. Os tempos de carregamentos das páginas foram registrado e foram calculadas as médias e medianas para cada técnica de otimização.
+Para cada técnica de otimização escolhida a página foi carregado 25 vezes utilizando o protocolo HTTP/1.1 no servidor \textit{Nginx} e 25 vezes utilizando o protocolo HTTP/2 no servidor \textit{nghttpd}. Os tempos de carregamentos das páginas foram registrado e foram calculadas as médias e medianas para cada técnica de otimização.
+
+\subsection{Problemas nos resultados}
+\label{problemasnosresultados}
+
+Após a execução dos testes, percebeu-se que os resultados obtidos não foram os esperados. O HTTP/2 estava tendo resultados piores do que o HTTP/1.1 para todos os cenários de teste e as técnicas que não se esperava que funcionassem no novo protocolo, continuavam gerando tempos de carregamento diferentes. Por esse motivo e levando em conta que o HTTP/2 é uma tecnologia muito nova que está evoluindo de maneira acelerada, após a conclusão de que os resultados obtidos com o \textit{nghttp2} não eram satisfatórios, foi feita nova procura por servidores \textit{web} com suporte à nova versão do protocolo HTTP.
+
+\section{A escolha final do servidor}
+\label{aescolhafinaldoservidor}
+
+
+No dia 22 de Setembro foi lançada uma nova versão não estável do Nginx que possuía suporte às duas versões do protocolo HTTP, sendo que o suporte ao HTTP/2 funcionava apensas para conexões segura, ou seja, utilizando o protocolo de segurança SSL. Até o momento a versão do servidor utilizada para a realização dos testes em HTTP/1.1 era a versão estável 1.6.2, a nova versão com suporte ao HTTP/2 é a 1.9.5. Dessa forma ficou decidido que o essa nova versão seria utilizada para os testes dos dois protocolos.
+
+Para instalar a versão 1.9.5 do Nginx foi necessário remover por completo a versão antiga, inserir o repositório de arquivos nas configurações do sistema operacional e instalar novamente o servidor. Abaixo encontra-se o passo-a-passo dessa instalação.
+
+\begin{enumerate}
+	\item Remova a versão antiga do servidor: \textit{sudo apt-get purge nginx nginx-common}
+	\item Adicione o novo repositório às configurações do sistema:
+		\begin{center}
+			\textit{sudo nano /etc/apt/source.list}
+			Adicione as duas linhas abaixo ao final do arquivo
+			\textit{deb http://nginx.org/packages/mainline/ubuntu/ trusty nginx}
+			\textit{deb-src http://nginx.org/packages/mainline/ubuntu/ trusty nginx}
+		\end{center}
+	\item Atualize seu repositório: \textit{sudo apt-get update}
+	\item Limpe a \textit{cache} do serviço de instalação e instale a nova versão do servidor: \textit{sudo apt-get clean \&\& sudo apt-get install nginx}
+	\item Verifique a versão instalada: \textit{nginx --v}
+\end{enumerate}
+
+Após instalada a nova versão do Nginx, foi necessário configurar o servidor para que ele aceitasse as duas versões do protocolo HTTP. Para isso é feita a edição do arquivo padrão de configuração do Nginx, o \textit{conf.d}, que se encontra no diretório de instalação do servidor. As seguintes configurações devem estar presentes nesse arquivo para que ele aceite o HTTP/1.1 na porta 81 e o HTTP/2 na porta 82.
+
+\begin{center}
+server {
+    listen 81 ssl default\_server;
+
+    ssl\_certificate    server.crt;
+    ssl\_certificate\_key server.key;
+    ...
+}
+
+server {
+    listen 82 ssl http2 default\_server;
+
+    ssl\_certificate    server.crt;
+    ssl\_certificate\_key server.key;
+    ...
+}
+\end{center}
+
+Dessa forma, se bastou seguir o mesmo processo utilizado para confirmar o funcionamento do \textit{nghttp2} e, com a ajuda de um navegador \textit{web} com suporte ao HTTP/2, confirmar que as requisições estão sendo aceitas utilizando o HTTP/1.1 na porta 81 e o HTTP/2 na porta 82, e estão sendo servidas com respostas na versão correta do protocolo.
+
+Então os testes foram repetidos na nova configuração do servidor e mais uma vez os resultados do tempo de carregamento de cada página de teste foi registrado para análise.

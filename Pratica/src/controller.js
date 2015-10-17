@@ -12,9 +12,7 @@ app.controller('appController', function ($scope, $http, $interval) {
 	var testFinish = {};
 	var browsersLocations = {
 		chrome: 'ec2-us-east-1:Chrome',
-		ie: 'ec2-us-east-1:IE 11',
-		firefox: 'ec2-us-east-1:Firefox',
-		safari: 'ec2-us-east-1:Safari'
+		firefox: 'ec2-us-east-1:Firefox'
 	}
 
 	var testPoll = function(url, key){
