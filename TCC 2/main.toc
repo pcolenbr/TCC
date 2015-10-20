@@ -59,28 +59,30 @@
 \contentsline {subsection}{\numberline {5.2.3}A escolha do servidor}{39}{subsection.5.2.3}
 \contentsline {subsubsection}{\numberline {5.2.3.1}A primeira escolha do servidor}{40}{subsubsection.5.2.3.1}
 \contentsline {section}{\numberline {5.3}Execu\IeC {\c c}\IeC {\~a}o dos testes}{41}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Considera\IeC {\c c}\IeC {\~o}es inicias}{41}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Utilizando o \textit {nghttpd}}{42}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.1}Considera\IeC {\c c}\IeC {\~o}es iniciais}{41}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Utilizando o \textit {nghttpd}}{43}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}A primeira execu\IeC {\c c}\IeC {\~a}o dos testes}{43}{subsection.5.3.3}
 \contentsline {subsection}{\numberline {5.3.4}Problemas nos resultados}{45}{subsection.5.3.4}
 \contentsline {section}{\numberline {5.4}A escolha final do servidor}{45}{section.5.4}
 \contentsline {chapter}{\chapternumberline {6}Resultados}{47}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}Tempo de carregamento}{47}{subsection.6.0.1}
-\contentsline {subsection}{\numberline {6.0.2}Cascata}{47}{subsection.6.0.2}
-\contentsline {subsection}{\numberline {6.0.3}Discuss\IeC {\~a}o dos resultados}{49}{subsection.6.0.3}
-\contentsline {chapter}{\chapternumberline {7}Conclus\IeC {\~a}o}{50}{chapter.7}
-\contentsline {section}{\numberline {7.1}Principais contribui\IeC {\c c}\IeC {\~o}es}{51}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trabalhos futuros}{52}{section.7.2}
-\contentsline {chapter}{Refer\^encias}{53}{section*.10}
+\contentsline {subsection}{\numberline {6.0.1}An\IeC {\'a}lise do tempo de carregamento}{47}{subsection.6.0.1}
+\contentsline {subsubsection}{\numberline {6.0.1.1}Desvio padr\IeC {\~a}o}{49}{subsubsection.6.0.1.1}
+\contentsline {subsubsection}{\numberline {6.0.1.2}Cascata}{50}{subsubsection.6.0.1.2}
+\contentsline {subsection}{\numberline {6.0.2}Discuss\IeC {\~a}o dos resultados}{53}{subsection.6.0.2}
+\contentsline {subsection}{\numberline {6.0.3}Quest\IeC {\~o}es em aberto}{55}{subsection.6.0.3}
+\contentsline {chapter}{\chapternumberline {7}Conclus\IeC {\~a}o}{57}{chapter.7}
+\contentsline {section}{\numberline {7.1}Principais contribui\IeC {\c c}\IeC {\~o}es}{58}{section.7.1}
+\contentsline {section}{\numberline {7.2}Trabalhos futuros}{59}{section.7.2}
+\contentsline {chapter}{Refer\^encias}{60}{section*.10}
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{55}{section*.11}
-\contentsline {appendix}{\chapternumberline {A}Tentativa de configura\IeC {\c c}\IeC {\~a}o do mod\_h2}{56}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Configurando \textit {nghttp2}}{58}{appendix.B}
-\contentsline {subsection}{\numberline {B.0.1}Instalando depend\IeC {\^e}ncias}{58}{subsection.B.0.1}
-\contentsline {subsection}{\numberline {B.0.2}Instalando a aplica\IeC {\c c}\IeC {\~a}o}{59}{subsection.B.0.2}
-\contentsline {appendix}{\chapternumberline {C}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Separados}{60}{appendix.C}
-\contentsline {appendix}{\chapternumberline {D}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Concatenados}{62}{appendix.D}
-\contentsline {appendix}{\chapternumberline {E}Reduza o n\IeC {\'u}mero de pesquisas DNS: Multiplas CDN}{64}{appendix.E}
-\contentsline {appendix}{\chapternumberline {F}Reduza o n\IeC {\'u}mero de pesquisas DNS: \IeC {\'U}nica CDN}{66}{appendix.F}
-\contentsline {appendix}{\chapternumberline {G}Quebrando dom\IeC {\'\i }nios dominantes}{68}{appendix.G}
+\contentsline {part}{Ap\^endices}{62}{section*.11}
+\contentsline {appendix}{\chapternumberline {A}Tentativa de configura\IeC {\c c}\IeC {\~a}o do mod\_h2}{63}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Configurando \textit {nghttp2}}{65}{appendix.B}
+\contentsline {subsection}{\numberline {B.0.1}Instalando depend\IeC {\^e}ncias}{65}{subsection.B.0.1}
+\contentsline {subsection}{\numberline {B.0.2}Instalando a aplica\IeC {\c c}\IeC {\~a}o}{66}{subsection.B.0.2}
+\contentsline {appendix}{\chapternumberline {C}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Separados}{67}{appendix.C}
+\contentsline {appendix}{\chapternumberline {D}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Concatenados}{69}{appendix.D}
+\contentsline {appendix}{\chapternumberline {E}Reduza o n\IeC {\'u}mero de pesquisas DNS: Multiplas CDN}{71}{appendix.E}
+\contentsline {appendix}{\chapternumberline {F}Reduza o n\IeC {\'u}mero de pesquisas DNS: \IeC {\'U}nica CDN}{73}{appendix.F}
+\contentsline {appendix}{\chapternumberline {G}Quebrando dom\IeC {\'\i }nios dominantes}{75}{appendix.G}

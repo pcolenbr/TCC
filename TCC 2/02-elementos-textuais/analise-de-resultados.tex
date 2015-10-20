@@ -11,25 +11,25 @@ Neste capitulo são descritos e analisados os valores encontrados e são tiradas
 \subsection{Análise do tempo de carregamento}
 \label{analisedotempodecarregamento}
 
-O tempo de carregamento foi a métrica de desempenho escolhida para comparar o comportamento das páginas de teste nos diferentes protocolos. Essa métrica foi obtido com a ajuda da ferramenta de desenvolvedor de cada navegador. As tabelas TABELA TECNICA 1, TABELA TECNICA 2, TABELA TECNICA 3, TABELA TECNICA 4, mostram os resultados do tempo carregamento das páginas \textit{web} divididos por técnica analisada.
+O tempo de carregamento foi a métrica de desempenho escolhida para comparar o comportamento das páginas de teste nos diferentes protocolos. Essa métrica foi obtido com a ajuda da ferramenta de desenvolvedor de cada navegador. As tabelas \autoref{resultados-facamenosrequisicoeshttp-separados} a \autoref{resultados-template}, mostram os resultados do tempo carregamento das páginas \textit{web} divididos por técnica analisada.
 
-TABELA TECNICA 1.1
+\input{./05-tabelas/analise-de-resultados/arquivos-separados}
 
-TABELA TECNICA 1.2
+\input{./05-tabelas/analise-de-resultados/arquivos-concatenados}
 
-As TABELA TECNICA 1.1 e TABELA TECNICA 1.2 mostram os resultados obtidos com a redução de requisições HTTP concatenando arquivos CSS e JS. Diferente do esperado o HTTP/2 obteve resultados piores ou iguais ao HTTP/1.1 e ainda a concatenação dos arquivos gerou uma melhora no tempo de carregamento da página, o que não era esperado para o novo protocolo.
+As \autoref{resultados-facamenosrequisicoeshttp-separados} e \autoref{resultados-facamenosrequisicoeshttp-concatenados} mostram os resultados obtidos com a redução de requisições HTTP concatenando arquivos CSS e JS. Diferente do esperado o HTTP/2 obteve resultados piores ou iguais ao HTTP/1.1 e ainda a concatenação dos arquivos gerou uma melhora no tempo de carregamento da página, o que não era esperado para o novo protocolo.
 
-TABELA TECNICA 2.1
+\input{./05-tabelas/analise-de-resultados/cdn-multiplas}
 
-TABELA TECNICA 2.2
+\input{./05-tabelas/analise-de-resultados/cdn-unica}
 
-Analisando as TABELA TECNICA 2.1 e TABELA TECNICA 2.2 percebemos que o HTTP/2, apesar de obter desempenho melhor do que o HTTP/1.1, teve um aumento no tempo de carregamento para um número maior de CDNs. Esse aumento pode ser consequência do tempo de busca de DNS ter aumentado ou por que com as novas CDNs utilizadas possuíam desempenho ruim. Mas julgando pelo fato de todas serem CDNs grandes e muito utilizadas, devemos considerar que todas são otimizadas e possuem alto desempenho. 
+Analisando as \autoref{resultados-reduzaonumerodepesquisasdns-multiplas} e \autoref{resultados-reduzaonumerodepesquisasdns-unica} percebemos que o HTTP/2, apesar de obter desempenho melhor do que o HTTP/1.1, teve um aumento no tempo de carregamento para um número maior de CDNs. Esse aumento pode ser consequência do tempo de busca de DNS ter aumentado ou por que com as novas CDNs utilizadas possuíam desempenho ruim. Mas julgando pelo fato de todas serem CDNs grandes e muito utilizadas, devemos considerar que todas são otimizadas e possuem alto desempenho. 
 
-TABELA TECNICA 3.1
+\input{./05-tabelas/analise-de-resultados/cdn-2}
 
-TABELA TECNICA 3.2
+\input{./05-tabelas/analise-de-resultados/cdn-3}
 
-As TABELA TECNICA 3.1 e TABELA TECNICA 3.2 mostram os resultados obtidos para o tempo de carregamento da página utilizando duas e três CDNs respectivamente. Mais uma vez percebe-se que o HTTP/2 possui desempenho melhor do que o HTTP/1.1 e além disso que o número de CNDs usado interfere diretamente no tempo de carregamento da página. Apesar de o resultado esperado pela análise da especificação do novo protocolo sugerir que o número de CNDs não fosse interferir no tempo de carregamento das páginas \textit{web}.
+As \autoref{resultados-quebrandodominiosdominantes-2} e \autoref{resultados-quebrandodominiosdominantes-3} mostram os resultados obtidos para o tempo de carregamento da página utilizando duas e três CDNs respectivamente. Mais uma vez percebe-se que o HTTP/2 possui desempenho melhor do que o HTTP/1.1 e além disso que o número de CNDs usado interfere diretamente no tempo de carregamento da página. Apesar de o resultado esperado pela análise da especificação do novo protocolo sugerir que o número de CNDs não fosse interferir no tempo de carregamento das páginas \textit{web}.
 
 Outro motivo para isso pode ser o fato de as CDNs não suportarem requisições HTTP/2, sendo assim a comunicação com as CNDs ocorre através da versão antiga do protocolo, fato que acaba influenciando no ganho de desempenho que a página teria com o HTTP/2.
 
@@ -39,9 +39,9 @@ TABELA TECNICA 4.2
 
 O redirecionamento não deveria influenciar no tempo de carregamento da página no HTTP/2. Apesar disso pode se perceber que quando a página é redirecionada o desempenho da mesma é pior independente do protocolo utilizado.
 
-TABELA TECNICA 5
+\input{./05-tabelas/analise-de-resultados/template}
 
-Na tabela TABELA TECNICA 5 encontra o resultado do tempo de carregamento da página utilizando o \textit{template} escolhido. Pode se dizer que os dois protocolos tiveram o mesmo resultado, pois as diferenças são muito pequenas. Contudo era esperado que o HTTP/2 fosse mais eficiente e carregasse a página mais rapidamente.
+Na tabela \autoref{resultados-template} encontra o resultado do tempo de carregamento da página utilizando o \textit{template} escolhido. Pode se dizer que os dois protocolos tiveram o mesmo resultado, pois as diferenças são muito pequenas. Contudo era esperado que o HTTP/2 fosse mais eficiente e carregasse a página mais rapidamente.
 
 \subsubsection{Desvio padrão}
 \label{desviopadrao}

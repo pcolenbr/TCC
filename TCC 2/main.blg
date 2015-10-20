@@ -16,15 +16,15 @@ A level-1 auxiliary file: ./02-elementos-textuais/fund-teorica.aux
 A level-1 auxiliary file: ./02-elementos-textuais/trab-relacionados.aux
 A level-1 auxiliary file: ./02-elementos-textuais/metodologia.aux
 A level-1 auxiliary file: ./02-elementos-textuais/desenvolvimento.aux
+A level-1 auxiliary file: ./02-elementos-textuais/analise-de-resultados.aux
+A level-1 auxiliary file: ./02-elementos-textuais/conclusao.aux
 A level-1 auxiliary file: ./03-elementos-pos-textuais/referencias.aux
 A level-1 auxiliary file: ./03-elementos-pos-textuais/apendices.aux
 The style file: abntex2-alf.bst
 Database file #1: abntex2-options.bib
 Database file #2: ./refbase.bib
-Warning--campo year vazio ou faltando em nghttp
 +---------------------------------------------------------+
 | Estilo bibliográfico abntex2-alf.bst versão v-1.9.3           |
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://abntex2.googlecode.com                           |
 +---------------------------------------------------------+
-(There was 1 warning)

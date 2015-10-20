@@ -5,6 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.3 }
 
+\bibitem[Apache{\ }Foundation 2015]{ApacheHTTPD}
+\abntrefinfo{Apache{\ }Foundation}{APACHE{\ }FOUNDATION}{2015}
+{APACHE{\ }FOUNDATION. \textbf{Apache HTTP Server Project}. 2015.
+Dispon{\'\i}vel em: \url{http://httpd.apache.org/}.}
+
 \bibitem[Archive 2015]{HttpArchiveContentType2011}
 \abntrefinfo{Archive}{ARCHIVE}{2015a}
 {ARCHIVE, H. \textbf{Http Archive Abril 2011 Query}. 2015.
@@ -26,11 +31,6 @@ Dispon{\'\i}vel em: \url{http://www.w3.org/History.html}.}
 \abntrefinfo{Eissing}{EISSING}{2015}
 {EISSING, S. \textbf{mod\_h2}. 2015.
 Dispon{\'\i}vel em: \url{https://github.com/icing/mod\_h2}.}
-
-\bibitem[Foundation 2015]{ApacheHTTPD}
-\abntrefinfo{Foundation}{FOUNDATION}{2015}
-{FOUNDATION, A. \textbf{Apache HTTP Server Project}. 2015.
-Dispon{\'\i}vel em: \url{http://httpd.apache.org/}.}
 
 \bibitem[Garrett 2005]{AJAX}
 \abntrefinfo{Garrett}{GARRETT}{2005}
@@ -75,6 +75,12 @@ Dispon{\'\i}vel em: \url{http://dev.chromium.org/spdy}.}
 {KRISHNAMURTHY, B.; MOGUL, J.~C.; KRISTOL, D.~M. Key differences between
   http/1.0 and http/1.1.
 \textbf{Elsevier Science B.V}, 1999.}
+
+\bibitem[Netcraft 2015]{PopularidadeServidores}
+\abntrefinfo{Netcraft}{NETCRAFT}{2015}
+{NETCRAFT. \textbf{June 2015 Web Server Survey}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://news.netcraft.com/archives/2015/06/25/june-2015-web-server-survey.html}.}
 
 \bibitem[Nginx 2015]{Nginx}
 \abntrefinfo{Nginx}{NGINX}{2015}
@@ -139,9 +145,9 @@ Dispon{\'\i}vel em: \url{http://daniel.haxx.se/http2}.}
   2015.
 Dispon{\'\i}vel em: \url{https://www.tollmanz.com/http2-nghttp2-nginx-tls/}.}
 
-\bibitem[Tsujikawa]{nghttp}
-\abntrefinfo{Tsujikawa}{TSUJIKAWA}{}
-{TSUJIKAWA, T. \textbf{Nghttp2}.
+\bibitem[Tsujikawa 2015]{nghttp}
+\abntrefinfo{Tsujikawa}{TSUJIKAWA}{2015}
+{TSUJIKAWA, T. \textbf{Nghttp2}. 2015.
 Dispon{\'\i}vel em: \url{https://nghttp2.org/}.}
 
 \end{thebibliography}

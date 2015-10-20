@@ -4,7 +4,7 @@
 
 \chapter{Desenvolvimento}
 
-O desenvolvimento desse trabalho passou por três etapas principais, a configuração do servidor de testes, a implementação dos testes e a execução dos testes. Neste capítulo serão descritos os detalhes dessas três etapas e as dificuldades encontradas em cada uma delas.
+O desenvolvimento deste trabalho passou por três etapas principais: a configuração do servidor de testes, a implementação dos testes e a execução dos testes. Neste capítulo estão descritos os detalhes dessas três etapas e as dificuldades encontradas em cada uma delas.
 
 \section{Técnicas Escolhidas}
 \label{tecnicasescolhidas}
@@ -19,7 +19,7 @@ Após análise das técnicas propostas por Steve Souders em seus livros, foi con
 	\item Quebrando domínios dominantes
 \end{enumerate}
 
-Das cinco técnicas listadas acima apenas quatro puderão ser testadas. Isso porque e a funcionalidade que melhorará o desempenho da técnica 4 (quatro) ainda não foi implementada no servidor de teste escolhidos. Mas, para complementar a análise da melhora de desempenho causada pelo HTTP/2, um quinto teste foi feito utilizando um \textit{template} de página \textit{web} e simplesmente o executando no HTTP/1.1 e depois no HTTP/2.
+Das cinco técnicas listadas acima apenas quatro puderam ser testadas. Isso porque e a funcionalidade que melhorará o desempenho da técnica 4 (quatro) ainda não foi implementada no servidor de teste escolhidos. Mas, para complementar a análise da melhora de desempenho causada pelo HTTP/2, um quinto teste foi feito utilizando um \textit{template} de página \textit{web} e simplesmente o executando no HTTP/1.1 e depois no HTTP/2.
 
 Para cada teste foram criados projetos HTML separados. Dessa forma o comportamento de uma técnica não interfere na outra. Além disso, foram escolhidos arquivos CSS e \textit{javascript} de maneira aleatória para a realização dos testes. Esses arquivos são de bibliotecas famosas e não foram alterados, apenas concatenados na realização de testes que necessitavam o uso dessa técnica. As bibliotecas escolhidas foram:
 
@@ -47,14 +47,14 @@ Abaixo encontram-se a explicações de cada teste e os códigos fontes podem ser
 \subsubsection{Faça menos requisições HTTP}
 \label{facamenosrequisicoeshttp}
 
-Para a realização desse teste vários arquivos CSS e \textit{javascript} foram inseridos na página. Primeiramente os arquivos são inseridos separadamente e depois são concatenados e inseridos de uma só vez. A soma dos tamanhos dos arquivos separados é 285kB maior do que a soma dos arquivos concatenados, isso ocorre por causa da remoção de espaços em branco.
+Para a realização deste teste vários arquivos CSS e \textit{javascript} foram inseridos na página. Primeiramente os arquivos são inseridos separadamente e depois são concatenados e inseridos de uma só vez. A soma dos tamanhos dos arquivos separados é 285kB maior do que a soma dos arquivos concatenados, 1.24 MB, isso ocorre por causa da remoção de espaços em branco.
 
 O código para o teste com arquivos separados pode ser encontrado no \autoref{apend:codigo_facamenosrequisicoeshttp_sep} e o código para o teste com os arquivos concatenados no \autoref{apend:codigo_facamenosrequisicoeshttp_concat}.
 
 \subsubsection{Reduza o número de pesquisas DNS}
 \label{reduzaonumerodepesquisasdns}
 
-Nesse teste os mesmos arquivos CSS e \textit{javascript} do teste \ref{facamenosrequisicoeshttp} foram utilizados, mas dessa vez, ao invés de serem hospedados no mesmo servidor dos arquivos HTML, eles foram inseridos via CDN. Sendo assim a diferença está no numero de CDNs utilizadas. Enquanto no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_mult} são utilizadas 4 CNDs diferentes, no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_unic} apenas uma é utilizada. Com isso, no primeiro teste são feitas quatro consultas de DNS e no segundo apenas uma.
+Neste teste, os mesmos arquivos CSS e \textit{javascript} do teste \ref{facamenosrequisicoeshttp} foram utilizados mas, desta vez, ao invés de serem hospedados no mesmo servidor dos arquivos HTML, eles foram inseridos via CDN. Sendo assim as páginas se diferem no número de CDNs utilizadas. Enquanto no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_mult} são utilizadas 4 CDNs diferentes, no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_unic} apenas uma é utilizada. Com isso, no primeiro teste são feitas quatro consultas de DNS e no segundo apenas uma.
 
 \subsubsection{Evite redirecionamentos}
 \label{eviteredirecionamentos}
@@ -64,19 +64,19 @@ A realização desse teste não depende apenas da página \textit{web} utilizada
 \subsubsection{Quebrando domínios dominantes}
 \label{quebrandodominiosdominantes}
 
-Enquanto que no teste \autoref{reduzaonumerodepesquisasdns} o número de pesquisas de DNS vai de um extremo ao outro, passa de 4 para 1, nesse teste as medições são repetidas para 2 e 3 DNS diferentes na página, com o intuito de se encontrar o número ideal de consultas de DNS que diminui o tempo de pesquisas e aumenta o paralelismo das requisições. O código para esse teste encontra-se no \autoref{apend:quebrandodominiodominantes}.
+Enquanto que no teste \autoref{reduzaonumerodepesquisasdns} o número de pesquisas de DNS vai de um extremo ao outro, passa de 4 para 1, neste teste as medições são repetidas para 2 e 3 DNS diferentes na página, com o intuito de se encontrar o número ideal de consultas de DNS que diminui o tempo de pesquisas e aumenta o paralelismo das requisições. O código para esse teste encontra-se no \autoref{apend:quebrandodominiodominantes}.
 
 \section{O servidor}
 \label{oservidor}
 
-Em poucas palavras, um servidor é um programa de computador que recebe requisições e envia respostas. Na \textit{Web}, o tipo mais comum de requisição e resposta são as requisições e respostas HTTP. Sendo assim, a função primaria de um servidor \textit{web} é aguardar por requisições HTTP e servir páginas \textit{web}.
+Um servidor é um programa de computador que recebe requisições e envia respostas. Na \textit{Web}, o tipo mais comum de requisição e resposta são as requisições e respostas HTTP. Sendo assim, a função primária de um servidor \textit{web} é aguardar por requisições HTTP e servir páginas \textit{web}.
 
-Para este trabalho três servidores foram considerados. Os dois primeiras são servidores \textit{web} mais populares do mundo atualmente são o Apache\footnote{http://www.apache.org/} e o Nginx\footnote{http://nginx.org/}. Mas como esses servidores ainda não possuem versões oficiais estáveis que suportem o HTTP/2, o \textit{nghttp2} foi o servidor considerado para lidar com o novo protocolo.
+Para este trabalho três servidores foram considerados. De acordo com a \citeonline{PopularidadeServidores}, os dois primeiros são servidores \textit{web} mais populares do mundo atualmente, o Apache\footnote{http://www.apache.org/} e o Nginx\footnote{http://nginx.org/}. Mas como esses servidores ainda não possuem versões oficiais estáveis que suportem o HTTP/2, o \textit{nghttp2} foi o servidor considerado para lidar com o novo protocolo.
 
 \subsection{Apache}
 \label{apache}
 
-O servidor \textit{web} Apache foi lançado em 1995 por um grupo de entusiastas que procuravam uma maneira segura, eficiente e escalável de servir páginas \textit{web} para todos.  De acordo com \citeonline{ApacheHTTPD}, o servidor Apache se tornou o mais popular do mundo em Abril de 1996 e nunca mais perdeu essa posição. Desde o início, o projeto se desenvolveu como uma iniciativa de código livre e assim se mantém até os dias atuais. As grandes vantagens do Apache são que ele pode ser executado em qualquer sistema operacional UNIX\footnote{Família de sistemas operacionais que é utilizado como base do Linux e do iOS. https://en.wikipedia.org/wiki/Unix} ou Windows NT\footnote{Família de sistemas operacionais produzidas pelas \textit{Microsoft}. https://en.wikipedia.org/wiki/Windows\_NT} e é simples de ser configurado.
+O servidor \textit{web} Apache foi lançado em 1995 por um grupo de entusiastas que procuravam uma maneira segura, eficiente e escalável de servir páginas \textit{web} para todos.  De acordo com a \citeonline{ApacheHTTPD}, o servidor Apache se tornou o mais popular do mundo em Abril de 1996 e nunca mais perdeu essa posição. Desde o início, o projeto se desenvolveu como uma iniciativa de código livre e assim se mantém até os dias atuais. As grandes vantagens do Apache são que ele pode ser executado em qualquer sistema operacional UNIX\footnote{Família de sistemas operacionais que é utilizado como base do Linux e do iOS. https://en.wikipedia.org/wiki/Unix} ou Windows NT\footnote{Família de sistemas operacionais produzidas pelas \textit{Microsoft}. https://en.wikipedia.org/wiki/Windows\_NT} e é simples de ser configurado.
 
 \subsection{Nginx}
 \label{nginx}
@@ -86,7 +86,7 @@ Assim como o Apache, o Nginx é um projeto de código livre de servidor HTTP. Co
 \subsubsection{Nghttp2}
 \label{nghttp2}
 
-O \textit{nghttp}, desenvolvido por \citeonline{nghttp}, é uma implementação em linguagem C do HTTP/2 e do protocolo de compressão HPACK. Essa implementação possui um cliente, um servidor, um \textit{proxy} e uma ferramente de teste para o servidor. O mod\_h2, escolhido para ser o módulo oficial do Apache, usa o \textit{nghttp2} como base de sua implementação. Apesar do nome sugerir que existe alguma ligação entre o Nginx e o \textit{nghttp2}, não foi possível encontrar nada que relacione os dois servidores.
+O \textit{nghttp}, desenvolvido por \citeonline{nghttp}, é uma implementação em linguagem C do HTTP/2 e do protocolo de compressão HPACK. Essa implementação possui um cliente, um servidor, um \textit{proxy} e uma ferramenta de teste de carga para o servidor. O mod\_h2, escolhido para ser o módulo oficial do Apache, usa o \textit{nghttp2} como base de sua implementação. Apesar do nome sugerir que existe alguma ligação entre o Nginx e o \textit{nghttp2}, não foi possível encontrar nada que relacione os dois servidores.
 
 Apesar de os passos para a instalação do \textit{nghttp2} estarem documentados no site do projeto, algumas etapas importantes sobre instalação de dependências necessárias para fazer a aplicação funcionar corretamente não estão bem explicadas. Sendo assim, foram encontradas dificuldades no processo de instalação. Mas após superar essas dificuldades a aplicação foi configurada e foi possível confirmar seu funcionamento com a ajuda de um navegador que estava aceitando requisições e respostas HTTP/2. O processo de instalação está descrito no \autoref{apend:configurandonghttp2}.
 
@@ -95,7 +95,7 @@ Apesar de os passos para a instalação do \textit{nghttp2} estarem documentados
 
 Para executar os testes propostos foi necessário utilizar um servidor que suportasse tanto requisições HTTP/1.1 quanto HTTP/2. Como o HTTP/2 ainda é recente, encontrar um servidor com tal característica se mostrou um grande desafio.
 
-Existem várias implementações do protocolo no mercado, cada uma com características diferentes e em estados diferentes de maturidade\footnote{Para obter mais informações sobre as diferentes implementações do HTTP/2 acesse o link a seguir. https://github.com/http2/http2-spec/wiki/Implementations}. Mas o grande problema é que a grande maioria dessas implementações são privadas e especificas para as empresas que as desenvolveram. Até o dia 1 de Agosto de 2015 (data quando os testes foram executados pela primeira vez) não existiam versões oficiais do protocolo para o Apache e o Nginx.
+Existem várias implementações do protocolo no mercado, cada uma com características diferentes e em estados diferentes de maturidade\footnote{Para obter mais informações sobre as diferentes implementações do HTTP/2 acesse o link a seguir. https://github.com/http2/http2-spec/wiki/Implementations}. Mas o grande problema é que a grande maioria dessas implementações são privadas e específicas para as empresas que as desenvolveram. Até o dia 1 de Agosto de 2015 (data quando os testes foram executados pela primeira vez) não existiam versões oficiais do protocolo para o Apache e o Nginx.
 
 Apesar de não existir uma versão oficial do HTTP/2 para o Apache, existe um projeto de código aberto chamado \textit{mod\_h2}, desenvolvido por \citeonline{ModH2}, que se tornará a versão oficial do protocolo quando atingir um nível de maturidade e estabilidade considerado aceitável pela Apache Foundation. Como para o Nginx não existia ainda uma extensão que implementasse o novo protocolo dentro do servidor, o Apache seria a melhor escolha de servidor de teste.
 
@@ -125,7 +125,7 @@ Como o \textit{nghttp2} foi o único servidor com suporte ao HTTP/2 que a instal
 
 Os testes foram realizados em navegadores \textit{web}, o que torna o processo independente do sistema operacional. Mas o servidor foi configurado em uma máquina utilizando o sistema Ubuntu 14.04LTS, sendo assim, vale ressaltar, que os comandos descritos não vão necessariamente funcionar em sistemas operacionais diferentes do utilizado neste trabalho.
 
-\subsection{Considerações inicias}
+\subsection{Considerações iniciais}
 \label{consideracoesiniciais}
 
 O \textit{nghttp2} permite a escolha do uso de HTTP/2 de duas maneiras:
@@ -149,12 +149,12 @@ A segunda opção utiliza o \textit{nghttpd}, um servidor completo embutido dent
 
 Como os servidores de teste para cada protocolo já são diferentes, houve um grande esforço para deixar as configurações de ambiente restantes as mais similares possíveis, tentando assim evitar diferenças de desempenho provindas de outras configurações além da mudança de protocolo. Dessa forma, a escolha pela configuração utilizando o \textit{nghttpx} foi descartada. O redirecionamento via \textit{proxy} acrescentaria mais uma etapa no processo de comunicação cliente-servidor, e mesmo que se um \textit{proxy} fosse configurado para o servidor HTTP/1.1, ainda assim existe a etapa de tradução que não teria como ser simulada. Com isso, a configuração escolhida foi o uso do \textit{nghttpd}.
 
-Como dito anteriormente, apesar de o HTTP/2 ter sido pensado inicialmente para funcionar apenas sob o protocolo TLS para melhorar a segurança da \textit{Web}, essa proposta não foi aprovada e o protocolo pode ser executado tanto com certificados de segurança como sem. Inicialmente a intenção era executar os testes nos dois ambientes, HTTP e HTTPS, contudo o \textit{nghttpd} não funcionou corretamente quando foi executado sem um certificado de segurança por isso os testes foram feitos apenas com o protocolo HTTPS. Esse tipo de falha no servidor, embora seja um problema para aplicações que querem utilizar do novo protocolo, são esperadas, pela tecnologia ser ainda muito nova e não houve tempo ábil para corrigir todos os defeitos.
+Como dito anteriormente, apesar de inicialmente o HTTP/2 ter sido desenvolvido para funcionar apenas sob o protocolo TLS para melhorar a segurança da \textit{Web}, essa proposta não foi aprovada e o HTTP/2 pode ser executado tanto com certificados de segurança como sem. A proposta inicial era executar os testes nos dois ambientes, HTTP e HTTPS, contudo o \textit{nghttpd} não funcionou corretamente quando foi executado sem um certificado de segurança por isso os testes foram feitos apenas com o protocolo HTTPS. Esse tipo de falha no servidor, embora seja um problema para aplicações que querem utilizar do novo protocolo, são esperadas, pela tecnologia ser ainda muito nova e não houve tempo ábil para corrigir todos os defeitos.
 
 \subsection{Utilizando o \textit{nghttpd}}
 \label{utilizandoonghttpd}
 
-Para utilizar o \textit{nghttpd} foi necessário uma porta possa ser escutada pelo novo servidor, um arquivo de certificado digital e uma chave para tal certificado. Então, tendo o \textit{nghttp2} instalado, basta executar o seguinte comando:
+Para utilizar o \textit{nghttpd} foi necessária uma porta na máquina onde o servidor foi instalado para o cliente poder acessar o servidor \textit{web}, um arquivo de certificado digital e uma chave para tal certificado. Então, tendo o \textit{nghttp2} instalado, basta executar o seguinte comando:
 
 \textbf{sudo nghttpd 83 /etc/apache2/ssl/dreamtech.key /etc/apache2/ssl/dreamtech.crt -d/var/www/html/tcc -v}
 
@@ -202,7 +202,7 @@ Esse processo garantiu que o servidor e os navegadores funcionam, pois ambos pod
 
 Como o servidor \textit{nghttpd} não possui um arquivo de configuração, foi necessário colocar cada caso de teste em pastas diferentes e quando um caso novo fosse ser testado o servidor tinha de ser reiniciado e apontado para outra pasta.
 
-Para cada técnica de otimização escolhida a página foi carregado 25 vezes utilizando o protocolo HTTP/1.1 no servidor \textit{Nginx} e 25 vezes utilizando o protocolo HTTP/2 no servidor \textit{nghttpd}. Os tempos de carregamentos das páginas foram registrado e foram calculadas as médias e medianas para cada técnica de otimização.
+Para cada técnica de otimização escolhida, a página foi carregada 25 vezes utilizando o protocolo HTTP/1.1 no servidor \textit{Nginx} e 25 vezes utilizando o protocolo HTTP/2 no servidor \textit{nghttpd}. Os tempos de carregamentos das páginas foram registrados e foram calculadas as médias e medianas para cada técnica de otimização.
 
 \subsection{Problemas nos resultados}
 \label{problemasnosresultados}
