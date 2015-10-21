@@ -1,0 +1,14 @@
+\begin{table}[h]
+	\centering
+	\caption{Desvio padrão HTTP/2}
+	\label{desviopadraohttp2}
+	\begin{tabular}{cccccccccc}
+		\hline
+        \multicolumn{2}{l}{\textbf{Faça menos requisições HTTP}} & \multicolumn{2}{l}{\textbf{Reduza o número de pesquisas DNS}} & \multicolumn{2}{l}{\textbf{Evite redirecionamentos}} & \multicolumn{2}{l}{\textbf{Quebrando domínios dominantes}} & \textbf{Template} \\
+		\hline
+        Arquivos Separados & Arquivos Concatenados & Única CDN & Multiplas CDNs & - & - & 2 CDNs & 3 CDNs & - \\
+		Firefox & 0.11883 & 0.10828 & 0.23863 & 0.13001 & 0.11883 & 0.51653 & 0.35197 & 0.48068 & 0.06192  \\
+		Chrome & 0.07786 & 0.09029 & 0.04958 & 0.09220 & 0.07786 & 0.76464 & 0.27013 & 0.26890 & 0.04752  \\
+		\hline
+	\end{tabular}
+\end{table}

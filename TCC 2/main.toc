@@ -86,3 +86,4 @@
 \contentsline {appendix}{\chapternumberline {E}Reduza o n\IeC {\'u}mero de pesquisas DNS: Multiplas CDN}{71}{appendix.E}
 \contentsline {appendix}{\chapternumberline {F}Reduza o n\IeC {\'u}mero de pesquisas DNS: \IeC {\'U}nica CDN}{73}{appendix.F}
 \contentsline {appendix}{\chapternumberline {G}Quebrando dom\IeC {\'\i }nios dominantes}{75}{appendix.G}
+\contentsline {chapter}{\chapternumberline {H}Gr\IeC {\'a}ficos em cascata}{79}{appendix.H}
