@@ -1,14 +1,71 @@
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Desvio padrão HTTP/1.1.}
 	\label{desviopadraohttp11}
-	\begin{tabular}{cccccccccc}
-		\hline
-        \multicolumn{2}{l}{\textbf{Faça menos requisições HTTP}} & \multicolumn{2}{l}{\textbf{Reduza o número de pesquisas DNS}} & \multicolumn{2}{l}{\textbf{Evite redirecionamentos}} & \multicolumn{2}{l}{\textbf{Quebrando domínios dominantes}} & \textbf{Template} \\
-		\hline
-        Arquivos Separados & Arquivos Concatenados & Única CDN & Multiplas CDNs & - & - & 2 CDNs & 3 CDNs & - \\
-		Firefox & 0.16059 & 0.15053 & 0.26658 & 0.12958 & 0.16059 & 1.01423 & 0.37758 & 0.27470 & 0.05334  \\
-		Chrome & 0.20940 & 0.11193 & 0.17080 & 0.11417 & 0.20940 & 0.86158 & 0.19079 & 0.35509 & 0.08606  \\
-		\hline
-	\end{tabular}
 \end{table}
+
+\begin{tabularx}{\textwidth}{| c | c |}
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Faça menos requisições HTTP}} \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{Arquivos Separados}} \\
+	\hline	
+	Firefox & Chrome \\
+	\hline
+	0.16059 & 0.20940 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{Arquivos Concatenados}} \\
+	\hline
+	Firefox & Chrome \\
+	\hline
+	0.15053 & 0.11193 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Reduza o número de pesquisas DNS}} \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{Única CDN}} \\
+	\hline
+	Firefox & Chrome \\
+	\hline
+	0.26658 & 0.17080 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{Multiplas CDNs}} \\
+	\hline
+	Firefox & Chrome \\
+	\hline
+	0.12958 & 0.11417 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Evite redirecionamentos}} \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{Sem redirecionamento}} \\
+	\hline
+	Firefox & Chrome \\
+	\hline
+	0.16059 & 0.20940 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{Com redirecionamento}} \\
+	\hline
+	1.01423 & 0.86158 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Quebrando domínios dominantes}} \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{2 CDNs}} \\
+	\hline
+	Firefox & Chrome \\
+	\hline
+	0.37758 & 0.19079 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{3 CDNs}} \\
+	\hline
+	Firefox & Chrome \\
+	\hline
+	0.27470  & 0.35509 \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Template}} \\
+	\hline
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{E5E5E5}\textbf{Sem redirecionamento}} \\
+	\hline
+	Firefox & Chrome \\
+	\hline
+	0.05334 & 0.08606 \\
+	\hline	
+\end{tabularx}

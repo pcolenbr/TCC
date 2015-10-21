@@ -11,7 +11,7 @@ Neste capitulo são descritos e analisados os valores encontrados e são tiradas
 \subsection{Análise do tempo de carregamento}
 \label{analisedotempodecarregamento}
 
-O tempo de carregamento foi a métrica de desempenho escolhida para comparar o comportamento das páginas de teste nos diferentes protocolos. Essa métrica foi obtido com a ajuda da ferramenta de desenvolvedor de cada navegador. As tabelas \autoref{resultados-facamenosrequisicoeshttp-separados} a \autoref{resultados-template}, mostram os resultados do tempo carregamento das páginas \textit{web} divididos por técnica analisada.
+O tempo de carregamento foi a métrica de desempenho escolhida para comparar o comportamento das páginas de teste nos diferentes protocolos. Essa métrica foi obtido com a ajuda da ferramenta de desenvolvedor de cada navegador. As tabelas \autoref{resultados-facamenosrequisicoeshttp-separados} à \autoref{resultados-template}, mostram os resultados do tempo carregamento das páginas \textit{web} divididos por técnica analisada.
 
 \input{./05-tabelas/analise-de-resultados/arquivos-separados}
 
@@ -23,7 +23,7 @@ As \autoref{resultados-facamenosrequisicoeshttp-separados} e \autoref{resultados
 
 \input{./05-tabelas/analise-de-resultados/cdn-unica}
 
-Analisando as \autoref{resultados-reduzaonumerodepesquisasdns-multiplas} e \autoref{resultados-reduzaonumerodepesquisasdns-unica} percebemos que o HTTP/2, apesar de obter desempenho melhor do que o HTTP/1.1, teve um aumento no tempo de carregamento para um número maior de CDNs. Esse aumento pode ser consequência do tempo de busca de DNS ter aumentado ou por que com as novas CDNs utilizadas possuíam desempenho ruim. Mas julgando pelo fato de todas serem CDNs grandes e muito utilizadas, devemos considerar que todas são otimizadas e possuem alto desempenho. 
+Analisando as \autoref{resultados-reduzaonumerodepesquisasdns-multiplas} e \autoref{resultados-reduzaonumerodepesquisasdns-unica} percebe-se que o HTTP/2, apesar de obter desempenho melhor do que o HTTP/1.1, teve um aumento no tempo de carregamento para um número maior de CDNs. Esse aumento pode ser consequência do tempo de busca de DNS ter aumentado ou por que com as novas CDNs utilizadas possuíam desempenho ruim. Mas julgando pelo fato de todas serem CDNs grandes e muito utilizadas, considera-se que todas são otimizadas e possuem alto desempenho. 
 
 \input{./05-tabelas/analise-de-resultados/cdn-2}
 
@@ -44,10 +44,10 @@ Na tabela \autoref{resultados-template} encontra o resultado do tempo de carrega
 \subsubsection{Desvio padrão}
 \label{desviopadrao}
 
-Apesar do HTTP/2 apresentar desempenho pior ou semelhando ao HTTP/1.1 e de algumas técnicas que não deveriam alterar o comportamento do protocolo causarem terem nele um efeito não esperado, pode se notar que o novo protocolo se comporta diferente de sua versão prévia. As \autoref{desviopadraohttp11} e \autoref{desviopadraohttp2} mostram os resultados encontrados quando os desvios padrão dos tempo de carregamento de cada página testada são calculados.
+Apesar do HTTP/2 não apresentar desempenho melhor do que HTTP/1.1 para todos os cenários e de algumas técnicas que não deveriam alterar o comportamento das páginas no protocolo causarem um efeito não esperado, pode se notar que o novo protocolo se comporta diferente de sua versão prévia. As \autoref{desviopadraohttp11} e \autoref{desviopadraohttp2} mostram os resultados encontrados quando os desvios padrão dos tempo de carregamento de cada página testada são calculados.
 
 \input{./05-tabelas/analise-de-resultados/desvio-padrao-http11}
-
+\clearpage
 \input{./05-tabelas/analise-de-resultados/desvio-padrao-http2}
 
 Observando as \autoref{desviopadraohttp11} e \autoref{desviopadraohttp2} percebe se que o HTTP/2 é um protocolo mais estável e que, aparentemente, sofre menos com as alterações de rede. Quando utilizando uma conexão de rede real, não é possível remover 100\% os picos e vales de conexão que ocorrem. Por esse motivo percebemos que os tempos de carregamento se alteram (apesar de os valores muito fora da média já terem sido retirados). Mesmo assim, o desvio padrão do HTTP/2 foi menor do que o do HTTP/1.1 para todas as páginas, o que pode ser uma grande vantagem para desenvolvedores tentarem prever o comportamento de seus \textit{websites} e seus usuários.
@@ -57,14 +57,14 @@ Observando as \autoref{desviopadraohttp11} e \autoref{desviopadraohttp2} percebe
 
 As \autoref{fig:cascatahttp11} e \autoref{fig:cascatahttp2} mostram o carregamento do cenário \autoref{facamenosrequisicoeshttp} em formato de gráfico em cascata, obtido com a ajuda da ferramenta de desenvolvedor do Google Chrome.
 
-\begin{figure}[!htb]
+\begin{figure}[!htbp]
     \centering
     \caption{Cascata representando \textit{download} de componentes da página no HTTP/1.1.}
     \includegraphics[width=1.0\textwidth]{./04-figuras/analise-de-resultados/cascata_http11}
     \label{fig:cascatahttp11}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!htbp]
     \centering
     \caption{Cascata representando \textit{download} de componentes da página no HTTP/2.}
     \includegraphics[width=1.0\textwidth]{./04-figuras/analise-de-resultados/cascata_http2}

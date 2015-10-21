@@ -71,7 +71,7 @@ Enquanto que no teste \autoref{reduzaonumerodepesquisasdns} o número de pesquis
 
 Um servidor é um programa de computador que recebe requisições e envia respostas. Na \textit{Web}, o tipo mais comum de requisição e resposta são as requisições e respostas HTTP. Sendo assim, a função primária de um servidor \textit{web} é aguardar por requisições HTTP e servir páginas \textit{web}.
 
-Para este trabalho três servidores foram considerados. De acordo com a \citeonline{PopularidadeServidores}, os dois primeiros são servidores \textit{web} mais populares do mundo atualmente, o Apache\footnote{http://www.apache.org/} e o Nginx\footnote{http://nginx.org/}. Mas como esses servidores ainda não possuem versões oficiais estáveis que suportem o HTTP/2, o \textit{nghttp2} foi o servidor considerado para lidar com o novo protocolo.
+Para este trabalho três servidores foram considerados. De acordo com a \citeonline{PopularidadeServidores}, os dois primeiros são os servidores \textit{web} mais populares do mundo atualmente, o Apache\footnote{http://www.apache.org/} e o Nginx\footnote{http://nginx.org/}. Mas como esses servidores ainda não possuem versões oficiais estáveis que suportem o HTTP/2, o \textit{nghttp2} foi o servidor considerado para lidar com o novo protocolo.
 
 \subsection{Apache}
 \label{apache}
@@ -95,7 +95,7 @@ Apesar de os passos para a instalação do \textit{nghttp2} estarem documentados
 
 Para executar os testes propostos foi necessário utilizar um servidor que suportasse tanto requisições HTTP/1.1 quanto HTTP/2. Como o HTTP/2 ainda é recente, encontrar um servidor com tal característica se mostrou um grande desafio.
 
-Existem várias implementações do protocolo no mercado, cada uma com características diferentes e em estados diferentes de maturidade\footnote{Para obter mais informações sobre as diferentes implementações do HTTP/2 acesse o link a seguir. https://github.com/http2/http2-spec/wiki/Implementations}. Mas o grande problema é que a grande maioria dessas implementações são privadas e específicas para as empresas que as desenvolveram. Até o dia 1 de Agosto de 2015 (data quando os testes foram executados pela primeira vez) não existiam versões oficiais do protocolo para o Apache e o Nginx.
+Existem várias implementações do protocolo no mercado, cada uma com características diferentes e em estados diferentes de maturidade\footnote{Para obter mais informações sobre as diferentes implementações do HTTP/2 acesse o link a seguir. https://github.com/http2/http2-spec/wiki/Implementations}. Mas o problema é que a grande maioria dessas implementações são privadas e específicas para as empresas que as desenvolveram. Até o dia 1 de Agosto de 2015 (data quando os testes foram executados pela primeira vez) não existiam versões oficiais do protocolo para o Apache e o Nginx.
 
 Apesar de não existir uma versão oficial do HTTP/2 para o Apache, existe um projeto de código aberto chamado \textit{mod\_h2}, desenvolvido por \citeonline{ModH2}, que se tornará a versão oficial do protocolo quando atingir um nível de maturidade e estabilidade considerado aceitável pela Apache Foundation. Como para o Nginx não existia ainda uma extensão que implementasse o novo protocolo dentro do servidor, o Apache seria a melhor escolha de servidor de teste.
 
@@ -202,18 +202,18 @@ Esse processo garantiu que o servidor e os navegadores funcionam, pois ambos pod
 
 Como o servidor \textit{nghttpd} não possui um arquivo de configuração, foi necessário colocar cada caso de teste em pastas diferentes e quando um caso novo fosse ser testado o servidor tinha de ser reiniciado e apontado para outra pasta.
 
-Para cada técnica de otimização escolhida, a página foi carregada 25 vezes utilizando o protocolo HTTP/1.1 no servidor \textit{Nginx} e 25 vezes utilizando o protocolo HTTP/2 no servidor \textit{nghttpd}. Os tempos de carregamentos das páginas foram registrados e foram calculadas as médias e medianas para cada técnica de otimização.
+Para cada técnica de otimização escolhida, a página foi carregada 25 vezes utilizando o protocolo HTTP/1.1 no servidor \textit{Nginx} e 25 vezes utilizando o protocolo HTTP/2 no servidor \textit{nghttpd}. Os tempos de carregamentos das páginas foram registrados e foram calculadas as médias e o desvio padrão para cada técnica de otimização.
 
 \subsection{Problemas nos resultados}
 \label{problemasnosresultados}
 
-Após a execução dos testes, percebeu-se que os resultados obtidos não foram os esperados. O HTTP/2 estava tendo resultados piores do que o HTTP/1.1 para todos os cenários de teste e as técnicas que não se esperava que funcionassem no novo protocolo, continuavam gerando tempos de carregamento diferentes. Por esse motivo e levando em conta que o HTTP/2 é uma tecnologia muito nova que está evoluindo de maneira acelerada, após a conclusão de que os resultados obtidos com o \textit{nghttp2} não eram satisfatórios, foi feita nova procura por servidores \textit{web} com suporte à nova versão do protocolo HTTP.
+Após a execução dos testes, percebeu-se que os resultados obtidos não foram os esperados. O HTTP/2 estava tendo resultados piores do que o HTTP/1.1 para todos os cenários de teste e as técnicas que não eram esperadas que funcionassem no novo protocolo, continuavam gerando tempos de carregamento diferentes quando aplicadas. Por esse motivo e levando em conta que o HTTP/2 é uma tecnologia muito nova que está evoluindo de maneira acelerada, após a conclusão de que os resultados obtidos com o \textit{nghttp2} não eram satisfatórios, foi feita uma nova procura por servidores \textit{web} com suporte à nova versão do protocolo HTTP.
 
 \section{A escolha final do servidor}
 \label{aescolhafinaldoservidor}
 
 
-No dia 22 de Setembro foi lançada uma nova versão não estável do Nginx que possuía suporte às duas versões do protocolo HTTP, sendo que o suporte ao HTTP/2 funcionava apensas para conexões segura, ou seja, utilizando o protocolo de segurança SSL. Até o momento a versão do servidor utilizada para a realização dos testes em HTTP/1.1 era a versão estável 1.6.2, a nova versão com suporte ao HTTP/2 é a 1.9.5. Dessa forma ficou decidido que o essa nova versão seria utilizada para os testes dos dois protocolos.
+No dia 22 de Setembro foi lançada uma nova versão não estável do Nginx que possui suporte às duas versões do protocolo HTTP, sendo que o suporte ao HTTP/2 funciona apenas para conexões segura, ou seja, utilizando o protocolo de segurança SSL. Até o momento a versão do servidor utilizada para a realização dos testes em HTTP/1.1 era a versão estável 1.6.2, a nova versão com suporte ao HTTP/2 é a 1.9.5. Dessa forma ficou decidido que o essa nova versão seria utilizada para os testes dos dois protocolos.
 
 Para instalar a versão 1.9.5 do Nginx foi necessário remover por completo a versão antiga, inserir o repositório de arquivos nas configurações do sistema operacional e instalar novamente o servidor. Abaixo encontra-se o passo-a-passo dessa instalação.
 
@@ -251,6 +251,6 @@ server {
 }
 \end{center}
 
-Dessa forma, se bastou seguir o mesmo processo utilizado para confirmar o funcionamento do \textit{nghttp2} e, com a ajuda de um navegador \textit{web} com suporte ao HTTP/2, confirmar que as requisições estão sendo aceitas utilizando o HTTP/1.1 na porta 81 e o HTTP/2 na porta 82, e estão sendo servidas com respostas na versão correta do protocolo.
+Dessa forma, bastou seguir o mesmo processo utilizado para confirmar o funcionamento do \textit{nghttp2} e, com a ajuda de um navegador \textit{web} com suporte ao HTTP/2, confirmar que as requisições estão sendo aceitas utilizando o HTTP/1.1 na porta 81 e o HTTP/2 na porta 82, e estão sendo servidas com respostas na versão correta do protocolo.
 
-Então os testes foram repetidos na nova configuração do servidor e mais uma vez os resultados do tempo de carregamento de cada página de teste foi registrado para análise.
+Então os testes foram repetidos na nova configuração do servidor seguindo exatamente o mesmo processo descrito anteriormente e mais uma vez os resultados do tempo de carregamento de cada página de teste foi registrado para análise.
