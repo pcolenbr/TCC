@@ -69,21 +69,21 @@
 \contentsline {subsubsection}{\numberline {6.0.1.1}Desvio padr\IeC {\~a}o}{49}{subsubsection.6.0.1.1}
 \contentsline {subsubsection}{\numberline {6.0.1.2}Cascata}{50}{subsubsection.6.0.1.2}
 \contentsline {subsection}{\numberline {6.0.2}Discuss\IeC {\~a}o dos resultados}{53}{subsection.6.0.2}
-\contentsline {subsection}{\numberline {6.0.3}Quest\IeC {\~o}es em aberto}{55}{subsection.6.0.3}
-\contentsline {chapter}{\chapternumberline {7}Conclus\IeC {\~a}o}{57}{chapter.7}
-\contentsline {section}{\numberline {7.1}Principais contribui\IeC {\c c}\IeC {\~o}es}{58}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trabalhos futuros}{59}{section.7.2}
-\contentsline {chapter}{Refer\^encias}{60}{section*.10}
+\contentsline {subsection}{\numberline {6.0.3}Quest\IeC {\~o}es em aberto}{54}{subsection.6.0.3}
+\contentsline {chapter}{\chapternumberline {7}Conclus\IeC {\~a}o}{58}{chapter.7}
+\contentsline {section}{\numberline {7.1}Principais contribui\IeC {\c c}\IeC {\~o}es}{59}{section.7.1}
+\contentsline {section}{\numberline {7.2}Trabalhos futuros}{60}{section.7.2}
+\contentsline {chapter}{Refer\^encias}{61}{section*.10}
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{62}{section*.11}
-\contentsline {appendix}{\chapternumberline {A}Tentativa de configura\IeC {\c c}\IeC {\~a}o do mod\_h2}{63}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Configurando \textit {nghttp2}}{65}{appendix.B}
-\contentsline {subsection}{\numberline {B.0.1}Instalando depend\IeC {\^e}ncias}{65}{subsection.B.0.1}
-\contentsline {subsection}{\numberline {B.0.2}Instalando a aplica\IeC {\c c}\IeC {\~a}o}{66}{subsection.B.0.2}
-\contentsline {appendix}{\chapternumberline {C}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Separados}{67}{appendix.C}
-\contentsline {appendix}{\chapternumberline {D}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Concatenados}{69}{appendix.D}
-\contentsline {appendix}{\chapternumberline {E}Reduza o n\IeC {\'u}mero de pesquisas DNS: Multiplas CDN}{71}{appendix.E}
-\contentsline {appendix}{\chapternumberline {F}Reduza o n\IeC {\'u}mero de pesquisas DNS: \IeC {\'U}nica CDN}{73}{appendix.F}
-\contentsline {appendix}{\chapternumberline {G}Quebrando dom\IeC {\'\i }nios dominantes}{75}{appendix.G}
-\contentsline {chapter}{\chapternumberline {H}Gr\IeC {\'a}ficos em cascata}{79}{appendix.H}
+\contentsline {part}{Ap\^endices}{63}{section*.11}
+\contentsline {appendix}{\chapternumberline {A}Tentativa de configura\IeC {\c c}\IeC {\~a}o do mod\_h2}{64}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}Configurando \textit {nghttp2}}{66}{appendix.B}
+\contentsline {subsection}{\numberline {B.0.1}Instalando depend\IeC {\^e}ncias}{66}{subsection.B.0.1}
+\contentsline {subsection}{\numberline {B.0.2}Instalando a aplica\IeC {\c c}\IeC {\~a}o}{67}{subsection.B.0.2}
+\contentsline {appendix}{\chapternumberline {C}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Separados}{68}{appendix.C}
+\contentsline {appendix}{\chapternumberline {D}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Concatenados}{70}{appendix.D}
+\contentsline {appendix}{\chapternumberline {E}Reduza o n\IeC {\'u}mero de pesquisas DNS: Multiplas CDN}{72}{appendix.E}
+\contentsline {appendix}{\chapternumberline {F}Reduza o n\IeC {\'u}mero de pesquisas DNS: \IeC {\'U}nica CDN}{74}{appendix.F}
+\contentsline {appendix}{\chapternumberline {G}Quebrando dom\IeC {\'\i }nios dominantes}{76}{appendix.G}
+\contentsline {chapter}{\chapternumberline {H}Gr\IeC {\'a}ficos em cascata}{80}{appendix.H}

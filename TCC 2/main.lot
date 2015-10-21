@@ -1,9 +1,12 @@
 \select@language {brazil}
 \contentsline {table}{\numberline {1}{\ignorespaces Impacto do desempenho de \textit {website} na receita.}}{2}{table.1.1}
-\contentsline {table}{\numberline {5}{\ignorespaces Resultados da t\IeC {\'e}cnica "Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP" com arquivos separados}}{48}{table.6.5}
-\contentsline {table}{\numberline {6}{\ignorespaces Resultados da t\IeC {\'e}cnica "Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP" com arquivos concatenados}}{49}{table.6.6}
-\contentsline {table}{\numberline {7}{\ignorespaces Resultados da t\IeC {\'e}cnica "Reduza o n\IeC {\'u}mero de pesquisas DNS" com multiplas CDNs}}{50}{table.6.7}
-\contentsline {table}{\numberline {8}{\ignorespaces Resultados da t\IeC {\'e}cnica "Reduza o n\IeC {\'u}mero de pesquisas DNS" com uma CDN}}{51}{table.6.8}
-\contentsline {table}{\numberline {9}{\ignorespaces Resultados da t\IeC {\'e}cnica "Quebrando dom\IeC {\'\i }nios dominantes" com 2 CDNs}}{52}{table.6.9}
-\contentsline {table}{\numberline {10}{\ignorespaces Resultados da t\IeC {\'e}cnica "Quebrando dom\IeC {\'\i }nios dominantes" com 3 CDNs}}{53}{table.6.10}
-\contentsline {table}{\numberline {11}{\ignorespaces Resultados do teste final utilizando \textit {template}}}{54}{table.6.11}
+\contentsline {table}{\numberline {5}{\ignorespaces Resultados da t\IeC {\'e}cnica "Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP" com arquivos separados.}}{48}{table.6.5}
+\contentsline {table}{\numberline {6}{\ignorespaces Resultados da t\IeC {\'e}cnica "Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP" com arquivos concatenados.}}{49}{table.6.6}
+\contentsline {table}{\numberline {7}{\ignorespaces Resultados da t\IeC {\'e}cnica "Reduza o n\IeC {\'u}mero de pesquisas DNS" com multiplas CDNs.}}{50}{table.6.7}
+\contentsline {table}{\numberline {8}{\ignorespaces Resultados da t\IeC {\'e}cnica "Reduza o n\IeC {\'u}mero de pesquisas DNS" com uma CDN.}}{51}{table.6.8}
+\contentsline {table}{\numberline {9}{\ignorespaces Resultados da t\IeC {\'e}cnica "Quebrando dom\IeC {\'\i }nios dominantes" com 2 CDNs.}}{52}{table.6.9}
+\contentsline {table}{\numberline {10}{\ignorespaces Resultados da t\IeC {\'e}cnica "Quebrando dom\IeC {\'\i }nios dominantes" com 3 CDNs.}}{53}{table.6.10}
+\contentsline {table}{\numberline {11}{\ignorespaces Resultados da t\IeC {\'e}cnica "Evite redirecionamento".}}{54}{table.6.11}
+\contentsline {table}{\numberline {12}{\ignorespaces Resultados do teste final utilizando \textit {template}.}}{55}{table.6.12}
+\contentsline {table}{\numberline {13}{\ignorespaces Desvio padr\IeC {\~a}o HTTP/1.1.}}{55}{table.6.13}
+\contentsline {table}{\numberline {14}{\ignorespaces Desvio padr\IeC {\~a}o HTTP/2.}}{56}{table.6.14}

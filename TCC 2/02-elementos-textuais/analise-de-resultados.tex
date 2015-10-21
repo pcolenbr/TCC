@@ -33,11 +33,9 @@ As \autoref{resultados-quebrandodominiosdominantes-2} e \autoref{resultados-queb
 
 Outro motivo para isso pode ser o fato de as CDNs não suportarem requisições HTTP/2, sendo assim a comunicação com as CNDs ocorre através da versão antiga do protocolo, fato que acaba influenciando no ganho de desempenho que a página teria com o HTTP/2.
 
-TABELA TECNICA 4.1
+\input{./05-tabelas/analise-de-resultados/redirecionamento}
 
-TABELA TECNICA 4.2
-
-O redirecionamento não deveria influenciar no tempo de carregamento da página no HTTP/2. Apesar disso pode se perceber que quando a página é redirecionada o desempenho da mesma é pior independente do protocolo utilizado.
+Apesar de ser esperado que o redirecionamento não influencie no tempo de carregamento da página no HTTP/2 quando as \autoref{resultados-facamenosrequisicoeshttp-separados} e \autoref{resultados-redirecionamento} são comparadas perceber-se que, quando a página é redirecionada, o desempenho da mesma é pior independente do protocolo utilizado.
 
 \input{./05-tabelas/analise-de-resultados/template}
 
@@ -46,11 +44,13 @@ Na tabela \autoref{resultados-template} encontra o resultado do tempo de carrega
 \subsubsection{Desvio padrão}
 \label{desviopadrao}
 
-Apesar do HTTP/2 apresentar desempenho pior ou semelhando ao HTTP/1.1 e de algumas técnicas que não deveriam alterar o comportamento do protocolo causarem terem nele um efeito não esperado, pode se notar que o novo protocolo se comporta diferente de sua versão prévia. A TABELA 6 mostra os resultados encontrados quando os desvios padrão dos tempo de carregamento de cada página testada são calculado.
+Apesar do HTTP/2 apresentar desempenho pior ou semelhando ao HTTP/1.1 e de algumas técnicas que não deveriam alterar o comportamento do protocolo causarem terem nele um efeito não esperado, pode se notar que o novo protocolo se comporta diferente de sua versão prévia. As \autoref{desviopadraohttp11} e \autoref{desviopadraohttp2} mostram os resultados encontrados quando os desvios padrão dos tempo de carregamento de cada página testada são calculados.
 
-TABELA 6
+\input{./05-tabelas/analise-de-resultados/desvio-padrao-http11}
 
-Observando a tabela percebe se que o HTTP/2 é um protocolo mais estável e que aparentemente sofre menos com as alterações de rede. Quando utilizando uma conexão de rede real, não é possível remover 100\% os picos e vales de conexão que ocorrem. Por esse motivo percebemos que os tempos de carregamento se alteram (apesar de os valores muito fora da média já terem sido retirados). Mesmo assim, o desvio padrão do HTTP/2 foi menor do que o do HTTP/1.1 para todas as páginas, o que pode ser uma grande vantagem para desenvolvedores tentarem prever o comportamento de seus \textit{websites} e seus usuários.
+\input{./05-tabelas/analise-de-resultados/desvio-padrao-http2}
+
+Observando as \autoref{desviopadraohttp11} e \autoref{desviopadraohttp2} percebe se que o HTTP/2 é um protocolo mais estável e que, aparentemente, sofre menos com as alterações de rede. Quando utilizando uma conexão de rede real, não é possível remover 100\% os picos e vales de conexão que ocorrem. Por esse motivo percebemos que os tempos de carregamento se alteram (apesar de os valores muito fora da média já terem sido retirados). Mesmo assim, o desvio padrão do HTTP/2 foi menor do que o do HTTP/1.1 para todas as páginas, o que pode ser uma grande vantagem para desenvolvedores tentarem prever o comportamento de seus \textit{websites} e seus usuários.
 
 \subsubsection{Cascata}
 \label{cascata}
@@ -73,7 +73,7 @@ As \autoref{fig:cascatahttp11} e \autoref{fig:cascatahttp2} mostram o carregamen
 
 Nas \autoref{fig:cascatahttp11} e \autoref{fig:cascatahttp2} a cor marrom representa o tempo que o componente ficou bloqueado, ou seja, estava aguardando outros componentes serem baixados para poder começar a ser processado. Sendo assim, durante esse período nem a requisição pelo componente foi feita ainda. A porção representada pela cor roxa é o tempo que o cliente ficou esperando pelo servidor para processar sua requisição e responde-la. E a cor cinza representa o tempo de envio do componente, ou seja, o tempo que o cliente demorou para fazer o \textit{download}.
 
-Os gráficos de cascata para os outros cenários podem ser encontrados nas FIGURA 1, FIGURA 2, FIGURA 3. Quando analisadas, essas figuras revelam a diferença no comportamento dos protocolos HTTP/1.1 e HTTP/2. Percebe se que no HTTP/1.1 os gráficos possuem o formato conhecido como cascata, onde os componentes ficam bloqueados ou não são nem processados até que outros já tenham terminado de serem baixados pelo cliente. Enquanto que no HTTP/2 a cascata não é formada, isso graças ao grande paralelismo que esse protocolo possui.
+Os gráficos de cascata para os outros cenários seguem o mesmo padrão dos dois mostrados e podem ser encontrados no \autoref{apend:graficosemcascata}. Quando analisadas, essas figuras revelam a diferença no comportamento dos protocolos HTTP/1.1 e HTTP/2. Percebe se que no HTTP/1.1 os gráficos possuem o formato conhecido como cascata, onde os componentes ficam bloqueados ou não são nem processados até que outros já tenham terminado de serem baixados pelo cliente. Enquanto que no HTTP/2 a cascata não é formada, isso graças ao grande paralelismo que esse protocolo possui.
 
 Com isso, esperava-se que o tempo gasto com componentes bloqueados no HTTP/1.1 fosse removido do tempo total de carregamento no HTTP/2. Mas podemos perceber, analisando os resultados do tempo de carregamento final das páginas, que isso não acontece. Apesar de os componentes não ficarem bloqueados, eles possuem tempo de \textit{download} muito maiores no HTTP/2.
 
