@@ -4,86 +4,87 @@
 \contentsline {section}{\numberline {1.1}Motiva\IeC {\c c}\IeC {\~a}o}{3}{section.1.1}
 \contentsline {section}{\numberline {1.2}Objetivos}{3}{section.1.2}
 \contentsline {chapter}{\chapternumberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}O Protocolo HTTP}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}Vis\IeC {\~a}o Geral}{7}{section.2.2}
-\contentsline {section}{\numberline {2.3}HTTP/1.0 VS HTTP/1.1}{9}{section.2.3}
+\contentsline {section}{\numberline {2.1}Protocolo HTTP}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Vis\IeC {\~a}o Geral do Funcionamento do HTTP}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}HTTP/1.0 VS HTTP/1.1}{10}{section.2.3}
 \contentsline {section}{\numberline {2.4}HTTP/1.1 VS HTTP/2}{15}{section.2.4}
-\contentsline {section}{\numberline {2.5}AJAX}{19}{section.2.5}
-\contentsline {section}{\numberline {2.6}Web 2.0}{21}{section.2.6}
+\contentsline {section}{\numberline {2.5}AJAX}{20}{section.2.5}
+\contentsline {section}{\numberline {2.6}Web 2.0}{20}{section.2.6}
 \contentsline {chapter}{\chapternumberline {3}Trabalhos Relacionados}{22}{chapter.3}
 \contentsline {section}{\numberline {3.1}\textit {High Performance Web Sites}}{22}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Regra 1: Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP}{22}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Regra 2: Use Redes de Entrega de Conte\IeC {\'u}do (CDN)}{23}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Regra 3: Adicione cabe\IeC {\c c}alhos de expira\IeC {\c c}\IeC {\~a}o}{23}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Regra 4: Utilize \textit {gzip} no componentes}{23}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.4}Regra 4: Utilize \textit {gzip} nos componentes}{23}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}Regra 5: Coloque folhas de estilo no topo da p\IeC {\'a}gina}{24}{subsection.3.1.5}
 \contentsline {subsection}{\numberline {3.1.6}Regra 6: Coloque \textit {scripts} no fim da p\IeC {\'a}gina}{24}{subsection.3.1.6}
 \contentsline {subsection}{\numberline {3.1.7}Regra 7: Evite express\IeC {\~o}es CSS}{24}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Regra 8: Fa\IeC {\c c}a arquivos \textit {JavaScripts} e folhas de estilo externos}{24}{subsection.3.1.8}
+\contentsline {subsection}{\numberline {3.1.8}Regra 8: Fa\IeC {\c c}a arquivos \textit {JavaScript} e folhas de estilo externos}{24}{subsection.3.1.8}
 \contentsline {subsection}{\numberline {3.1.9}Regra 9: Reduza o n\IeC {\'u}mero de pesquisas de DNS}{25}{subsection.3.1.9}
-\contentsline {subsection}{\numberline {3.1.10}Regra 10: Minimizar arquivo \textit {JavaScript}}{25}{subsection.3.1.10}
+\contentsline {subsection}{\numberline {3.1.10}Regra 10: Minimizar componentes}{25}{subsection.3.1.10}
 \contentsline {subsection}{\numberline {3.1.11}Regra 11: Evite redirecionamentos}{25}{subsection.3.1.11}
 \contentsline {subsection}{\numberline {3.1.12}Regra 12: Remova \textit {scripts} duplicados}{26}{subsection.3.1.12}
 \contentsline {subsection}{\numberline {3.1.13}Regra 13: Configure \textit {ETags}}{26}{subsection.3.1.13}
 \contentsline {subsection}{\numberline {3.1.14}Regra 14: Habilite \textit {cache} para AJAX}{26}{subsection.3.1.14}
 \contentsline {section}{\numberline {3.2}\textit {Even Faster Web Sites}}{26}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Entendendo performance em AJAX}{27}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}Entendendo desempenho em AJAX}{27}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Criando aplica\IeC {\c c}\IeC {\~o}es \textit {web} responsivas}{27}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Dividindo carga inicial}{28}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Carregando \textit {scripts} sem bloqueios}{28}{subsection.3.2.4}
 \contentsline {subsection}{\numberline {3.2.5}Lidando com \textit {scripts} ass\IeC {\'\i }ncronos}{29}{subsection.3.2.5}
 \contentsline {subsection}{\numberline {3.2.6}Posicionando blocos de \textit {scripts} em linha}{29}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Escrevendo \textit {JavaScripts} eficientes}{29}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.7}Escrevendo c\IeC {\'o}digos \textit {JavaScript} eficientes}{29}{subsection.3.2.7}
 \contentsline {subsection}{\numberline {3.2.8}Escalando usando \textit {Comet}}{30}{subsection.3.2.8}
 \contentsline {subsection}{\numberline {3.2.9}Indo al\IeC {\'e}m do \textit {gzip}}{30}{subsection.3.2.9}
 \contentsline {subsection}{\numberline {3.2.10}Otimizando imagens}{31}{subsection.3.2.10}
 \contentsline {subsection}{\numberline {3.2.11}Quebrando dom\IeC {\'\i }nios dominantes}{31}{subsection.3.2.11}
 \contentsline {subsection}{\numberline {3.2.12}Entregando o documento cedo}{31}{subsection.3.2.12}
 \contentsline {subsection}{\numberline {3.2.13}Usando \textit {Iframes} com modera\IeC {\c c}\IeC {\~a}o}{32}{subsection.3.2.13}
-\contentsline {subsection}{\numberline {3.2.14}Simplificando seletor CSS}{32}{subsection.3.2.14}
+\contentsline {subsection}{\numberline {3.2.14}Simplificando seletores CSS}{32}{subsection.3.2.14}
 \contentsline {chapter}{\chapternumberline {4}Metodologia}{33}{chapter.4}
 \contentsline {section}{\numberline {4.1}Sele\IeC {\c c}\IeC {\~a}o das t\IeC {\'e}cnicas de melhora de desempenho}{33}{section.4.1}
 \contentsline {section}{\numberline {4.2}Prepara\IeC {\c c}\IeC {\~a}o dos testes}{34}{section.4.2}
 \contentsline {section}{\numberline {4.3}Realiza\IeC {\c c}\IeC {\~a}o dos testes e coleta de dados}{35}{section.4.3}
 \contentsline {section}{\numberline {4.4}An\IeC {\'a}lise de resultados}{35}{section.4.4}
-\contentsline {chapter}{\chapternumberline {5}Desenvolvimento}{36}{chapter.5}
-\contentsline {section}{\numberline {5.1}T\IeC {\'e}cnicas Escolhidas}{36}{section.5.1}
-\contentsline {subsubsection}{\numberline {5.1.0.1}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP}{37}{subsubsection.5.1.0.1}
-\contentsline {subsubsection}{\numberline {5.1.0.2}Reduza o n\IeC {\'u}mero de pesquisas DNS}{37}{subsubsection.5.1.0.2}
-\contentsline {subsubsection}{\numberline {5.1.0.3}Evite redirecionamentos}{38}{subsubsection.5.1.0.3}
-\contentsline {subsubsection}{\numberline {5.1.0.4}Quebrando dom\IeC {\'\i }nios dominantes}{38}{subsubsection.5.1.0.4}
-\contentsline {section}{\numberline {5.2}O servidor}{38}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Apache}{38}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Nginx}{39}{subsection.5.2.2}
-\contentsline {subsubsection}{\numberline {5.2.2.1}Nghttp2}{39}{subsubsection.5.2.2.1}
-\contentsline {subsection}{\numberline {5.2.3}A escolha do servidor}{39}{subsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.3.1}A primeira escolha do servidor}{40}{subsubsection.5.2.3.1}
-\contentsline {section}{\numberline {5.3}Execu\IeC {\c c}\IeC {\~a}o dos testes}{41}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Considera\IeC {\c c}\IeC {\~o}es iniciais}{41}{subsection.5.3.1}
+\contentsline {chapter}{\chapternumberline {5}Desenvolvimento}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}T\IeC {\'e}cnicas Escolhidas}{37}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP}{38}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Reduza o n\IeC {\'u}mero de pesquisas DNS}{38}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Evite redirecionamentos}{39}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Quebrando dom\IeC {\'\i }nios dominantes}{39}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}O servidor}{39}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Apache}{39}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Nginx}{40}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Nghttp2}{40}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}A escolha do servidor}{40}{subsection.5.2.4}
+\contentsline {subsubsection}{\numberline {5.2.4.1}A primeira escolha do servidor}{41}{subsubsection.5.2.4.1}
+\contentsline {section}{\numberline {5.3}Execu\IeC {\c c}\IeC {\~a}o dos testes}{42}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Considera\IeC {\c c}\IeC {\~o}es iniciais}{42}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Utilizando o \textit {nghttpd}}{43}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}A primeira execu\IeC {\c c}\IeC {\~a}o dos testes}{43}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Problemas nos resultados}{45}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}A escolha final do servidor}{45}{section.5.4}
-\contentsline {chapter}{\chapternumberline {6}Resultados}{47}{chapter.6}
-\contentsline {subsection}{\numberline {6.0.1}An\IeC {\'a}lise do tempo de carregamento}{47}{subsection.6.0.1}
-\contentsline {subsubsection}{\numberline {6.0.1.1}Desvio padr\IeC {\~a}o}{55}{subsubsection.6.0.1.1}
-\contentsline {subsubsection}{\numberline {6.0.1.2}Cascata}{58}{subsubsection.6.0.1.2}
-\contentsline {subsection}{\numberline {6.0.2}Discuss\IeC {\~a}o dos resultados}{59}{subsection.6.0.2}
-\contentsline {subsection}{\numberline {6.0.3}Quest\IeC {\~o}es em aberto}{60}{subsection.6.0.3}
-\contentsline {chapter}{\chapternumberline {7}Conclus\IeC {\~a}o}{61}{chapter.7}
-\contentsline {section}{\numberline {7.1}Principais contribui\IeC {\c c}\IeC {\~o}es}{62}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trabalhos futuros}{63}{section.7.2}
-\contentsline {chapter}{Refer\^encias}{64}{section*.10}
+\contentsline {subsection}{\numberline {5.3.3}A primeira execu\IeC {\c c}\IeC {\~a}o dos testes}{44}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Problemas nos resultados}{46}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}A escolha final do servidor}{46}{section.5.4}
+\contentsline {chapter}{\chapternumberline {6}Resultados}{48}{chapter.6}
+\contentsline {section}{\numberline {6.1}An\IeC {\'a}lise do tempo de carregamento}{48}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}An\IeC {\'a}lise do desvio padr\IeC {\~a}o}{50}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Cascata}{51}{subsection.6.1.2}
+\contentsline {section}{\numberline {6.2}Discuss\IeC {\~a}o dos resultados}{54}{section.6.2}
+\contentsline {section}{\numberline {6.3}Quest\IeC {\~o}es em aberto}{55}{section.6.3}
+\contentsline {chapter}{\chapternumberline {7}Conclus\IeC {\~a}o}{56}{chapter.7}
+\contentsline {section}{\numberline {7.1}Principais contribui\IeC {\c c}\IeC {\~o}es}{57}{section.7.1}
+\contentsline {section}{\numberline {7.2}Trabalhos futuros}{58}{section.7.2}
+\contentsline {chapter}{Refer\^encias}{59}{section*.13}
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{66}{section*.11}
-\contentsline {appendix}{\chapternumberline {A}Tentativa de configura\IeC {\c c}\IeC {\~a}o do mod\_h2}{67}{appendix.A}
-\contentsline {appendix}{\chapternumberline {B}Configurando \textit {nghttp2}}{69}{appendix.B}
-\contentsline {subsection}{\numberline {B.0.1}Instalando depend\IeC {\^e}ncias}{69}{subsection.B.0.1}
-\contentsline {subsection}{\numberline {B.0.2}Instalando a aplica\IeC {\c c}\IeC {\~a}o}{70}{subsection.B.0.2}
-\contentsline {appendix}{\chapternumberline {C}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Separados}{71}{appendix.C}
-\contentsline {appendix}{\chapternumberline {D}Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP: Arquivos Concatenados}{73}{appendix.D}
-\contentsline {appendix}{\chapternumberline {E}Reduza o n\IeC {\'u}mero de pesquisas DNS: Multiplas CDN}{75}{appendix.E}
-\contentsline {appendix}{\chapternumberline {F}Reduza o n\IeC {\'u}mero de pesquisas DNS: \IeC {\'U}nica CDN}{77}{appendix.F}
-\contentsline {appendix}{\chapternumberline {G}Quebrando dom\IeC {\'\i }nios dominantes}{79}{appendix.G}
-\contentsline {chapter}{\chapternumberline {H}Gr\IeC {\'a}ficos em cascata}{83}{appendix.H}
+\contentsline {part}{Ap\^endices}{61}{section*.14}
+\contentsline {appendix}{\chapternumberline {A}C\IeC {\'o}digo de teste para a t\IeC {\'e}cnica ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'': Arquivos Separados}{62}{appendix.A}
+\contentsline {appendix}{\chapternumberline {B}C\IeC {\'o}digo de teste para a t\IeC {\'e}cnica ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'': Arquivos Concatenados}{64}{appendix.B}
+\contentsline {appendix}{\chapternumberline {C}C\IeC {\'o}digo de teste para a t\IeC {\'e}cnica ''Reduza o n\IeC {\'u}mero de pesquisas DNS'': Multiplas CDN}{66}{appendix.C}
+\contentsline {appendix}{\chapternumberline {D}C\IeC {\'o}digo de teste para a t\IeC {\'e}cnica ''Reduza o n\IeC {\'u}mero de pesquisas DNS'': \IeC {\'U}nica CDN}{68}{appendix.D}
+\contentsline {appendix}{\chapternumberline {E}C\IeC {\'o}digo de teste para a t\IeC {\'e}cnica ''Quebrando dom\IeC {\'\i }nios dominantes''}{70}{appendix.E}
+\contentsline {appendix}{\chapternumberline {F}Configurando \textit {nghttp2}}{74}{appendix.F}
+\contentsline {section}{\numberline {F.1}Instalando depend\IeC {\^e}ncias}{74}{section.F.1}
+\contentsline {section}{\numberline {F.2}Instalando a aplica\IeC {\c c}\IeC {\~a}o}{75}{section.F.2}
+\contentsline {appendix}{\chapternumberline {G}Tentativa de configura\IeC {\c c}\IeC {\~a}o do mod\_h2}{76}{appendix.G}
+\contentsline {appendix}{\chapternumberline {H}Tabelas de resultados detalhados dos testes realizados}{78}{appendix.H}
+\contentsline {appendix}{\chapternumberline {I}Gr\IeC {\'a}ficos em cascata dos testes realizados}{86}{appendix.I}

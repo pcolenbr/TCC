@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\caption{Resultados da técnica ''Faça menos requisições HTTP''}
+\label{resultados-facamenosrequisicoeshttp}
+\begin{tabular}{ll|c|c|c|c|}
+\cline{3-6}
+                                                                                                                & \multicolumn{1}{c|}{\textbf{}}   & \multicolumn{2}{c|}{\textbf{HTTP/1.1}} & \multicolumn{2}{c|}{\textbf{HTTP/2}} \\ \cline{3-6} 
+\multicolumn{1}{c}{}                                                                                            &                                  & \textbf{Firefox}   & \textbf{Chrome}   & \textbf{Firefox}  & \textbf{Chrome}  \\ \hline
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}Arquivos\\ separados\end{tabular}}}}    & \textbf{Média}                   & 4.8996             & 4.944            & 4.8944             & 4.8184           \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                          & \textbf{Desvio padrão}           & 0.15053            & 0.11193          & 0.10828           & 0.09029          \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                          & \textbf{Coeficiente de varição}  & 3.24\%             & 2.43\%            & 2.33\%            & 1.97\%           \\ \hline
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}Arquivos\\ concatenados\end{tabular}}}} & \textbf{Média}                   & 4.6496             & 4.6528             & 4.608            & 4.5844           \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                          & \textbf{Desvio padrão}           & 0.16059            & 0.20940           & 0.11883           & 0.07786          \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                          & \textbf{Coeficiente de variação} & 3.28\%             & 4.28\%            & 2.40\%            & 1.62\%           \\ \hline
+\end{tabular}
+\end{table}

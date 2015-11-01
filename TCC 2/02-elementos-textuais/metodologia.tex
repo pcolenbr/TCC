@@ -5,16 +5,16 @@
 \chapter{Metodologia}
 \label{chap:metodologia}
 
-Para alcançar os objetivos propostos de entender o funcionamento das técnicas de otimização descritas por Steve Souders em seus dois livro, \textit{High Performance Web Sites}, \cite{HighPerformance}, e \textit{Even Faster Web Sites}, \cite{EvenFaster}, quando aplicadas ao HTTP/2 e, se necessário, propor novas técnicas para essa versão do protocolo, este trabalho foi divido em quatro etapas:
+Para alcançar os objetivos propostos de entender o funcionamento das técnicas de otimização descritas por Steve Souders em seus dois livros, \textit{High Performance Web Sites}, \cite{HighPerformance}, e \textit{Even Faster Web Sites}, \cite{EvenFaster}, quando aplicadas ao HTTP/2 e, se necessário, propor novas técnicas para essa versão do protocolo, este trabalho foi divido em quatro etapas:
 
 \begin{itemize}
-	\item Etapa 1: Seleção das técnicas de melhora de desempenho;
+	\item Etapa 1: Seleção das técnicas de melhora de desempenho a serem avaliadas;
 	\item Etapa 2: Preparação dos testes das técnicas selecionadas;
 	\item Etapa 3: Realização dos teste e coleta de dados;
 	\item Etapa 4: Análise dos resultados.
 \end{itemize}
 
-Neste capítulo serão descritas as etapas deste trabalho.
+No restante deste capítulo são descritas as etapas deste trabalho.
 
 \section{Seleção das técnicas de melhora de desempenho}
 \label{sec:selecaodastecnicasdemelhoradedesempenho}
@@ -30,16 +30,16 @@ Sendo assim, para escolher as técnicas que serão testadas, duas perguntas deve
 	\item A técnica pode ter o seu funcionamento afetado pela mudança do protocolo HTTP/1.1 para o HTTP2?
 \end{itemize}
 
-Caso a resposta para essas duas perguntas seja positiva, então, a técnica será analisada.
+Caso a resposta para essas duas perguntas seja positiva, então, a técnica foi selecionada para análise.
 
 \section{Preparação dos testes}
 \label{sec:preparacaodostestes}
 
-Para executar os testes propostos foi necessário utilizar um servidor \textit{web} que tenha a capacidade de se comunicar através do protocolo HTTP. Uma instância de um servidor foi implantada em uma maquina virtual instanciada no serviço de servidores em nuvem da empresa americana Amazon\footnote{http://www.amazon.com/}, o Amazon AWS\footnote{http://aws.amazon.com/}. A Amazon foi escolhida por possuir um preço acessível para máquinas de baixo desempenho e possuir instâncias de servidores no Brasil. O sistema operacional escolhido para este servidor de testes é o Ubuntu 14.04 LTS\footnote{https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes}. O servidor será criado com localidade definida para São Paulo e será do tipo \textit{t1.micro}, que possui as seguintes configurações:
+Para executar os testes propostos, foi necessário utilizar um servidor \textit{web} com a capacidade de se comunicar através do protocolo HTTP. Uma instância de um servidor foi implantada em uma máquina virtual instanciada no serviço de servidores em nuvem da empresa americana Amazon\footnote{http://www.amazon.com/}, o Amazon AWS\footnote{http://aws.amazon.com/}. A Amazon foi escolhida por possuir um preço acessível para máquinas de baixo desempenho e possuir instâncias de servidores no Brasil. O sistema operacional escolhido para este servidor de testes é o Ubuntu 14.04 LTS\footnote{https://wiki.ubuntu.com/TrustyTahr/ReleaseNotes}. O servidor foi criado com localidade definida para São Paulo e foi do tipo \textit{t1.micro}, que possui as seguintes configurações:
 
 \begin{itemize}
 	\item Processador de 32-bit ou 64-bit
-	\item 1 CPU
+	\item 1 CPU, com 1 núcleo de processamento
 	\item 0,613 Gb de memória RAM
 	\item Capacidade de armazenamento EBS\footnote{http://aws.amazon.com/ebs/}
 	\item Performance de rede muito baixa
@@ -48,20 +48,20 @@ Para executar os testes propostos foi necessário utilizar um servidor \textit{w
 
 Essa configuração de máquina foi escolhida por ser a mais básica (e consequentemente mais barata) na época de publicação deste trabalho.
 
-Além do servidor para a hospedagem das páginas \textit{web}, a realização dos testes de desempenho dependem de um navegador \textit{web}. Visando compreender os resultados que as melhorais podem ter no mundo real, os navegadores Google Chrome\footnote{Navegador \textit{web} desenvolvido e mantido pela Google e o mais utilizado do mundo} versão 43.0 e Mozilla Firefox\footnote{Navegador \textit{web} desenvolvido e mantido pela Mozilla e segundo mais utilizado do mundo} versão 38.0 foram os escolhidos. Essa escolha levou em conta o fato de os dois navegadores juntos representam mais de 80\% dos acessos a Internet. Mas apesar da escolha dos navegadores de teste se limitarem a dois navegadores, espera-se que os resultados sejam independentes do navegador utilizado.
+Além do servidor para a hospedagem das páginas \textit{web}, a realização dos testes de desempenho dependem de um navegador \textit{web}. Visando compreender os resultados que as melhorias podem ter no mundo real, os navegadores Google Chrome\footnote{Navegador \textit{web} desenvolvido e mantido pela Google e o mais utilizado do mundo} versão 43.0 e Mozilla Firefox\footnote{Navegador \textit{web} desenvolvido e mantido pela Mozilla e segundo mais utilizado do mundo} versão 38.0 foram os escolhidos. Essa escolha levou em conta o fato de os dois navegadores juntos representam mais de 80\% dos acessos à Internet \cite{BrowserPopularity}. Mas apesar da escolha dos navegadores de teste se limitarem a dois navegadores, espera-se que os resultados sejam independentes do navegador utilizado.
 
 \section{Realização dos testes e coleta de dados}
 \label{sec:realizacaodostestesecoletadedados}
 
 Dois tipos de testes foram executados para cada uma das técnicas de otimização escolhidas.
 
-No primeiro tipo, foram criadas páginas especiais para cada teste. Essas páginas continham os elementos necessários para analisar os resultados obtidos com a técnica em questão e alguns elementos para aumentar o número de requisições, estressando a conexão e se aproximando mais do mundo real. Cada página foi carregada 20 vezes e o tempo de carregamento obtido através das ferramentas de desenvolvedor de cada navegador e foi registrado em uma tabela. Esses testes provaram se as técnicas têm seu funcionamento alterado com a mudança de versão do protocolo HTTP.
+No primeiro tipo, foram criadas páginas especiais para cada teste. Essas páginas continham os elementos necessários para analisar os resultados obtidos com a técnica em questão e alguns elementos para aumentar o número de requisições, estressando a conexão e se aproximando mais do mundo real. Cada página foi carregada 25 vezes e o tempo de carregamento obtido através das ferramentas de desenvolvedor de cada navegador e foi registrado em uma tabela. Esses testes mostraram se as técnicas têm seu funcionamento alterado com a mudança de versão do protocolo HTTP.
 
-No segundo tipo, as técnicas foram testadas uma a uma em uma simulação de um \textit{website} completo. O modelo de \textit{website} escolhido foi o \textit{template} de página única chamado \textit{Startbootstrap Creative}\footnote{http://ironsummitmedia.github.io/startbootstrap-creative/}. Esse tipo de \textit{template} é muito utilizado atualmente por ser simples e facilitar a navegação em dispositivos móveis, logo a análise do \textit{Startbootstrap Creative} representa um resultado relevante para o mundo atual.
+No segundo tipo, as técnicas foram testadas uma a uma em uma simulação de um \textit{website} completo. O modelo de \textit{website} escolhido foi o \textit{template} de página única chamado \textit{Startbootstrap Creative}\footnote{http://ironsummitmedia.github.io/startbootstrap-creative/}. Esse tipo de \textit{template} é muito utilizado atualmente por ser simples e facilitar a navegação em dispositivos móveis, logo, a análise do \textit{Startbootstrap Creative} representa um resultado relevante para a forma como a \textit{Web} tem sido usada atualmente.
 
 Como o modelo de \textit{cache} não se alterou entre as versões do protocolo, os testes foram realizados apenas para situações com \textit{cache} vazia, que é considerado o caso mais crítico para os usuários.
 
 \section{Análise de resultados}
 \label{sec:analisederesultados}
 
-Após coleta dos tempos de carregamentos das páginas no dois protocolos, esses dados foram analisados levando em conta a mediana e a média de cada conjunto. Valores de tempo de carregamento que estavam muito distantes dos demais foram desconsiderados por serem causados por picos de conexão. Essa decisão foi baseada no fato de que o objetivo de trabalho é analisar o uso da \textit{Web} no dia a dia das pessoas e não em situações extremas  de exceção. Além dos valores absolutos analisados os gráficos em cascata de cada página foram analisados para poder entender melhor o paralelismo das conexões em cada versão do HTTP.
+Após coleta dos tempos de carregamentos das páginas no dois protocolos, esses dados foram analisados, levando em conta a média e o desvio padrão dessa média de cada conjunto. Valores de tempo de carregamento que estavam muito distantes dos demais foram desconsiderados por serem causados por picos de conexão. Essa decisão foi baseada no fato de que o objetivo de trabalho é analisar o uso da \textit{Web} no dia a dia das pessoas e não em situações extremas  de exceção. Além dos valores absolutos analisados, os gráficos em cascata mostrando a sequência requisição dos recursos (imagens, arquivos CSS/JavaScript etc.) de cada página foram analisados para poder entender melhor o paralelismo das conexões em cada versão do HTTP.

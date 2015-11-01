@@ -9,7 +9,7 @@
 	\hline
 	\textbf{Etiqueta} & \textbf{Descrição} \\
 	\hline
-	\textit{Accept-Encoding}\footnote{A etiqueta \textit{Accept-Encoding} já existia no HTTP/1.0, mas era pouco utilizada por causa da sua especificação consufa, por isso por redefinida na versão 1.1.} & Lista de codificações aceitas. \\
+	\textit{Accept-Encoding}\footnote{A etiqueta \textit{Accept-Encoding} já existia no HTTP/1.0, mas era pouco utilizada por causa da sua especificação confusa, por isso foi redefinida na versão 1.1.} & Lista de codificações aceitas. \\
 	\hline
 	\textit{Age} & O tempo que o conteúdo está salvo no \textit{proxy} em segundos. \\
 	\hline
@@ -31,6 +31,8 @@
 	\hline
 	\textit{If-Unmodified-Since} & Envie o conteúdo se, e somente se, ele não foi modificado na data esperada. \\
 	\hline
+	\textit{Keep-Alive} & Detalhes sobre a conexão, tempo que ela ficará aberta e número máximo de requisições aceitas por ela. \\
+	\hline
 	\textit{Proxy-Authentication} & Pede uma,requisição de autenticação de um \textit{proxy}. \\
 	\hline
 	\textit{Proxy-Autorization} & Credenciais de autorização para se conectar a um \textit{proxy}. \\
@@ -45,7 +47,7 @@
 	\hline
 	\textit{Vary} & Informa quais partes do cabeçalho de requisição devem ser levadas em conta para descobrir se um recurso em \textit{cache} deve ser utilizado ou se este recurso deve ser solicitado no servidor. \\
 	\hline
-	\textit{Via} & Informa o servidor de proxies pelos quais a requisição passou. \\
+	\textit{Via} & Informa o servidor de \textit{proxies} pelos quais a requisição passou. \\
 	\hline
 	\textit{Warning} & Mensagem genérica de cuidado para possíveis problemas no corpo da mensagem. \\
 	\hline
@@ -55,9 +57,9 @@
 	\hline
 	\textbf{Método} & \textbf{Descrição} \\
 	\hline
-	\textit{OPTIONS} & Requer informações sobre os recursos que o servidor suporta. \\
+	\textit{OPTIONS} & Solicita informações sobre os recursos que o servidor suporta. \\
 	\hline
-	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Estados}\footnote{Além dos citados ainda foram adicionados outros estados no HTTP/1.1, mas a lista ficaria muito extensa. Logo foram descritos os estados que podem influenciar no desempenho do \textit{front-end}}} \\
+	\multicolumn{2}{| c |}{\cellcolor[HTML]{C0C0C0}\textbf{Estados}\footnote{Além dos citados ainda foram adicionados outros estados no HTTP/1.1, mas a lista ficaria muito extensa. Logo foram descritos os estados que podem influenciar no desempenho do \textit{front-end}.}} \\
 	\hline
 	\textbf{Código} & \textbf{Descrição} \\
 	\hline
@@ -75,7 +77,7 @@
 	\hline
 	\textbf{Diretiva} & \textbf{Descrição} \\
 	\hline
-	\textit{chuncked} & Utilizado para envie de conteúdo em partes. \\
+	\textit{chuncked} & Utilizado para envio de conteúdo em partes. \\
 	\hline
 	\textit{max-age} & Determina qual é o tempo máximo que um conteúdo deve ficar salvo em \textit{cache}. \\
 	\hline

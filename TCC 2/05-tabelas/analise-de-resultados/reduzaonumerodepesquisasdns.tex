@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\caption{Resultados da técnica ''Reduza o número de pesquisas DNS''}
+\label{resultados-reduzaonumerodepesquisasdns}
+\begin{tabular}{ll|c|c|c|c|}
+\cline{3-6}
+                                                                                                         & \multicolumn{1}{c|}{\textbf{}}   & \multicolumn{2}{c|}{\textbf{HTTP/1.1}} & \multicolumn{2}{c|}{\textbf{HTTP/2}} \\ \cline{3-6} 
+\multicolumn{1}{c}{}                                                                                     &                                  & \textbf{Firefox}   & \textbf{Chrome}   & \textbf{Firefox}  & \textbf{Chrome}  \\ \hline
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}Multiplas\\ CDNs\end{tabular}}}} & \textbf{Média}                   & 4.9                & 4.2304            & 4.3484            & 4.1972           \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                   & \textbf{Desvio padrão}           & 0.12958            & 0.13001           & 0.11417           & 0.09220          \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                   & \textbf{Coeficiente de varição}  & 2.65\%             & 2.70\%            & 3.01\%            & 2.20\%           \\ \hline
+\multicolumn{1}{|l|}{\multirow{3}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}Única\\ CDN\end{tabular}}}}      & \textbf{Média}                   & 5.0664             & 4.2104            & 4.314             & 4.0712           \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                   & \textbf{Desvio padrão}           & 0.26658            & 0.17080           & 0.23863           & 0.04958          \\ \cline{2-6} 
+\multicolumn{1}{|l|}{}                                                                                   & \textbf{Coeficiente de variação} & 5.26\%             & 5.53\%            & 4.06\%            & 1.22\%           \\ \hline
+\end{tabular}
+\end{table}

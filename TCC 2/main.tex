@@ -39,9 +39,10 @@
 \usepackage[bottom]{footmisc}                      % Mantém as notas de rodapé sempre na mesma posição
 %\usepackage{subfig}                                % Posicionamento de figuras
 %\usepackage{scalefnt}                              % Permite redimensionar tamanho da fonte
-%\usepackage{lscape}                                % Permite páginas em modo "paisagem"
+\usepackage{lscape}           	                    % Permite páginas em modo "paisagem"
 %\usepackage{picinpar}                              % Dispor imagens em parágrafos
 \usepackage{ltablex}
+\usepackage{multirow}
 
 % Inclui o preâmbulo do documento
 \include{./01-elementos-pre-textuais/preambulo}
@@ -81,8 +82,8 @@
     \include{./01-elementos-pre-textuais/capa}              % Capa
     \include{./01-elementos-pre-textuais/folha-rosto}       % Folha de rosto
     %\include{./01-elementos-pre-textuais/folha-aprovacao}   % Folha de aprovação
-    %\include{./01-elementos-pre-textuais/dedicatoria}       % Dedicatória
-    %\include{./01-elementos-pre-textuais/agradecimentos}    % Agradecimentos
+    \include{./01-elementos-pre-textuais/dedicatoria}       % Dedicatória
+    \include{./01-elementos-pre-textuais/agradecimentos}    % Agradecimentos
     \include{./01-elementos-pre-textuais/epigrafe}          % Epígrafe
     \include{./01-elementos-pre-textuais/resumo-pt}         % Resumo na língua vernácula
     \include{./01-elementos-pre-textuais/resumo-en}         % Resumo em língua estrangeira
