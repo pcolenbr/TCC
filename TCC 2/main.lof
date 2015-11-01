@@ -6,7 +6,7 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces Vis\IeC {\~a}o Geral do Protocolo HTTP}}{7}{figure.2.5}
 \contentsline {figure}{\numberline {6}{\ignorespaces HTTP com (a) m\IeC {\'u}ltiplas conex\IeC {\~o}es e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (b) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (c) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es em \textit {pipeline}}}{12}{figure.2.6}
 \contentsline {figure}{\numberline {7}{\ignorespaces Multiplexa\IeC {\c c}\IeC {\~a}o de fluxos no HTTP/2 (a) dois fluxos separados (b) fluxos multiplexados}}{17}{figure.2.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o entre modelo de \textit {web} original e modelo utilizando AJAX}}{21}{figure.2.8}
+\contentsline {figure}{\numberline {8}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o entre modelo de \textit {web} original e modelo utilizando AJAX}}{20}{figure.2.8}
 \contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de funcionamento de proxy HTTP/2.}}{42}{figure.5.9}
 \contentsline {figure}{\numberline {10}{\ignorespaces Ferramentas do desenvolvedor do Google Chrome mostrando protocolo usado na requisi\IeC {\c c}\IeC {\~a}o.}}{45}{figure.5.10}
 \contentsline {figure}{\numberline {11}{\ignorespaces Ferramentas do desenvolvedor do Mozilla Firefox mostrando protocolo usado na requisi\IeC {\c c}\IeC {\~a}o.}}{45}{figure.5.11}

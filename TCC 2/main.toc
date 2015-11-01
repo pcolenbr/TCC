@@ -8,8 +8,8 @@
 \contentsline {section}{\numberline {2.2}Vis\IeC {\~a}o Geral do Funcionamento do HTTP}{7}{section.2.2}
 \contentsline {section}{\numberline {2.3}HTTP/1.0 VS HTTP/1.1}{10}{section.2.3}
 \contentsline {section}{\numberline {2.4}HTTP/1.1 VS HTTP/2}{15}{section.2.4}
-\contentsline {section}{\numberline {2.5}AJAX}{20}{section.2.5}
-\contentsline {section}{\numberline {2.6}Web 2.0}{20}{section.2.6}
+\contentsline {section}{\numberline {2.5}AJAX}{19}{section.2.5}
+\contentsline {section}{\numberline {2.6}Web 2.0}{21}{section.2.6}
 \contentsline {chapter}{\chapternumberline {3}Trabalhos Relacionados}{22}{chapter.3}
 \contentsline {section}{\numberline {3.1}\textit {High Performance Web Sites}}{22}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Regra 1: Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP}{22}{subsection.3.1.1}
@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {3.1.9}Regra 9: Reduza o n\IeC {\'u}mero de pesquisas de DNS}{25}{subsection.3.1.9}
 \contentsline {subsection}{\numberline {3.1.10}Regra 10: Minimizar componentes}{25}{subsection.3.1.10}
 \contentsline {subsection}{\numberline {3.1.11}Regra 11: Evite redirecionamentos}{25}{subsection.3.1.11}
-\contentsline {subsection}{\numberline {3.1.12}Regra 12: Remova \textit {scripts} duplicados}{26}{subsection.3.1.12}
+\contentsline {subsection}{\numberline {3.1.12}Regra 12: Remova \textit {scripts} duplicados}{25}{subsection.3.1.12}
 \contentsline {subsection}{\numberline {3.1.13}Regra 13: Configure \textit {ETags}}{26}{subsection.3.1.13}
 \contentsline {subsection}{\numberline {3.1.14}Regra 14: Habilite \textit {cache} para AJAX}{26}{subsection.3.1.14}
 \contentsline {section}{\numberline {3.2}\textit {Even Faster Web Sites}}{26}{section.3.2}
