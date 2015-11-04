@@ -156,4 +156,10 @@ Dispon{\'\i}vel em: \url{https://www.tollmanz.com/http2-nghttp2-nginx-tls/}.}
 {TSUJIKAWA, T. \textbf{Nghttp2}. 2015.
 Dispon{\'\i}vel em: \url{https://nghttp2.org/}.}
 
+\bibitem[W3Schools 2015]{BrowserPopularity}
+\abntrefinfo{W3Schools}{W3SCHOOLS}{2015}
+{W3SCHOOLS. \textbf{Browser Statistics}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://www.w3schools.com/browsers/browsers\_stats.asp}.}
+
 \end{thebibliography}

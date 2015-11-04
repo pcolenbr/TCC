@@ -11,7 +11,7 @@ Neste capítulo são descritos e analisados os valores encontrados e é analisad
 \section{Análise do tempo de carregamento}
 \label{analisedotempodecarregamento}
 
-O tempo de carregamento foi a métrica de desempenho escolhida para comparar o comportamento das páginas de teste nos diferentes protocolos. Essa métrica foi obtido com a ajuda da ferramenta de desenvolvedor de cada navegador. As tabelas \ref{resultados-facamenosrequisicoeshttp} à \ref{resultados-template}, mostram os resultados obtidos para das médias, desvio padrão e coeficiente de variação do tempo carregamento das páginas \textit{web} divididos por técnica analisada. Os resultados detalhados para cada técnica, mostrando os valores para cada execução, podem ser encontrados no \autoref{apend:tabelasdetalhadas}.
+O tempo de carregamento foi a métrica de desempenho escolhida para comparar o comportamento das páginas de teste nos diferentes protocolos. Essa métrica foi obtida com a ajuda da ferramenta de desenvolvedor de cada navegador. As tabelas \ref{resultados-facamenosrequisicoeshttp} a \ref{resultados-template}, mostram os resultados obtidos para as médias, desvio padrão e coeficiente de variação do tempo carregamento das páginas \textit{web} divididos por técnica analisada. Os testes foram executados 25 vezes para cada cada cenário e as medidas estatísticas foram calculadas a partir dos valores de tempo de carregamento obtidos em cada execução do teste. Os resultados detalhados para cada técnica, mostrando os valores para cada execução, podem ser encontrados no \autoref{apend:tabelasdetalhadas}.
 
 \input{./05-tabelas/analise-de-resultados/facamenosrequisicoeshttp}
 
@@ -65,7 +65,7 @@ As figuras \ref{fig:cascatahttp11} e \ref{fig:cascatahttp2} mostram o carregamen
 	\end{figure}
 \end{landscape}
 
-Nas figuras \ref{fig:cascatahttp11} e \ref{fig:cascatahttp2} a cor marrom representa o tempo que o componente ficou bloqueado, ou seja, estava aguardando outros componentes serem baixados para poder começar a ser processado. Sendo assim, durante esse período, nem mesmo a requisição pelo componente foi feita ainda. A porção representada pela cor roxa é o tempo que o cliente ficou esperando pelo servidor para processar sua requisição e responde-la. E a cor cinza representa o tempo de envio do componente, ou seja, o tempo que o cliente demorou para fazer o \textit{download}.
+Nas figuras \ref{fig:cascatahttp11} e \ref{fig:cascatahttp2}, a cor marrom representa o tempo que o componente ficou bloqueado, ou seja, estava aguardando outros componentes serem baixados para poder começar a ser processado. Sendo assim, durante esse período, nem mesmo a requisição pelo componente foi feita ainda. A porção representada pela cor roxa é o tempo que o cliente ficou esperando pelo servidor para processar sua requisição e responde-la. E a cor cinza representa o tempo de envio do componente, ou seja, o tempo que o cliente demorou para fazer o \textit{download}.
 
 Os gráficos de cascata para os outros cenários seguem o mesmo padrão dos dois mostrados e podem ser encontrados no \autoref{apend:graficosemcascata}. Quando analisadas, essas figuras revelam a diferença no comportamento dos protocolos HTTP/1.1 e HTTP/2. Percebe-se que no HTTP/1.1 os gráficos possuem o formato conhecido como cascata, em que os componentes ficam bloqueados ou não são nem processados até que outros já tenham terminado de serem baixados pelo cliente. Enquanto que no HTTP/2, a cascata não é formada, isso graças ao grande paralelismo que esse protocolo possui.
 
