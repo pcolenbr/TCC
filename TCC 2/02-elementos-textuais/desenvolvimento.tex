@@ -9,7 +9,7 @@ O desenvolvimento deste trabalho passou por quatro etapas principais: a seleçã
 \section{Técnicas Escolhidas}
 \label{tecnicasescolhidas}
 
-Após análise das técnicas propostas por Steve Souders em seus livros, foi concluído que cinco técnicas poderiam sofrer alterações com a implantação do novo protocolo. São estas:
+Após análise das técnicas propostas por Steve Souders em \cite{HighPerformance} e \cite{EvenFaster}, foi concluído que cinco técnicas poderiam sofrer alterações com a implantação do novo protocolo. São estas:
 
 \begin{enumerate}
 	\item Faça menos requisições HTTP
@@ -47,14 +47,14 @@ A seguir encontram-se a explicações de cada teste e seus códigos-fontes podem
 \subsection{Faça menos requisições HTTP}
 \label{facamenosrequisicoeshttp}
 
-Para a realização deste teste, vários arquivos CSS e \textit{JavaScript} foram inseridos na página. Primeiramente, os arquivos são inseridos separadamente e depois são concatenados e inseridos de uma só vez. A soma dos tamanhos dos arquivos separados é 285kB maior do que a soma dos arquivos concatenados, 1.24 MB, isso ocorre por causa da remoção de espaços em branco.
+Para a realização deste teste, arquivos CSS e \textit{JavaScript} foram inseridos na página através das etiquetas HTML \textit{script} e \textit{style}. Primeiramente, os arquivos são inseridos separadamente e depois são concatenados em apenas um arquivo. A soma dos tamanhos dos arquivos separados é 285kB maior do que a soma dos arquivos concatenados, 1.24 MB, isso ocorre por causa da remoção de espaços em branco.
 
 O código para o teste com arquivos separados pode ser encontrado no \autoref{apend:codigo_facamenosrequisicoeshttp_sep} e o código para o teste com os arquivos concatenados no \autoref{apend:codigo_facamenosrequisicoeshttp_concat}.
 
 \subsection{Reduza o número de pesquisas DNS}
 \label{reduzaonumerodepesquisasdns}
 
-Neste teste, os mesmos arquivos CSS e \textit{JavaScript} do teste \ref{facamenosrequisicoeshttp} foram utilizados mas, desta vez, ao invés de serem hospedados no mesmo servidor dos arquivos HTML, eles foram inseridos via CDN. Sendo assim, as páginas se diferem no número de CDNs utilizadas. Enquanto no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_mult} são utilizadas 4 CDNs diferentes, no código do \autoref{apend:codigo_reduzaonumerodepesquisasdns_unic} apenas uma é utilizada. Com isso, no primeiro teste, são feitas quatro consultas de DNS e, no segundo, apenas uma.
+Neste teste, os mesmos arquivos CSS e \textit{JavaScript} do teste \ref{facamenosrequisicoeshttp} foram utilizados mas, desta vez, ao invés de serem hospedados no mesmo servidor dos arquivos HTML, eles foram inseridos via CDN. Sendo assim, as páginas se diferem no número de CDNs utilizadas. Enquanto no código do primeiro experimento são utilizadas 4 CDNs diferentes, no código do segundo experimento apenas uma é utilizada. Com isso, no primeiro teste são feitas quatro consultas de DNS e, no segundo, apenas uma.
 
 \subsection{Evite redirecionamentos}
 \label{eviteredirecionamentos}
@@ -88,7 +88,7 @@ Assim como o Apache, o Nginx é um projeto de código livre de servidor HTTP. Co
 
 O \textit{nghttp2}, desenvolvido por \citeonline{nghttp}, é uma implementação em linguagem C do HTTP/2 e do protocolo de compressão HPACK. Essa implementação possui um cliente, um servidor, um \textit{proxy} e uma ferramenta de teste de carga para o servidor. Apesar do nome sugerir que existe alguma ligação entre o Nginx e o \textit{nghttp2}, não foi possível encontrar nada que relacione os dois servidores.
 
-Apesar de os passos para a instalação do \textit{nghttp2} estarem documentados no site do projeto, algumas etapas importantes sobre instalação de dependências necessárias para fazer a aplicação funcionar corretamente não estão bem explicadas. Sendo assim, foram encontradas dificuldades no processo de instalação. Mas após superar essas dificuldades a aplicação foi configurada e foi possível confirmar seu funcionamento com a ajuda de um navegador com suporte a requisições e respostas HTTP/2. O processo de instalação está descrito no \autoref{apend:configurandonghttp2}.
+Apesar dos passos para a instalação do \textit{nghttp2} estarem documentados no site do projeto, algumas etapas sobre instalação de dependências não estão bem explicadas. Sendo assim, foram encontradas dificuldades no processo de instalação. Mas após superar essas dificuldades a aplicação foi configurada e foi possível confirmar seu funcionamento com a ajuda de um navegador com suporte a requisições e respostas HTTP/2. O processo de instalação está descrito no \autoref{apend:configurandonghttp2}.
 
 \subsection{A escolha do servidor}
 \label{aescolhadoservidor}
@@ -115,7 +115,7 @@ Como a configuração do servidor Apache falhou, foi necessário encontrar uma s
 \subsubsection{A primeira escolha do servidor}
 \label{aprimeiraescolhadoservidor}
 
-Apesar dos esforços para encontrar um servidor que suportasse a várias versões do protocolo HTTP, tal feito não foi possível. Sendo assim, ficou decido que seriam utilizados dois servidores diferentes para a realização dos testes, um para o HTTP/1.1 e outro para o HTTP/2.
+Apesar dos esforços para encontrar um servidor que suportasse as várias versões do protocolo HTTP, tal feito não foi possível. Sendo assim, ficou decido que seriam utilizados dois servidores diferentes para a realização dos testes, um para o HTTP/1.1 e outro para o HTTP/2.
 
 Como o \textit{nghttp2} foi o único servidor com suporte ao HTTP/2 que a instalação foi feita com sucesso, ele foi escolhido como o servidor de teste para o novo protocolo. E por apresentar desempenho melhor do que o Apache, o Nginx foi escolhido como o servidor de teste para o HTTP/1.1.
 
@@ -123,7 +123,7 @@ Como o \textit{nghttp2} foi o único servidor com suporte ao HTTP/2 que a instal
 \section{Execução dos testes}
 \label{execuçãodostestes}
 
-Os testes foram realizados em navegadores \textit{web}, o que torna o processo independente do sistema operacional. Mas o servidor foi configurado em uma máquina utilizando o sistema Ubuntu 14.04LTS, sendo assim, vale ressaltar, que os comandos descritos não vão necessariamente funcionar em sistemas operacionais diferentes do utilizado neste trabalho.
+Os testes foram realizados em navegadores \textit{web}, o que torna o processo independente do sistema operacional. Mas o servidor foi configurado em uma máquina utilizando o sistema Ubuntu 14.04LTS, sendo assim, vale ressaltar, que os comandos descritos não irão necessariamente funcionar em sistemas operacionais diferentes do utilizado neste trabalho.
 
 \subsection{Considerações iniciais}
 \label{consideracoesiniciais}
@@ -207,7 +207,7 @@ Para cada técnica de otimização escolhida, a página foi carregada 25 vezes u
 \subsection{Problemas nos resultados}
 \label{problemasnosresultados}
 
-Após a execução dos testes, percebeu-se que os resultados obtidos não foram os esperados. O HTTP/2 estava tendo resultados piores do que o HTTP/1.1 para todos os cenários de teste e as técnicas que não eram esperadas que funcionassem no novo protocolo, continuavam gerando tempos de carregamento diferentes quando aplicadas. Por esse motivo e levando em conta que o HTTP/2 é uma tecnologia muito nova e que suas implementações estão evoluindo de maneira acelerada, após a conclusão de que os resultados obtidos com o \textit{nghttp2} não eram satisfatórios, foi feita uma nova procura por servidores \textit{web} com suporte à nova versão do protocolo HTTP.
+Após a execução dos testes, percebeu-se que os resultados obtidos divergiram dos esperados. O HTTP/2 estava tendo tempos de carregamento piores do que o HTTP/1.1 para todos os cenários de teste e as técnicas que não eram esperadas que funcionassem no novo protocolo, continuavam gerando tempos de carregamento diferentes quando aplicadas. Por esse motivo e levando em conta que o HTTP/2 é uma tecnologia muito nova e que suas implementações estão evoluindo de maneira acelerada, após a conclusão de que os resultados obtidos com o \textit{nghttp2} não eram satisfatórios, foi feita uma nova procura por servidores \textit{web} com suporte à nova versão do protocolo HTTP.
 
 \section{A escolha final do servidor}
 \label{aescolhafinaldoservidor}

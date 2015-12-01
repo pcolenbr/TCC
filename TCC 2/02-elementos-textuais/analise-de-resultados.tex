@@ -65,7 +65,7 @@ As figuras \ref{fig:cascatahttp11} e \ref{fig:cascatahttp2} mostram o carregamen
 	\end{figure}
 \end{landscape}
 
-Nas figuras \ref{fig:cascatahttp11} e \ref{fig:cascatahttp2}, a cor marrom representa o tempo que o componente ficou bloqueado, ou seja, estava aguardando outros componentes serem baixados para poder começar a ser processado. Sendo assim, durante esse período, nem mesmo a requisição pelo componente foi feita ainda. A porção representada pela cor roxa é o tempo que o cliente ficou esperando pelo servidor para processar sua requisição e responde-la. E a cor cinza representa o tempo de envio do componente, ou seja, o tempo que o cliente demorou para fazer o \textit{download}.
+Nas Figuras \ref{fig:cascatahttp11} e \ref{fig:cascatahttp2}, a cor marrom representa o tempo que o componente ficou bloqueado, ou seja, estava aguardando outros componentes serem baixados para poder começar a ser processado. Sendo assim, durante esse período, nem mesmo a requisição pelo componente foi feita ainda. A porção representada pela cor roxa é o tempo que o cliente ficou esperando pelo servidor para processar sua requisição e responde-la. E a cor cinza representa o tempo de envio do componente, ou seja, o tempo que o cliente demorou para fazer o \textit{download}.
 
 Os gráficos de cascata para os outros cenários seguem o mesmo padrão dos dois mostrados e podem ser encontrados no \autoref{apend:graficosemcascata}. Quando analisadas, essas figuras revelam a diferença no comportamento dos protocolos HTTP/1.1 e HTTP/2. Percebe-se que no HTTP/1.1 os gráficos possuem o formato conhecido como cascata, em que os componentes ficam bloqueados ou não são nem processados até que outros já tenham terminado de serem baixados pelo cliente. Enquanto que no HTTP/2, a cascata não é formada, isso graças ao grande paralelismo que esse protocolo possui.
 
@@ -73,12 +73,26 @@ Com isso, esperava-se que o tempo gasto com componentes bloqueados no HTTP/1.1 f
 
 Existem alguns fatores que podem ser a causa desse aumento no tempo de \textit{download} das páginas. Tsujikawa, desenvolvedor do \textit{ngtthp2}, acredita que um dos motivos é o fato de os navegadores não estarem preparados para utilizar todas as funcionalidades disponíveis no HTTP/2, afinal de contas o protocolo é muito novo e ainda é necessário tempo para que tal adaptação seja feita\footnote{https://github.com/tatsuhiro-t/nghttp2/issues/387}. Outros motivos que podem estar limitando os ganhos com o paralelismo do HTTP/2 são a possível falta de otimização do Nginx, que não conseguiria servir tantas requisições paralelas otimizadas ao mesmo tempo, a limitação do \textit{hardware} da máquina onde está instalado o servidor, que não possui um processador multi-tarefas, ou até mesmo limitações da rede, que possui largura de banda para transferir tantos dados ao mesmo tempo.
 
+\section{Teste T}
+\label{testet}
+
+Para se comprovar o nível de confiança dos resultados encontrados, foi realizada uma análise estatística dos testes. Essa análise utilizou o Teste T para entender se os ganhos e perdas no tempo de carregamento das páginas ocorreu por acaso ou se os valores encontrados são aceitos estatisticamente.
+
+As Tabelas \ref{testt-facamenosrequisicoeshttp} a \ref{testt-eviteredirecionamento} mostram os valores encontrados para P e qual conclusão pode ser tirada com a análise desse valor para cada técnica. Para essa análise foi considerado um nível de confiança de 95\%, ou seja, se o valor de P for menor do que 5\% os resultados do teste são válidos estatisticamente e não ocorreram por acaso. Caso o contrário, o teste não é conclusivo, pois há 95\% de chance da diferença obtida com a aplicação da técnica ter ocorrido devido o acaso e nesse caso os testes deverão ser repetidos com um número maior de amostras.
+
+\input{./05-tabelas/analise-de-resultados/ttest-facamenosrequisicoeshttp}
+\input{./05-tabelas/analise-de-resultados/ttest-reduzaonumerodepesquisasdns}
+\input{./05-tabelas/analise-de-resultados/ttest-quebrandodominiosdominantes}
+\input{./05-tabelas/analise-de-resultados/ttest-redirecionamento}
+
 \section{Discussão dos resultados}
 \label{discussaodosresultados}
 
-A hipótese inicial deste trabalho propunha que o HTTP/2 apresentaria um desempenho melhor do que o HTTP/1.1 e que algumas técnicas de otimização de desempenho utilizadas para o protocolo mais antigo não teriam efeito ou seriam até mesmo prejudiciais para as páginas \textit{web} no novo protocolo. Mas apesar do esforço para encontrar um servidor HTTP/2 confiável e de gerar resultados que representassem o mundo real, o HTTP/2 não apresentou o comportamento esperado.
+A hipótese inicial deste trabalho propunha que o HTTP/2 apresentaria um desempenho melhor do que o HTTP/1.1 e que algumas técnicas de otimização de desempenho utilizadas para o protocolo mais antigo não teriam efeito ou seriam até mesmo prejudiciais para as páginas \textit{web} no novo protocolo. Mas apesar do esforço para encontrar um servidor HTTP/2 confiável e se comprovar a hipótese proposta, o HTTP/2 não apresentou o comportamento esperado.
 
 A redução de requisições HTTP continuou tendo aumentando o desempenho das páginas \textit{web}, o aumento de pesquisas de DNS foi prejudicial e o redirecionamento ainda deve ser um recurso evitado. Além disso, quando analisado em uma simulação de um site real sem sobre carga de requisições e sem a aplicação de técnicas de otimização, o HTTP/2 ainda obteve resultados piores do que o HTTP/1.1.
+
+Outro ponto que vale ser observado são os testes que não foram validados pelo Teste T. Existem 4 (quatro) situações onde os testes não podem ser conclusivos pois os resultados encontrados podem te ocorrido devido ao acaso. Nesses casos os testes deverão ser repetidos com um número maior de amostras para se entender o que realmente acontece quando a técnica de otimização em questão é aplicada.
 
 Não foi possível analisar a fundo o motivo de porquê o novo protocolo não se comportou como o esperado, mas algumas perguntas ficam em aberto para serem respondidas em trabalhos futuros.
 
@@ -90,7 +104,7 @@ O HTTP/2 ainda está em fase de desenvolvimento e adaptação e, no decorrer dos
 A seguir, encontra-se uma lista de questões deixadas em aberto por este trabalho que podem ser usadas como guias de trabalhos futuros.
 
 \begin{itemize}
-	\item Porque a implementação atual do HTTP/2 apresentou desempenho pior do que o HTTP/1.1?
+	\item Porque a implementação atual do HTTP/2 apresentou desempenho inferior do que o HTTP/1.1?
 	\item Quanto o \textit{hardware} da máquina onde está instalado o servidor \textit{web} interfere no desempenho do HTTP/2?
 	\item O Nginx, versão 1.9.5, consegue lidar com uma grande quantidade de requisições paralelas?
 	\item Qual é o número de componentes ideal em uma página, de forma que o paralelismo não gera perda de desempenho?

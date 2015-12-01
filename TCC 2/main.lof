@@ -7,22 +7,22 @@
 \contentsline {figure}{\numberline {6}{\ignorespaces HTTP com (a) m\IeC {\'u}ltiplas conex\IeC {\~o}es e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (b) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es sequenciais. (c) Uma conex\IeC {\~a}o persistente e requisi\IeC {\c c}\IeC {\~o}es em \textit {pipeline}}}{12}{figure.2.6}
 \contentsline {figure}{\numberline {7}{\ignorespaces Multiplexa\IeC {\c c}\IeC {\~a}o de fluxos no HTTP/2 (a) dois fluxos separados (b) fluxos multiplexados}}{17}{figure.2.7}
 \contentsline {figure}{\numberline {8}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o entre modelo de \textit {web} original e modelo utilizando AJAX}}{21}{figure.2.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de funcionamento de proxy HTTP/2.}}{42}{figure.5.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Ferramentas do desenvolvedor do Google Chrome mostrando protocolo usado na requisi\IeC {\c c}\IeC {\~a}o.}}{45}{figure.5.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Ferramentas do desenvolvedor do Mozilla Firefox mostrando protocolo usado na requisi\IeC {\c c}\IeC {\~a}o.}}{45}{figure.5.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Cascata representando \textit {download} de componentes da p\IeC {\'a}gina no HTTP/1.1.}}{52}{figure.6.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Cascata representando \textit {download} de componentes da p\IeC {\'a}gina no HTTP/2.}}{53}{figure.6.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Cascata ''Reduza requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos separados - HTTP/1.1.}}{87}{figure.I.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Cascata ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos separados - HTTP/2.}}{88}{figure.I.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Cascata ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos concatenados - HTTP/1.1.}}{89}{figure.I.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Cascata ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos concatenados - HTTP/2.}}{90}{figure.I.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - \IeC {\'U}nica CDN - HTTP/1.1.}}{91}{figure.I.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - \IeC {\'U}nica CDN - HTTP/2.}}{92}{figure.I.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - Multiplas CDN - HTTP/1.1.}}{93}{figure.I.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - Multiplas CDNs - HTTP/2.}}{94}{figure.I.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 2 CDNs - HTTP/1.1.}}{95}{figure.I.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 2 CDNs - HTTP/2.}}{96}{figure.I.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 3 CDNs - HTTP/1.1.}}{97}{figure.I.24}
-\contentsline {figure}{\numberline {25}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 3 CDNs - HTTP/2.}}{98}{figure.I.25}
-\contentsline {figure}{\numberline {26}{\ignorespaces Cascata ''Template'' - HTTP/1.1.}}{99}{figure.I.26}
-\contentsline {figure}{\numberline {27}{\ignorespaces Cascata ''Template'' - HTTP/2.}}{100}{figure.I.27}
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de funcionamento de proxy HTTP/2.}}{43}{figure.5.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Ferramentas do desenvolvedor do Google Chrome mostrando protocolo usado na requisi\IeC {\c c}\IeC {\~a}o.}}{46}{figure.5.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Ferramentas do desenvolvedor do Mozilla Firefox mostrando protocolo usado na requisi\IeC {\c c}\IeC {\~a}o.}}{46}{figure.5.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Cascata representando \textit {download} de componentes da p\IeC {\'a}gina no HTTP/1.1.}}{53}{figure.6.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Cascata representando \textit {download} de componentes da p\IeC {\'a}gina no HTTP/2.}}{54}{figure.6.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Cascata ''Reduza requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos separados - HTTP/1.1.}}{90}{figure.I.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Cascata ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos separados - HTTP/2.}}{91}{figure.I.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Cascata ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos concatenados - HTTP/1.1.}}{92}{figure.I.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Cascata ''Fa\IeC {\c c}a menos requisi\IeC {\c c}\IeC {\~o}es HTTP'' - Arquivos concatenados - HTTP/2.}}{93}{figure.I.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - \IeC {\'U}nica CDN - HTTP/1.1.}}{94}{figure.I.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - \IeC {\'U}nica CDN - HTTP/2.}}{95}{figure.I.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - Multiplas CDN - HTTP/1.1.}}{96}{figure.I.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Cascata ''Reduza o n\IeC {\'u}mero de pesquisas DNS'' - Multiplas CDNs - HTTP/2.}}{97}{figure.I.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 2 CDNs - HTTP/1.1.}}{98}{figure.I.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 2 CDNs - HTTP/2.}}{99}{figure.I.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 3 CDNs - HTTP/1.1.}}{100}{figure.I.24}
+\contentsline {figure}{\numberline {25}{\ignorespaces Cascata ''Quebrando dom\IeC {\'\i }nios dominantes'' - 3 CDNs - HTTP/2.}}{101}{figure.I.25}
+\contentsline {figure}{\numberline {26}{\ignorespaces Cascata ''Template'' - HTTP/1.1.}}{102}{figure.I.26}
+\contentsline {figure}{\numberline {27}{\ignorespaces Cascata ''Template'' - HTTP/2.}}{103}{figure.I.27}

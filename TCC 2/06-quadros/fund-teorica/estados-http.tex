@@ -2,18 +2,12 @@
 	\centering
 	\caption{Códigos de estado HTTP.\label{qua:estadoshttp}}
 	\fonte{Adaptado de \citeonline{Tanenbaum}}
+	\begin{tabular}{|l|l|l|}
+		\hline
+		\textbf{Código} & \textbf{Significado} & \textbf{Exemplo}                                                                                   \\ \hline
+		1xx             & Informação           & \begin{tabular}[c]{@{}l@{}}100 = servidor concorda em lidar\\ com requisição do cliente \end{tabular} \\ \hline
+		2xx             & Sucesso              & \begin{tabular}[c]{@{}l@{}}200 = sucessona requisição\\ 204 = nenhum conteúdopresente\end{tabular} \\ \hline
+		3xx             & Redirecionamento     & \begin{tabular}[c]{@{}l@{}}301 = página foi movida\\ 304 = \textit{cache} ainda é válida\end{tabular}       \\ \hline
+		4xx             & Erro do cliente      & \begin{tabular}[c]{@{}l@{}}403 = página proibida\\ 404 = página não encontrada\end{tabular}        \\ \hline
+	\end{tabular}
 \end{quadro}
-\begin{table}[]
-\centering
-\caption{My caption}
-\label{my-label}
-\begin{tabular}{|l|l|l|}
-\hline
-\textbf{Código} & \textbf{Significado} & \textbf{Exemplo}                                                                                   \\ \hline
-1xx             & Informação           & \begin{tabular}[c]{@{}l@{}}100 = servidor concorda em lidar\\ com requisição do cliente \end{tabular} \\ \hline
-2xx             & Sucesso              & \begin{tabular}[c]{@{}l@{}}200 = sucessona requisição\\ 204 = nenhum conteúdopresente\end{tabular} \\ \hline
-3xx             & Redirecionamento     & \begin{tabular}[c]{@{}l@{}}301 = página foi movida\\ 304 = \textit{cache} ainda é válida\end{tabular}       \\ \hline
-4xx             & Erro do cliente      & \begin{tabular}[c]{@{}l@{}}403 = página proibida\\ 404 = página não encontrada\end{tabular}        \\ \hline
-\end{tabular}
-\end{table}
-	

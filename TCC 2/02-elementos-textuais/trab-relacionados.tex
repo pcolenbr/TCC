@@ -3,7 +3,9 @@
 %
 
 \chapter{Trabalhos Relacionados}
-Desenvolvedores estão sempre a procura de maneiras para tornar suas aplicações mais rápidas aos olhos dos usuários finais e isso não é diferente com os \textit{websites}. A área de otimização de desempenho para páginas \textit{web} é tão antiga quanto a \textit{World Wide Web}, mas por muito tempo os esforços foram dedicados à otimização de \textit{back-end}, o que \citeonline{HighPerformance} provou não ser o melhor caminho para se atingir o objetivo desejado. De acordo com \citeonline[p.~5]{HighPerformance}: "Apenas 10-20\% do tempo de resposta do usuário final são gastos baixando o documento HTML. Os outros 80-90\% são gastos baixando todos os componentes da página.". Então, os desenvolvedores podem obter melhores resultados de desempenho caso foquem seus esforços na otimização do \textit{front-end} de seus \textit{websites} ao invés do \textit{back-end}.
+Desenvolvedores estão sempre a procura de maneiras para tornar suas aplicações mais rápidas aos olhos dos usuários finais e isso não é diferente com os \textit{websites}. A área de otimização de desempenho para páginas \textit{web} é tão antiga quanto a \textit{World Wide Web}, mas por muito tempo os esforços foram dedicados à otimização de \textit{back-end}, o que \citeonline{HighPerformance} provou não ser o melhor caminho para se atingir o objetivo desejado.
+
+De acordo com \citeonline[p.~5]{HighPerformance}: "Apenas 10-20\% do tempo de resposta do usuário final são gastos baixando o documento HTML. Os outros 80-90\% são gastos baixando todos os componentes da página.". Então, os desenvolvedores podem obter melhores resultados de desempenho caso foquem seus esforços na otimização do \textit{front-end} de seus \textit{websites} ao invés do \textit{back-end}.
 
 Neste capítulo são apresentadas as ideias principais dos dois livros  de Steve Souders. Esses livros tornaram o conhecimento sobre a otimização de desempenho de \textit{front-end} de \textit{websites} acessível a todos os desenvolvedores e ajudaram a melhorar a \textit{web} nos últimos anos.
 
@@ -67,7 +69,7 @@ Redirecionamentos são extremamente danosos para a experiência de uso de \texti
 
 \subsection{Regra 12: Remova \textit{scripts} duplicados}
 \label{subsec:highperformance_regra12}
-Em projetos grandes, é comum que vários desenvolvedores faças alterações no código e isso pode fazer com que um mesmo arquivo seja inserido mais de uma vez em uma página HTML. \textit{Scripts} duplicados aumentam o número de chamadas HTTP e isso é muito prejudicial ao desempenho de \textit{websites} e aplicações \textit{web}. Sendo assim os desenvolvedores devem ser muito cuidadosos quanto aos \textit{scripts} que estão sendo carregados em suas páginas e ter certeza de que todos são únicos e necessários.
+Em projetos grandes, é comum que vários desenvolvedores façam alterações no código e isso pode fazer com que um mesmo arquivo seja inserido mais de uma vez em uma página HTML. \textit{Scripts} duplicados aumentam o número de chamadas HTTP e isso é muito prejudicial ao desempenho de \textit{websites} e aplicações \textit{web}. Sendo assim os desenvolvedores devem ser muito cuidadosos quanto aos \textit{scripts} que estão sendo carregados em suas páginas e ter certeza de que todos são únicos e necessários.
 
 \subsection{Regra 13: Configure \textit{ETags}}
 \label{subsec:highperformance_regra13}
@@ -76,6 +78,7 @@ Muitas vezes os desenvolvedores não configuram como funcionará o mecanismo de 
 \subsection{Regra 14: Habilite \textit{cache} para AJAX}
 \label{subsec:highperformance_regra14}
 As chamadas AJAX melhoram muito a experiência do usuário, pois tornam as páginas \textit{web} mais dinâmicas e responsivas. O problema é que muitas vezes elas não são salvas em \textit{cache} e isso pode afetar o desempenho dos \textit{websites} e aplicações \textit{web}. Para garantir que as chamadas AJAX serão salvas em \textit{cache}, os desenvolvedores devem seguir seguir as regras 1 a 13 também para esse tipo de componente, tomando cuidado especial com a regra 3.
+
 
 \section{\textit{Even Faster Web Sites}}
 \label{sec:evenfasterwebsites}
@@ -127,7 +130,7 @@ Não existe uma solução única para todos os \textit{websites} e aplicações 
 
 \subsection{Lidando com \textit{scripts} assíncronos}
 \label{subsec:evenfaster_cap5}
-Quando as técnicas descritas no Capítulo 4 \cite[p.~27]{EvenFaster}, são utilizadas para carregar \textit{scripts} sem bloqueios, cria-se um novo problema. Componentes que são carregados de maneira assíncrona estão sujeitos a condições de corrida\footnote{http://en.wikipedia.org/wiki/Race\_condition}. Essas condições tornam imprevisível a ordem na qual os \textit{scripts} serão carregados, o que pode fazer com que ocorram falhas nas dependências de funções. Para evitar essas falhas, Steve Souders descreve 5 técnicas de como garantir que os \textit{scripts} serão carregados em uma ordem na qual sejam executados sem erros de dependências:
+Quando as técnicas descritas no Capítulo 4 \cite[p.~27]{EvenFaster} são utilizadas para carregar \textit{scripts} sem bloqueios, cria-se um novo problema. Componentes que são carregados de maneira assíncrona estão sujeitos a condições de corrida\footnote{http://en.wikipedia.org/wiki/Race\_condition}. Essas condições tornam imprevisível a ordem na qual os \textit{scripts} serão carregados, o que pode fazer com que ocorram falhas nas dependências de funções. Para evitar essas falhas, Steve Souders descreve 5 técnicas de como garantir que os \textit{scripts} serão carregados em uma ordem na qual sejam executados sem erros de dependências:
 
 \begin{itemize}
 	\item \textit{Hardcoded Callback}, \cite[p.~46]{EvenFaster}
@@ -197,3 +200,6 @@ Como regra geral, Steve Souders aconselha não utilizar estes componentes.
 Na \textit{Web} 2.0, folhas de estilo são tão populares quanto \textit{scripts}. \textit{Websites} possuem várias folhas de estilo, mas pouco esforço é empregado em otimizar esses arquivos.
 
 Neste capítulo, Souders explica que os navegadores fazem buscas por componentes declarados em folhas de estilo da direita para esquerda, logo os identificadores mais à direita devem ser os mais específicos, para diminuir o tempo de busca. Além disso ele alerta para o mal de códigos duplicados e cita boas práticas de programação para CSS \cite[p.~195]{EvenFaster}.
+
+\section{Análise das técnicas propostas}
+Conhecendo as técnicas de otimização de desempenho propostas por Souders para o HTTP/1.1, este trabalho analisa o comportamento de tais técnicas quando aplicadas em \textit{websites} que utilizam o HTTP/2. Como as duas versões do protocolo apresentam mudanças significativas, espera-se que o comportamento das técnicas explicadas até o momento sofram alterações significativas.
