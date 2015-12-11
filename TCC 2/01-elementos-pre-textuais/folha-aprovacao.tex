@@ -2,53 +2,66 @@
 % Documento: Folha de aprovação
 %
 
+
+
+%
+% Documento: Folha de aprovação
+%
+
 \makeatletter
 \begin{folhadeaprovacao}
-
-    \begin{center}
-        {\large\normalfont\scshape\textbf\imprimirautor}
-    \end{center}
-
-    \vspace*{10pt}
-
-    \begin{center}
-        \ABNTEXchapterfont\Large\scshape\imprimirtitulo
-        \abntex@ifnotempty{\imprimirsubtitulo}{%
-            {\ABNTEXchapterfont\Large\scshape: }{\ABNTEXchapterfont\large\scshape\imprimirsubtitulo}
-        }
-    \end{center}
-
-    \abntex@ifnotempty{\imprimirpreambulo}{%
-        \SingleSpacing
-        \begin{tabular}{p{.24\textwidth}p{.15\textwidth}p{.44\textwidth}}
-            & \multicolumn{2}{p{.6\textwidth}}{\small\hyphenpenalty=10000{\imprimirpreambulo}} \\ & & \\
-        \end{tabular}
-    }
-
-    \vspace*{5pt}
-
-    \begin{center}
-        Trabalho aprovado. \imprimirlocal, 24 de novembro de 2014
-    \end{center}
-
-    \begin{center}
-        \assinatura{\textbf{\imprimirorientador} \\ Orientador}
-        \assinatura{\textbf{\imprimircoorientador} \\ Co-Orientador}
-        \assinatura{\textbf{Professor} \\ Convidado 1}
-        \assinatura{\textbf{Professor} \\ Convidado 2}
-        %\assinatura{\textbf{Professor} \\ Convidado 3}
-        %\assinatura{\textbf{Professor} \\ Convidado 4}
-    \end{center}
-
-    \vspace*{\fill}
-
-    \begin{center}
-        \normalfont\scshape{\imprimirinstituicao}\\
-        \normalfont\scshape{\imprimirdepartamento}\\
-        \normalfont\scshape{\imprimirprograma}\\
-        \normalfont\scshape{\imprimirlocal}\\
-        \normalfont\scshape{\imprimirdata}
-    \end{center}
-
+		\hspace{-2.0cm}
+	    \begin{minipage}{0.19\textwidth}
+	    	\includegraphics[width=0.8\textwidth]{./04-figuras/cefet-logo}
+	    \end{minipage}
+	    \quad
+	    \hspace{-1.5cm}
+	    \begin{minipage}{.9\textwidth}
+	    	\begin{center}	    	
+	    	{\normalfont\scshape\textbf\imprimirinstituicao}\\
+	    	\normalfont\scshape{\imprimirdepartamento}\\
+	    	\normalfont\scshape{\imprimirprograma}\\
+	    	{\normalfont\scshape Avalia\c{c}\~ao do Trabalho de Conclusão de Curso}\\
+	    	\end{center}
+	    \end{minipage}
+	
+	\vspace*{50pt}
+	
+	{\noindent\normalfont\scshape\textbf{Aluno:} \imprimirautor}\\
+	{\normalfont\scshape\textbf{T\'{i}tulo do trabalho:} \imprimirtitulo}\\
+	{\normalfont\scshape\textbf{Data do trabalho:} 20/11/2015}\\
+	{\normalfont\scshape\textbf{Hor\'{a}rio:} 16:00}\\
+	{\normalfont\scshape\textbf{Local da defesa: Audit{\'o}rio 401, pr{\'e}dio 17 (DECOM).} }\\
+	
+	\vspace*{40pt}
+	
+	\begin{center}
+		{\normalfont\scshape O presente Trabalho de Conclus\~ao de Curso foi avaliado pela seguinte banca:}\\
+	\end{center}
+	
+	\vspace*{10pt}
+	
+	\begin{center}
+		{\normalfont\scshape\imprimirorientador - Orientador}\\
+		{\normalfont\scshape Departamento de Computa\c{c}\~ao}\\
+		{\normalfont\scshape\imprimirinstituicao}\\
+	\end{center}
+	
+	\vspace*{3pt}
+	
+	\begin{center}
+		{\normalfont\scshape Profª. Glívia Angélica Rodrigues Barbosa - Membro da banca de avalia\c{c}\~ao}\\
+		{\normalfont\scshape Departamento de Computa\c{c}\~ao}\\
+		{\normalfont\scshape\imprimirinstituicao}\\
+	\end{center}
+	
+	\vspace*{3pt}
+	
+	\begin{center}
+		{\normalfont\scshape Prof. Ismael Santana Silva - Membro da banca de avalia\c{c}\~ao}\\
+		{\normalfont\scshape Departamento de Computa\c{c}\~ao}\\
+		{\normalfont\scshape\imprimirinstituicao}\\
+	\end{center}
+	
 \end{folhadeaprovacao}
 \makeatother
